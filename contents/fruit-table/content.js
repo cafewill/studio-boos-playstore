@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 1,
   "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-  "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "손 씻기부터 준비된 과일 담기와 나누기까지 차례를 골라요.",
   "params": {
     "steps": [
       "손을 씻어요",
@@ -20,5 +20,9 @@ export const definition = {
       "함께 나눠요"
     ]
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "🍐",
+    "detail": "과일 나눔"
+  }
 };

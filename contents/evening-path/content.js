@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 1,
   "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-  "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "장난감 정리·씻기·잠옷 입기를 이어 놓고 편히 쉬는 시간에 닿아요.",
   "params": {
     "steps": [
       "장난감을 정리해요",
@@ -20,5 +20,9 @@ export const definition = {
       "편히 쉬어요"
     ]
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "🌙",
+    "detail": "저녁 쉼표"
+  }
 };

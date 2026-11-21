@@ -18,7 +18,7 @@ for(const item of batch.items){
 }
 outputs.set('contents/shape-garden/src/activity.js',"// v1 호환 API: 이전 회귀 검증과 저장 마이그레이션에만 사용한다.\nexport * from '../../shared/engines/shape-legacy.js';\n");
 outputs.set('contents/shape-garden/src/storage.js',"// v1 회귀 검사 전용 호환 진입점. 신규 화면에서 사용하지 않는다.\nimport {createLegacyStore} from '../../shared/core/legacy-storage.js';\nimport {restore} from './activity.js';\nexport const {read,write,load,save,clear}=createLegacyStore('shape-garden',restore);\n");
-const catalog=batch.items.map(({content:d})=>({slug:d.slug,title:d.title,age:`${d.ageMin}–${d.ageMax}세와 함께`,ageMin:d.ageMin,ageMax:d.ageMax,category:d.family,description:d.objective,href:`${d.slug}/`,engine:d.engine}));
+const catalog=batch.items.map(({content:d})=>({slug:d.slug,title:d.title,age:`${d.ageMin}–${d.ageMax}세와 함께`,ageMin:d.ageMin,ageMax:d.ageMax,category:d.family,description:d.description,preview:{engine:d.engine,variant:d.variant,params:d.params,presentation:d.presentation},href:`${d.slug}/`,engine:d.engine}));
 outputs.set('contents/catalog.js',`// 생성 파일: data/implementation/registry.json에 등록한 배치 정의에서 생성한다.\nexport const CONTENTS = ${JSON.stringify(catalog,null,2)};\n`);
 let failures=0;
 for(const [relative,text]of outputs){const full=path.join(root,relative);if(check){if(!fs.existsSync(full)||fs.readFileSync(full,'utf8')!==text){console.error(`생성 결과 불일치: ${relative}`);failures++;}}else{fs.mkdirSync(path.dirname(full),{recursive:true});fs.writeFileSync(full,text);}}

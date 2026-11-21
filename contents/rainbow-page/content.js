@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 1,
   "objective": "무지개 그림 한 장에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요.",
-  "description": "무지개 그림 한 장에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "네 겹의 둥근 무지개 선을 따라 색을 고르거나 새로운 길을 그려요.",
   "params": {
     "template": "rainbow"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "네 겹 무지개"
+  }
 };

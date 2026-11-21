@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 3,
   "objective": "그림과 어울리는 낱말을 연결해요.",
-  "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "나무·꽃·잎 그림을 보고 한글 낱말을 골라 연결해요.",
   "params": {
     "cards": [
       {
@@ -28,5 +28,9 @@ export const definition = {
       }
     ]
   },
-  "accent": "#456f99"
+  "accent": "#456f99",
+  "presentation": {
+    "symbol": "🌳",
+    "detail": "나무·꽃·잎"
+  }
 };

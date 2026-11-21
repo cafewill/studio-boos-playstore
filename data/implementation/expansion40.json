@@ -63,7 +63,7 @@
         "ageMax": 8,
         "roundCount": 3,
         "objective": "그림과 어울리는 낱말을 연결해요.",
-        "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "나무·꽃·잎 그림을 보고 한글 낱말을 골라 연결해요.",
         "params": {
           "cards": [
             {
@@ -80,7 +80,11 @@
             }
           ]
         },
-        "accent": "#456f99"
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🌳",
+          "detail": "나무·꽃·잎"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -111,7 +115,7 @@
         "ageMax": 8,
         "roundCount": 3,
         "objective": "그림과 어울리는 낱말을 연결해요.",
-        "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "사과·배·포도 그림을 보고 한글 낱말을 골라 연결해요.",
         "params": {
           "cards": [
             {
@@ -128,7 +132,11 @@
             }
           ]
         },
-        "accent": "#456f99"
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🍎",
+          "detail": "사과·배·포도"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -159,7 +167,7 @@
         "ageMax": 8,
         "roundCount": 3,
         "objective": "그림과 어울리는 낱말을 연결해요.",
-        "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "tree·flower·sun 그림을 보고 영어 낱말을 골라 연결해요.",
         "params": {
           "cards": [
             {
@@ -176,7 +184,11 @@
             }
           ]
         },
-        "accent": "#456f99"
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🌳",
+          "detail": "tree·flower·sun"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -207,7 +219,7 @@
         "ageMax": 8,
         "roundCount": 3,
         "objective": "그림과 어울리는 낱말을 연결해요.",
-        "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "책·공·가방 그림을 보고 한글 낱말을 골라 연결해요.",
         "params": {
           "cards": [
             {
@@ -224,7 +236,11 @@
             }
           ]
         },
-        "accent": "#456f99"
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "📖",
+          "detail": "책·공·가방"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -255,7 +271,7 @@
         "ageMax": 8,
         "roundCount": 3,
         "objective": "그림과 어울리는 낱말을 연결해요.",
-        "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "apple·banana·grape 그림을 보고 영어 낱말을 골라 연결해요.",
         "params": {
           "cards": [
             {
@@ -272,7 +288,11 @@
             }
           ]
         },
-        "accent": "#456f99"
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🍎",
+          "detail": "apple·banana·grape"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -303,7 +323,7 @@
         "ageMax": 8,
         "roundCount": 3,
         "objective": "그림과 어울리는 낱말을 연결해요.",
-        "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "sun·moon·star 그림을 보고 영어 낱말을 골라 연결해요.",
         "params": {
           "cards": [
             {
@@ -320,7 +340,11 @@
             }
           ]
         },
-        "accent": "#456f99"
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "☀️",
+          "detail": "sun·moon·star"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -351,7 +375,7 @@
         "ageMax": 8,
         "roundCount": 3,
         "objective": "그림과 어울리는 낱말을 연결해요.",
-        "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "해·달·별 그림을 보고 한글 낱말을 골라 연결해요.",
         "params": {
           "cards": [
             {
@@ -368,7 +392,11 @@
             }
           ]
         },
-        "accent": "#456f99"
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "☀️",
+          "detail": "해·달·별"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -399,7 +427,7 @@
         "ageMax": 8,
         "roundCount": 3,
         "objective": "그림과 어울리는 낱말을 연결해요.",
-        "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "물고기·문어·게 그림을 보고 한글 낱말을 골라 연결해요.",
         "params": {
           "cards": [
             {
@@ -416,7 +444,11 @@
             }
           ]
         },
-        "accent": "#456f99"
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🐟",
+          "detail": "물고기·문어·게"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -447,7 +479,7 @@
         "ageMax": 8,
         "roundCount": 3,
         "objective": "그림과 어울리는 낱말을 연결해요.",
-        "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "고양이·토끼·새 그림을 보고 한글 낱말을 골라 연결해요.",
         "params": {
           "cards": [
             {
@@ -464,7 +496,11 @@
             }
           ]
         },
-        "accent": "#456f99"
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🐈",
+          "detail": "고양이·토끼·새"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -495,7 +531,7 @@
         "ageMax": 8,
         "roundCount": 3,
         "objective": "그림과 어울리는 낱말을 연결해요.",
-        "description": "그림과 어울리는 낱말을 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "우산·신발·모자 그림을 보고 한글 낱말을 골라 연결해요.",
         "params": {
           "cards": [
             {
@@ -512,7 +548,11 @@
             }
           ]
         },
-        "accent": "#456f99"
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "☂️",
+          "detail": "우산·신발·모자"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -543,7 +583,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-        "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "기지개부터 세수·옷 입기·인사까지, 아침의 네 걸음을 이어 봐요.",
         "params": {
           "steps": [
             "눈을 뜨고 기지개를 켜요",
@@ -552,7 +592,11 @@
             "아침 인사를 해요"
           ]
         },
-        "accent": "#28644e"
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🌤️",
+          "detail": "아침 준비"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -583,7 +627,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-        "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "손 씻기부터 준비된 과일 담기와 나누기까지 차례를 골라요.",
         "params": {
           "steps": [
             "손을 씻어요",
@@ -592,7 +636,11 @@
             "함께 나눠요"
           ]
         },
-        "accent": "#28644e"
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🍐",
+          "detail": "과일 나눔"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -623,7 +671,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-        "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "어른에게 말하고 모자와 신발을 챙겨 함께 나서는 순서를 살펴봐요.",
         "params": {
           "steps": [
             "어른에게 함께 가자고 말해요",
@@ -632,7 +680,11 @@
             "함께 문을 나서요"
           ]
         },
-        "accent": "#28644e"
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🧢",
+          "detail": "산책 준비"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -663,7 +715,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-        "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "어른과 기다리기·차례로 타기·앉기·함께 내리기의 흐름을 이어 봐요.",
         "params": {
           "steps": [
             "어른과 정류장에서 기다려요",
@@ -672,7 +724,11 @@
             "도착하면 어른과 내려요"
           ]
         },
-        "accent": "#28644e"
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🚌",
+          "detail": "버스 나들이"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -703,7 +759,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-        "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "손을 씻고 준비된 음식을 골라 담은 뒤 뚜껑을 닫는 순서예요.",
         "params": {
           "steps": [
             "손을 씻어요",
@@ -712,7 +768,11 @@
             "뚜껑을 닫아요"
           ]
         },
-        "accent": "#28644e"
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🧺",
+          "detail": "도시락 준비"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -743,7 +803,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-        "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "필요한 물건을 생각하고 바구니를 챙겨 어른과 계산하는 차례를 골라요.",
         "params": {
           "steps": [
             "필요한 것을 살펴봐요",
@@ -752,7 +812,11 @@
             "어른과 계산해요"
           ]
         },
-        "accent": "#28644e"
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "📝",
+          "detail": "장보기 메모"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -783,7 +847,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-        "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "놀이를 마친 장난감을 모아 제자리에 놓고 바닥을 살펴봐요.",
         "params": {
           "steps": [
             "놀이를 마쳐요",
@@ -792,7 +856,11 @@
             "빈 바닥을 살펴봐요"
           ]
         },
-        "accent": "#28644e"
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🧸",
+          "detail": "장난감 정리"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -823,7 +891,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-        "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "손 씻기와 자리 앉기부터 식사 후 정리까지 한 가지 흐름을 연습해요.",
         "params": {
           "steps": [
             "손을 씻어요",
@@ -832,7 +900,11 @@
             "그릇을 정리해요"
           ]
         },
-        "accent": "#28644e"
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🍽️",
+          "detail": "함께 식사"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -863,7 +935,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-        "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "메모를 보고 장을 본 다음, 집에서 물건을 제자리에 놓는 흐름이에요.",
         "params": {
           "steps": [
             "장보기 메모를 봐요",
@@ -872,7 +944,11 @@
             "집에서 제자리에 놓아요"
           ]
         },
-        "accent": "#28644e"
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🛒",
+          "detail": "바구니 정리"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -903,7 +979,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-        "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "장난감 정리·씻기·잠옷 입기를 이어 놓고 편히 쉬는 시간에 닿아요.",
         "params": {
           "steps": [
             "장난감을 정리해요",
@@ -912,7 +988,11 @@
             "편히 쉬어요"
           ]
         },
-        "accent": "#28644e"
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🌙",
+          "detail": "저녁 쉼표"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -943,7 +1023,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "의자·책·화분·쿠션을 여섯 자리에 놓아 나만의 방을 꾸며요.",
         "params": {
           "backdrop": "room",
           "props": [
@@ -965,7 +1045,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🪑",
+          "detail": "의자 · 책"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -996,7 +1080,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "나무·꽃·집·의자로 작은 마을의 쉼터 한 장면을 배치해요.",
         "params": {
           "backdrop": "garden",
           "props": [
@@ -1018,7 +1102,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🌳",
+          "detail": "나무 · 꽃"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1049,7 +1137,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "잎·조개·꽃·돌을 골라 자연에서 떠올린 소품 선반을 채워요.",
         "params": {
           "backdrop": "studio",
           "props": [
@@ -1071,7 +1159,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🍃",
+          "detail": "잎 · 조개"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1102,7 +1194,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "창가를 상상하며 화분·책·의자·등을 원하는 자리에 놓아요.",
         "params": {
           "backdrop": "room",
           "props": [
@@ -1124,7 +1216,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🪴",
+          "detail": "화분 · 책"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1155,7 +1251,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "집·나무·다리·꽃 소품으로 한 장의 마을 구상을 만들어요.",
         "params": {
           "backdrop": "studio",
           "props": [
@@ -1177,7 +1273,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🏠",
+          "detail": "집 · 나무"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1208,7 +1308,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "리본·빗·모자·꽃을 놓으며 나만의 소품 작업대를 꾸며요.",
         "params": {
           "backdrop": "studio",
           "props": [
@@ -1230,7 +1330,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🎀",
+          "detail": "리본 · 빗"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1261,7 +1365,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "나무·꽃·화분·의자를 골라 정원의 여섯 자리를 채워요.",
         "params": {
           "backdrop": "garden",
           "props": [
@@ -1283,7 +1387,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🌳",
+          "detail": "나무 · 꽃"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1314,7 +1422,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "꽃·컵·접시·선물을 배치해 누구나 함께하는 축하 자리를 만들어요.",
         "params": {
           "backdrop": "table",
           "props": [
@@ -1336,7 +1444,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🌼",
+          "detail": "꽃 · 컵"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1367,7 +1479,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "책·의자·등·화분을 놓아 읽고 쉬는 작은 공간을 꾸며요.",
         "params": {
           "backdrop": "room",
           "props": [
@@ -1389,7 +1501,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "📚",
+          "detail": "책 · 의자"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1420,7 +1536,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "공·인형·책·블록 소품을 골라 놀이방 한 장면을 배치해요.",
         "params": {
           "backdrop": "room",
           "props": [
@@ -1442,7 +1558,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "⚽",
+          "detail": "공 · 곰 인형"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1473,7 +1593,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "사과·빵·컵·꽃을 식탁에 놓아 함께 나누는 자리를 상상해요.",
         "params": {
           "backdrop": "table",
           "props": [
@@ -1495,7 +1615,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🍎",
+          "detail": "사과 · 빵"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1526,7 +1650,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "네 가지 색의 무늬 소품을 여섯 자리에 놓아 색 배치를 살펴봐요.",
         "params": {
           "backdrop": "studio",
           "props": [
@@ -1548,7 +1672,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🟡",
+          "detail": "노랑 무늬 · 파랑 무늬"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1579,7 +1707,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "의자·쿠션·책·화분의 위치를 바꿔 쉬는 거실을 구성해요.",
         "params": {
           "backdrop": "room",
           "props": [
@@ -1601,7 +1729,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🪑",
+          "detail": "의자 · 쿠션"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1632,7 +1764,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "나무와 꽃 사이에 의자·공을 놓으며 동네 공원 장면을 만들어요.",
         "params": {
           "backdrop": "garden",
           "props": [
@@ -1654,7 +1786,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🌳",
+          "detail": "나무 · 꽃"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1685,7 +1821,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "집·책·별·나무를 배치하고 그림에서 어떤 이야기가 떠오르는지 살펴봐요.",
         "params": {
           "backdrop": "studio",
           "props": [
@@ -1707,7 +1843,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🏠",
+          "detail": "집 · 책"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1738,7 +1878,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "컵·빵·꽃·의자를 골라 손님을 반기는 작은 자리를 꾸며요.",
         "params": {
           "backdrop": "table",
           "props": [
@@ -1760,7 +1900,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🥛",
+          "detail": "컵 · 빵"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1791,7 +1935,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "모자·리본·별·가방을 놓아 상상 속 소품 작업실을 만들어요.",
         "params": {
           "backdrop": "studio",
           "props": [
@@ -1813,7 +1957,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🧢",
+          "detail": "모자 · 리본"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1844,7 +1992,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "노랑·파랑·초록·보라 소품을 놓아 작은 색 전시를 구성해요.",
         "params": {
           "backdrop": "studio",
           "props": [
@@ -1866,7 +2014,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🟡",
+          "detail": "노랑 그림 · 파랑 그림"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1897,7 +2049,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "책·공·인형·화분의 위치를 고르며 함께 노는 방을 꾸며요.",
         "params": {
           "backdrop": "room",
           "props": [
@@ -1919,7 +2071,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "📖",
+          "detail": "책 · 공"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",
@@ -1950,7 +2106,7 @@
         "ageMax": 8,
         "roundCount": 1,
         "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-        "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+        "description": "리본·모자·가방·꽃을 원하는 순서와 위치로 선반에 놓아요.",
         "params": {
           "backdrop": "studio",
           "props": [
@@ -1972,7 +2128,11 @@
             }
           ]
         },
-        "accent": "#83628e"
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🎀",
+          "detail": "리본 · 모자"
+        }
       },
       "status": "mvp-logic-verified",
       "browserStatus": "not-run",

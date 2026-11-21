@@ -1,3 +1,4 @@
+import {DRAWING_PATHS} from './artwork.js';
 import {COLORS,NAMES} from '../core/utils.js';
 import {PARTS,target} from '../engines/assembly.js';
 import {goal} from '../engines/commands.js';
@@ -53,8 +54,7 @@ export function stage(state,def){
 export function attachDrawing(root,state,def,emit){
  const canvas=root.querySelector('#draw-surface');if(!canvas)return()=>{};
  const ctx=canvas.getContext('2d');let points=[];let pointer=null;
- function draw(){ctx.clearRect(0,0,800,480);ctx.fillStyle='#fffef9';ctx.fillRect(0,0,800,480);ctx.strokeStyle='#d9e2d1';ctx.lineWidth=3;ctx.setLineDash([7,9]);const theme=def.params.template;
-  ctx.beginPath();if(['house','kite','tree','forest'].includes(theme)){ctx.moveTo(210,360);ctx.lineTo(210,190);ctx.lineTo(400,60);ctx.lineTo(590,190);ctx.lineTo(590,360);ctx.closePath();}else if(['waves','rainbow','sky'].includes(theme)){for(let y=120;y<=360;y+=80){ctx.moveTo(100,y);ctx.bezierCurveTo(260,y-90,540,y+90,700,y);}}else if(['flower','garden','leaf','fruit','butterfly'].includes(theme)){for(let i=0;i<5;i++){ctx.moveTo(400,240);ctx.ellipse(400+90*Math.cos(i*2*Math.PI/5),240+90*Math.sin(i*2*Math.PI/5),75,55,i*2*Math.PI/5,0,Math.PI*2);}}else{for(let i=0;i<7;i++){ctx.moveTo(150+i*80,200);ctx.arc(150+i*80,240,26+i%3*9,0,Math.PI*2);}}ctx.stroke();ctx.setLineDash([]);
+ function draw(){ctx.clearRect(0,0,800,480);ctx.fillStyle='#fffef9';ctx.fillRect(0,0,800,480);ctx.strokeStyle='#a2b4bf';ctx.save();ctx.scale(800/340,480/220);ctx.lineWidth=1.3;ctx.setLineDash([3,4]);for(const path of DRAWING_PATHS[def.params.template])ctx.stroke(new Path2D(path));ctx.restore();ctx.setLineDash([]);
   const renderStroke=s=>{ctx.strokeStyle=colorHex(s.color);ctx.fillStyle=colorHex(s.color);ctx.lineWidth=8;ctx.lineCap='round';ctx.lineJoin='round';const first=s.points[0];ctx.beginPath();ctx.moveTo(first[0]*800,first[1]*480);for(const [x,y]of s.points)ctx.lineTo(x*800,y*480);ctx.stroke();if(s.points.length===1){ctx.beginPath();ctx.arc(first[0]*800,first[1]*480,s.stamp?13:4,0,Math.PI*2);ctx.fill();}};
   state.data.strokes.forEach(renderStroke);if(points.length)renderStroke({points,color:state.data.color});
  }

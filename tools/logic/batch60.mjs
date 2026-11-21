@@ -134,3 +134,17 @@ for(const engine of ['words','routine','scene']){
  assert.ok(welcomeArt(d).includes('&lt;script&gt;'));assert.ok(!welcomeArt(d).includes(text));
 }
 console.log('시작 미리보기 통과: 전체 정의·신규 3유형 문자열 이스케이프');
+
+// 소개가 같은 상용 문구나 엔진 공통 그림으로 되돌아가지 않도록 정본과의 대응을 확인한다.
+const {CONTENTS:catalog}=await import('../../contents/catalog.js');
+const {activityArtwork,DRAWING_PATHS}=await import('../../contents/shared/ui/artwork.js');
+assert.equal(new Set(batch.items.map(i=>i.content.description)).size,batch.items.length,'소개는 실제 활동 데이터를 설명한다');
+assert.equal(new Set(Object.values(DRAWING_PATHS).map(p=>JSON.stringify(p))).size,17,'17개 그리기 안내선을 구분한다');
+for(const {content:def}of batch.items){
+ const entry=catalog.find(c=>c.slug===def.slug);assert.equal(entry.description,def.description);assert.deepEqual(entry.preview.params,def.params);
+ const html=activityArtwork(entry.preview);assert.ok(html.startsWith('<svg')&&!/undefined|NaN/.test(html));
+ assert.equal(welcomeArt(def),`<div class="activity-preview">${html}</div>`,'카드와 시작 화면 그림 일치');
+}
+const drawingPreviews=batch.items.filter(i=>i.content.engine==='drawing').map(i=>activityArtwork(i.content));
+assert.equal(new Set(drawingPreviews).size,17,'색뿐 아니라 안내선이 다름');
+console.log('소개·그림 계약 통과: 100개 소개 대응·17종 안내선·카드/시작 화면 그림 일치');

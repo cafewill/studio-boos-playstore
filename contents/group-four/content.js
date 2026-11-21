@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 6,
   "objective": "네 개씩 모인 상자의 전체 수를 알아봐요.",
-  "description": "네 개씩 모인 상자의 전체 수를 알아봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "네 개씩 모인 점들이 몇 묶음인지 보고 전체 개수를 알아봐요.",
   "params": {
     "min": 4,
     "max": 4,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "4개씩 묶어 세기"
+  }
 };

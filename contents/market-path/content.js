@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 1,
   "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-  "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "필요한 물건을 생각하고 바구니를 챙겨 어른과 계산하는 차례를 골라요.",
   "params": {
     "steps": [
       "필요한 것을 살펴봐요",
@@ -20,5 +20,9 @@ export const definition = {
       "어른과 계산해요"
     ]
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "📝",
+    "detail": "장보기 메모"
+  }
 };

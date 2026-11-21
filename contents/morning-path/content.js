@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 1,
   "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-  "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "기지개부터 세수·옷 입기·인사까지, 아침의 네 걸음을 이어 봐요.",
   "params": {
     "steps": [
       "눈을 뜨고 기지개를 켜요",
@@ -20,5 +20,9 @@ export const definition = {
       "아침 인사를 해요"
     ]
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "🌤️",
+    "detail": "아침 준비"
+  }
 };

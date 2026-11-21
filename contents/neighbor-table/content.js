@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 1,
   "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-  "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "사과·빵·컵·꽃을 식탁에 놓아 함께 나누는 자리를 상상해요.",
   "params": {
     "backdrop": "table",
     "props": [
@@ -33,5 +33,9 @@ export const definition = {
       }
     ]
   },
-  "accent": "#83628e"
+  "accent": "#83628e",
+  "presentation": {
+    "symbol": "🍎",
+    "detail": "사과 · 빵"
+  }
 };

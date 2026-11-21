@@ -22,5 +22,6 @@ export function validateDefinition(d){
  if(d.engine==='words'&&(!Array.isArray(d.params.cards)||d.params.cards.length<3||d.params.cards.length>6||d.roundCount!==d.params.cards.length||!d.params.cards.every(c=>c&&typeof c.word==='string'&&c.word.length>0&&c.word.length<=30&&typeof c.symbol==='string'&&c.symbol.length>0&&c.symbol.length<=20)||new Set(d.params.cards.map(c=>c.word)).size!==d.params.cards.length))fail('낱말 카드');
  if(d.engine==='routine'&&(!Array.isArray(d.params.steps)||d.params.steps.length<3||d.params.steps.length>6||new Set(d.params.steps).size!==d.params.steps.length||!d.params.steps.every(s=>typeof s==='string'&&s.length>0&&s.length<=80)))fail('생활 순서');
  if(d.engine==='scene'&&(!['room','table','garden','studio'].includes(d.params.backdrop)||!Array.isArray(d.params.props)||d.params.props.length<3||d.params.props.length>8||new Set(d.params.props.map(p=>p.label)).size!==d.params.props.length||!d.params.props.every(p=>p&&typeof p.label==='string'&&p.label.length>0&&p.label.length<=30&&typeof p.symbol==='string'&&p.symbol.length>0&&p.symbol.length<=20)))fail('장면 구성');
+ if(d.presentation!==undefined&&(!d.presentation||typeof d.presentation.symbol!=='string'||d.presentation.symbol.length>20||typeof d.presentation.detail!=='string'||!d.presentation.detail||d.presentation.detail.length>100))fail('활동 소개 그림 메타데이터');
  return true;
 }

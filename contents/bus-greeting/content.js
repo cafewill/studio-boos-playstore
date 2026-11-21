@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 1,
   "objective": "오늘의 작은 일들을 순서대로 이어 봐요.",
-  "description": "오늘의 작은 일들을 순서대로 이어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "어른과 기다리기·차례로 타기·앉기·함께 내리기의 흐름을 이어 봐요.",
   "params": {
     "steps": [
       "어른과 정류장에서 기다려요",
@@ -20,5 +20,9 @@ export const definition = {
       "도착하면 어른과 내려요"
     ]
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "🚌",
+    "detail": "버스 나들이"
+  }
 };

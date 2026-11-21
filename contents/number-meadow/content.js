@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 6,
   "objective": "다섯 송이부터 열 송이까지 꽃을 세어 봐요.",
-  "description": "다섯 송이부터 열 송이까지 꽃을 세어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "다섯 개에서 열 개까지 세어 보며 작은 수보다 많은 수를 살펴봐요.",
   "params": {
     "min": 5,
     "max": 10,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "flower"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "5부터 10까지 세기"
+  }
 };

@@ -54,6 +54,12 @@ contents/
 
 향후 시각 변형은 검증 가능한 선언형 표시 정의와 등록된 표시 어댑터로 확장한다. 셸·CSS·저장 코드를 콘텐츠 폴더에 복제하지 않는다. 새 필드를 추가할 때 스키마·생성기·기본값·검사·기존 콘텐츠 호환을 함께 구현한다. 이는 후속 확장 원칙이며 현재 60개에 다양한 장면 어댑터가 모두 구현됐음을 뜻하지 않는다.
 
+### 🖼 표시 데이터와 미술 안내선
+
+정의의 description은 활동별 소개이며 카탈로그도 같은 값을 사용한다. 선택 필드 presentation은 미리보기의 짧은 설명·표시 기호만 담는다. catalog.preview는 공개 가능한 엔진·유형·params·presentation을 생성해 제공하고 원작 식별 정보는 제외한다. 카드와 시작 화면은 동일한 공통 artwork 함수를 호출한다.
+
+미술의 SVG·Canvas 안내선은 ui/artwork.js의 DRAWING_PATHS를 공유해 미리보기와 실제 활동의 불일치를 방지한다. 문구·배경 안내선 변경은 규칙이나 저장 획의 의미를 변경하지 않아 기존 definitionVersion과 저장 버전을 유지한다. 기존 그림 위의 안내선 배경은 달라지므로 브라우저에서 복원 화면을 별도 확인한다.
+
 ### 🧩 콘텐츠 정의 계약
 
 필수 필드는 schemaVersion·definitionVersion·slug·title·family·engine·variant·ageMin·ageMax·roundCount·objective·description·params·accent다. slug·범위·지원 유형·문항·버전은 definition.js로 검사한다. 원작 식별·후보 ID·참고 URL은 배치 원본의 조사 필드에 두고 생성된 사용자 정의에는 포함하지 않는다.

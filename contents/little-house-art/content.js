@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 1,
   "objective": "작은 집 그림방에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요.",
-  "description": "작은 집 그림방에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "지붕·문·창문이 있는 집 안내선에 나만의 선과 색을 더해요.",
   "params": {
     "template": "house"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "지붕과 창문"
+  }
 };

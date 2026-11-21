@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 1,
   "objective": "좋아하는 소품을 골라 나만의 장면을 만들어요.",
-  "description": "좋아하는 소품을 골라 나만의 장면을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "창가를 상상하며 화분·책·의자·등을 원하는 자리에 놓아요.",
   "params": {
     "backdrop": "room",
     "props": [
@@ -33,5 +33,9 @@ export const definition = {
       }
     ]
   },
-  "accent": "#83628e"
+  "accent": "#83628e",
+  "presentation": {
+    "symbol": "🪴",
+    "detail": "화분 · 책"
+  }
 };

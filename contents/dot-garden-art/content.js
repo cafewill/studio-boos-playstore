@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 1,
   "objective": "점을 찍는 정원에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요.",
-  "description": "점을 찍는 정원에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "크기가 다른 점 안내선을 보고 점을 찍거나 점 사이를 이어 봐요.",
   "params": {
     "template": "dots"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "다양한 점"
+  }
 };

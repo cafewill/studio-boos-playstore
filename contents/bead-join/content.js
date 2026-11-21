@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 6,
   "objective": "두 묶음의 구슬을 모아 세어 봐요.",
-  "description": "두 묶음의 구슬을 모아 세어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "따로 놓인 두 점 묶음을 함께 세어 더한 수를 찾아요.",
   "params": {
     "min": 1,
     "max": 4,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "두 묶음 더하기"
+  }
 };

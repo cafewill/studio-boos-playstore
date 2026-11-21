@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 1,
   "objective": "열매 색 산책에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요.",
-  "description": "열매 색 산책에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "열매의 둥근 윤곽과 잎 안내선에 좋아하는 색을 입혀요.",
   "params": {
     "template": "fruit"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "열매와 잎"
+  }
 };
