@@ -12,7 +12,9 @@ Google Play 스토어 아동용 콘텐츠의 조사부터 독립 웹 콘텐츠 �
 | 가이드 | 적용 내용 |
 |---|---|
 | [조사·리뷰](guide-content-review.md) | 원작 확인, 후보 비교, 리뷰 템플릿, 자체 표현 |
+| [저작권·지식재산권](guide-intellectual-property.md) | 독립 재구현·권리 근거·에셋·상표·공개 전 검토 |
 | [Fascinating UI](guide-ui-design.md) | 커스텀 컴포넌트·절제된 발견 경험·접근성·반응형·검증 |
+| [공통 구조·유지보수](guide-content-architecture.md) | 정본·생성·상태·입력·저장·버전·영향 검사·CI |
 | [구현·검증](guide-content-build.md) | 구조, 구현 계획 템플릿, 실행, 완료 조건 |
 | [아동 UX·안전](guide-child-safety.md) | 연령별 인터랙션, 정서 함양을 고려한 컬러·용어·네이밍, 학습 피드백, 보호자 영역, 데이터 |
 
