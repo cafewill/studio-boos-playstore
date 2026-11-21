@@ -28,6 +28,10 @@ Google Play 스토어의 아이들용 게임·교육·창작·이야기 콘텐�
 
 ### 🚀 로컬 실행
 
+참고 프로젝트와 동일하게 Python 기본 정적 서버를 사용한다. 터미널에서는 `npm start` 또는 아래 명령으로 실행한다. 서버는 `127.0.0.1:7904`에만 바인딩한다.
+
+macOS에서는 루트의 [start-local.command](start-local.command)를 더블클릭한다. 서버가 시작되면 브라우저에서 `http://127.0.0.1:7904/`를 연다. 터미널을 열어 두고, 종료는 Control+C로 한다. 터미널에서는 `./start-local.command`로 같은 실행이 가능하다.
+
 ```bash
 python3 docs/tools/md_to_html.py --all
 python3 -m http.server 7904 --bind 127.0.0.1

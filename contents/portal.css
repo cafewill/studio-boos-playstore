@@ -1,1 +1,123 @@
-.portal{max-width:1440px;margin:auto;padding:clamp(1.5rem,5vw,4rem)}.portal-intro h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.17;letter-spacing:-.06em;margin:0 0 1.2rem}.portal-intro p{color:var(--muted);line-height:1.8}.search-box{display:flex;align-items:center;gap:.7rem;background:var(--paper);border:1px solid #82977f;border-radius:20px;padding:.7rem 1rem;max-width:600px;margin:1.6rem 0 2rem}.search-box:focus-within{outline:3px solid #76522c;outline-offset:3px}.search-box svg{width:24px;height:24px;flex-shrink:0}.search-box input{appearance:none;border:0;background:transparent;color:var(--ink);font:inherit;min-height:36px;width:100%;min-width:0;outline:0}.search-box input::placeholder{color:var(--muted)}.filter-chips{display:flex;flex-wrap:wrap;gap:.6rem}.filter-chips button{min-height:48px;border:1px solid #82977f;border-radius:100px;padding:.65rem 1rem;background:var(--paper);color:var(--ink);font-size:.9rem}.filter-chips button[aria-pressed=true]{background:var(--green);color:white;border-color:var(--green)}#result-count{color:var(--muted);margin:1.4rem 0}.content-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}.content-cards article{border:1px solid var(--line);border-radius:28px;background:var(--paper);overflow:hidden;display:flex;flex-direction:column;min-width:0}.card-art{min-height:160px;display:flex;align-items:center;justify-content:center;gap:.8rem;background:#e4eedb}.card-art svg{width:22%;max-width:70px}.card-body{padding:1.4rem;display:flex;flex-direction:column;flex:1}.card-body h2{font-size:1.45rem;letter-spacing:-.04em;line-height:1.4;margin:.6rem 0}.card-body p{color:var(--muted);font-size:.95rem;line-height:1.8;margin:.5rem 0 1.4rem}.card-body .primary{align-self:flex-start;margin-top:auto}.card-tag{font-size:.85rem;color:var(--muted)}.empty{padding:2rem;background:var(--paper);border:1px dashed #82977f;border-radius:24px;grid-column:1/-1}@media(max-width:1000px){.content-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.content-cards{grid-template-columns:1fr}.card-art{min-height:140px}.portal-intro h1{font-size:2.65rem}.filter-chips button{font-size:.85rem;padding:.6rem .85rem}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+/* 포털의 시각 언어는 이 파일에 한정한다. 활동 화면의 공통 토큰은 유지한다. */
+body[data-content-id=portal]{background:#f7f8f2;--ink:#244b42;--muted:#526c63;--green:#285d4d;--paper:#fffefa}
+
+html{scroll-behavior:smooth}
+.portal{max-width:1320px;margin:auto;padding:0 clamp(1rem,4.5vw,4rem)}
+.topbar{max-width:1320px;min-height:90px;border:0;padding-inline:clamp(1rem,4.5vw,4rem)}
+.brand-seed{color:#bb654b}
+.header-link{font-size:.85rem;padding:.7rem}
+.skip-link{position:absolute;top:-100px;left:1rem;z-index:5;background:#fff;padding:1rem}
+.skip-link:focus{top:1rem}
+.portal-intro{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;padding:3rem 0 3.7rem}
+.eyebrow{font-size:.8rem;letter-spacing:.07em;margin-bottom:1rem}
+.portal-intro h1{font-size:clamp(2.7rem,5.6vw,4.5rem);letter-spacing:-.07em;line-height:1.2;margin:0 0 1.5rem;word-break:keep-all}
+.portal-intro h1 em{font-style:normal;color:#ac593e;position:relative}
+.portal-intro h1 em:after{content:'';position:absolute;bottom:-.12em;height:.08em;background:#e3c477;left:0;right:0;border-radius:100%}
+.hero-copy>p{line-height:1.9;color:var(--muted);font-size:.95rem;margin:0 0 1.8rem}
+.hero-copy .primary{border-radius:100px;box-shadow:0 5px 0 #d8e1d6}
+.hero-note{display:block;font-size:.78rem;color:var(--muted);margin-top:1.1rem}
+.discovery{background:#e7eee4;border:1px solid #d4e0d1;border-radius:40% 40% 28px 28px;padding:1.5rem 1.2rem 1rem;position:relative}
+.scene-caption{display:flex;justify-content:space-between;gap:1rem;margin:1.1rem 1rem 0;font-size:.78rem;color:#42654e}
+.garden-scene{position:relative;height:280px;overflow:hidden}
+.scene-sun{position:absolute;top:26px;right:65px;width:54px;height:54px;border-radius:50%;background:#ebc36e;box-shadow:0 0 0 12px #ebc36e22}
+.scene-cloud{position:absolute;top:58px;left:40px;width:80px;height:20px;background:#fffef7;border-radius:100%}
+.scene-cloud:before{content:'';position:absolute;width:40px;height:30px;border-radius:50%;background:inherit;left:13px;bottom:0}
+.scene-hill{position:absolute;border-radius:50% 50% 0 0;width:120%;height:180px;bottom:-75px}
+.hill-back{background:#bbd0ad;left:-30%;transform:rotate(10deg)}
+.hill-front{background:#a3bfa0;right:-40%;bottom:-90px;transform:rotate(-15deg)}
+.scene-flowers{position:absolute;inset:15px 0 0}
+.scene-flowers svg{width:100%;height:100%;filter:drop-shadow(0 8px 5px #3853370c)}
+.scene-label{position:absolute;bottom:5px;left:50%;transform:translateX(-50%) rotate(-4deg);background:#fffcf0;padding:.45rem 1rem;font-size:.75rem;border-radius:6px;white-space:nowrap;box-shadow:0 3px 0 #335e3810}
+.new-sprout{position:absolute;left:var(--position);bottom:40px;font-size:2.2rem;color:#a8543b;transform:rotate(var(--tilt));animation:sprout .35s ease-out}
+.garden-controls{display:flex;justify-content:center;gap:.6rem;margin-top:.8rem}
+.garden-controls button{min-height:48px;border-radius:100px;padding:.65rem 1rem;font-size:.8rem;font-weight:700}
+.plant-button{background:#285d4d;color:#fff}
+.color-button{background:#fffdf5;color:#285d4d;border:1px solid #90a28f}
+.garden-controls button:hover{box-shadow:0 3px 0 #285d4d25}
+.discovery>p{font-size:.75rem;line-height:1.6;text-align:center;min-height:2.8em;color:#425f4c;margin:.8rem 0 0}
+.invitation{display:flex;align-items:center;gap:1.4rem;border-top:1px solid #d5dfd2;border-bottom:1px solid #d5dfd2;padding:1.4rem .4rem}
+.invitation-flower{color:#a76146;font-size:2.7rem}
+.invitation p{font-size:.85rem;color:var(--muted);line-height:1.8;margin:0}
+.invitation strong{color:var(--ink);font-weight:650}
+.invitation-detail{margin-left:auto;font-size:.75rem;color:var(--muted)}
+.explore{padding-top:3.8rem;scroll-margin-top:1.5rem}
+.explore-heading{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-bottom:1.8rem}
+.explore h2{font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.05em;margin:0}
+.explore .eyebrow{margin-bottom:.6rem}
+.search-box{display:flex;align-items:center;gap:.7rem;background:#fffefa;border:1px solid #a6b6a5;border-radius:100px;padding:.5rem 1rem;width:330px;max-width:100%}
+.search-box:focus-within{outline:3px solid #76522c;outline-offset:3px}
+.search-box svg{width:21px;height:21px;flex-shrink:0}
+.search-box input{appearance:none;border:0;background:transparent;color:var(--ink);font:inherit;font-size:.85rem;min-height:36px;width:100%;min-width:0;outline:0}
+.search-box input::placeholder{color:var(--muted)}
+.filter-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.filter-chips button{min-height:48px;border:1px solid #c2cfbd;border-radius:100px;padding:.6rem 1rem;background:transparent;color:var(--ink);font-size:.8rem}
+.filter-chips button:hover{background:#e7eee2}
+.filter-chips button[aria-pressed=true]{background:var(--green);color:white;border-color:var(--green)}
+#result-count{color:var(--muted);margin:1.6rem 0 1rem;font-size:.8rem}
+.content-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+.play-card{border:1px solid #d6dfd1;border-radius:23px;background:#fffefa;overflow:hidden;min-width:0;transition:transform .2s,box-shadow .2s}
+.play-card:hover,.play-card:focus-within{transform:translateY(-5px);box-shadow:0 14px 24px #264c3b0d}
+.card-link{display:flex;flex-direction:column;height:100%}
+.card-link:focus-visible{outline-offset:-5px;border-radius:23px}
+.card-art{position:relative;background:#e8eedf;overflow:hidden}
+.card-art>svg{display:block;width:100%;height:auto;transition:transform .3s}
+.play-card:hover .card-art>svg{transform:rotate(-2deg) scale(1.04)}
+.tone-1 .card-art{background:#f3e5d9}
+.tone-2 .card-art{background:#e3eaf3}
+.tone-3 .card-art{background:#eee7f2}
+.card-age{position:absolute;left:1rem;top:.9rem;background:#fffdf2ed;border-radius:100px;padding:.35rem .65rem;font-size:.7rem;color:#3c584c}
+.card-body{padding:1.25rem;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-size:1.2rem;letter-spacing:-.04em;line-height:1.5;margin:.4rem 0}
+.card-body p{color:var(--muted);font-size:.85rem;line-height:1.8;margin:.3rem 0 1.2rem}
+.card-tag{font-size:.72rem;color:#526c63}
+.card-action{display:flex;justify-content:space-between;align-items:center;margin-top:auto;border-top:1px solid #e2e7dc;padding-top:.8rem;font-size:.8rem;font-weight:700}
+.card-action>span{color:#ab6949;font-size:1.1rem}
+.empty{padding:2rem;background:var(--paper);border:1px dashed #82977f;border-radius:24px;grid-column:1/-1}
+.portal-footer{text-align:center;padding:4rem 1rem 2rem;margin-top:3rem;border-top:1px solid #d5dfd2}
+.portal-footer p{font-size:1rem;line-height:1.8}
+.portal-footer>span:last-child{font-size:.75rem;color:var(--muted)}
+@keyframes sprout{from{opacity:0;translate:0 12px;scale:.5}
+to{opacity:1;translate:0 0;scale:1}
+}
+@media(min-width:1500px){.portal-intro{padding-block:4rem}
+}
+@media(max-width:1000px){.portal-intro{gap:1.5rem}
+.content-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.invitation-detail{display:none}
+.scene-caption{margin-inline:.2rem}
+.garden-scene{height:250px}
+.topbar>.small-note{display:none}
+}
+@media(max-width:680px){.topbar{min-height:78px}
+.brand{font-size:.85rem;gap:.4rem}
+.header-link{font-size:.75rem;padding:.5rem}
+.portal-intro{grid-template-columns:1fr;padding:1.8rem 0 2rem;gap:2rem}
+.portal-intro h1{font-size:clamp(2.7rem,10vw,3.7rem)}
+.hero-copy>p{font-size:.9rem}
+.discovery{max-width:440px;width:100%;justify-self:center}
+.garden-scene{height:250px}
+.invitation{gap:.8rem}
+.invitation p{font-size:.78rem}
+.explore{padding-top:2.5rem}
+.explore-heading{flex-direction:column;align-items:stretch;gap:1.2rem}
+.search-box{width:100%}
+.filter-chips{gap:.4rem}
+.filter-chips button{font-size:.75rem;padding:.5rem .8rem}
+.content-cards{gap:.8rem}
+.card-body{padding:.9rem}
+.card-body h3{font-size:1.05rem}
+.card-age{left:.5rem;top:.5rem;font-size:.67rem}
+.card-body p{font-size:.78rem}
+.card-action{font-size:.75rem}
+}
+@media(max-width:420px){.content-cards{grid-template-columns:1fr}
+.card-art>svg{max-height:210px}
+.card-body h3{font-size:1.2rem}
+.card-body p{font-size:.85rem}
+.card-age{font-size:.75rem}
+.card-tag{font-size:.75rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+.play-card,.card-art>svg,.new-sprout{animation:none;transition:none}
+.play-card:hover,.play-card:focus-within,.play-card:hover .card-art>svg{transform:none}
+}
