@@ -21,6 +21,7 @@
 | `docs/tools/md_to_html.py` | 참고 프로젝트에서 재사용한 표준 라이브러리 기반 변환기 |
 | `contents/{slug}/` | 생성된 콘텐츠 정의·진입·설명 130개, 모두 브라우저 검증 대기 |
 | `contents/catalog.js` | 배치 정의에서 생성한 사용자 목록 |
+| `contents/portal-catalog.js` | 전체 놀이·카테고리 집계, 상단 요약과 하단 필터 공통 사용 |
 | `contents/shared/ui/artwork.js` | 실제 설정 기반 카드·시작 그림과 17종 미술 안내선 정본 |
 | `contents/shared/` | 공통 모델·저장·UI·14개 엔진·토큰 |
 | `data/implementation/registry.json` | 활성 배치 등록, 현재 batch60.json + expansion40.json + expansion30.json |

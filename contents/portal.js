@@ -1,20 +1,34 @@
 import {CONTENTS} from './catalog.js';
+import {catalogSummary} from './portal-catalog.js';
 import {escape} from './shared/ui/graphics.js';
 import {illustration} from './portal-art.js';
 import {activityArtwork} from './shared/ui/artwork.js';
 const filter=document.querySelector('#families'),cards=document.querySelector('#cards'),search=document.querySelector('#search');
 let family='전체';
-const families=['전체',...new Set(CONTENTS.map(c=>c.category))];
-filter.innerHTML=families.map(f=>`<button type="button" data-family="${escape(f)}" aria-pressed="${f===family}">${escape(f)}</button>`).join('');
+const summary=catalogSummary(CONTENTS),summaryFilter=document.querySelector('#summary-families');
+const families=[{name:'전체',count:summary.total},...summary.categories];
+document.querySelector('#total-play-count').textContent=summary.total.toLocaleString('ko');
+document.querySelector('#category-total').textContent=summary.categories.length;
+const familyButtons=()=>families.map(({name,count})=>`<button type="button" data-family="${escape(name)}" aria-label="${escape(name)} 놀이 ${count}개 보기" aria-pressed="${name===family}"><span>${escape(name)}</span><span class="category-count">${count}</span></button>`).join('');
+filter.innerHTML=familyButtons();summaryFilter.innerHTML=familyButtons();
+function syncFamily(){
+ for(const nav of [filter,summaryFilter])nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.family===family)));
+}
 function render(){
  const term=search.value.trim().toLocaleLowerCase('ko');
  const items=CONTENTS.filter(c=>(family==='전체'||c.category===family)&&`${c.title} ${c.description} ${c.category}`.toLocaleLowerCase('ko').includes(term));
  document.querySelector('#result-count').textContent=`함께 만나볼 놀이 ${items.length}개`;
  cards.innerHTML=items.length?items.map(c=>{const index=CONTENTS.indexOf(c);return `<article class="play-card tone-${index%4}"><a class="card-link" href="${escape(c.href)}"><div class="card-art">${activityArtwork(c.preview)}<span class="card-age">${escape(c.age)}</span></div><div class="card-body"><span class="card-tag">${escape(c.category)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p><span class="card-action">놀이 만나기 <span aria-hidden="true">✦</span></span></div></a></article>`;}).join(''):'<div class="empty"><p>아직 찾지 못했어요. 다른 이름으로 찾아볼까요?</p><button id="reset-search" class="secondary" type="button">모든 놀이 보기</button></div>';
 }
-filter.addEventListener('click',event=>{const b=event.target.closest('button');if(!b)return;family=b.dataset.family;filter.querySelectorAll('button').forEach(el=>el.setAttribute('aria-pressed',String(el===b)));render();});
+for(const nav of [filter,summaryFilter])nav.addEventListener('click',event=>{
+ const b=event.target.closest('button[data-family]');if(!b)return;
+ family=b.dataset.family;
+ if(nav===summaryFilter)search.value='';
+ syncFamily();render();
+ if(nav===summaryFilter){const heading=document.querySelector('#explore-title');heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});}
+});
 search.addEventListener('input',render);
-cards.addEventListener('click',event=>{if(event.target.closest('#reset-search')){search.value='';family='전체';filter.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.family==='전체')));render();search.focus();}});
+cards.addEventListener('click',event=>{if(event.target.closest('#reset-search')){search.value='';family='전체';syncFamily();render();search.focus();}});
 let planted=0,color=0;
 const scene=document.querySelector('#garden-scene'),message=document.querySelector('#garden-message');
 function drawGarden(){

@@ -52,6 +52,15 @@ try{
   passed.push(d.slug);console.log(`브라우저 통과: ${d.slug}`);
  }
  await b.goto(`${base}/contents/`);assert.equal(await b.evaluate('document.querySelectorAll("article").length'),batch.items.length);
+ assert.equal(await b.evaluate("Number(document.querySelector('#total-play-count').textContent.replaceAll(',',''))"),batch.items.length);
+ assert.equal(await b.evaluate("Number(document.querySelector('#category-total').textContent)"),new Set(batch.items.map(i=>i.content.family)).size);
+ const firstFamily=batch.items[0].content.family;
+ await b.tap('#summary-families button:nth-child(2)');
+ assert.equal(await b.evaluate('document.querySelectorAll("article").length'),batch.items.filter(i=>i.content.family===firstFamily).length);
+ assert.equal(await b.evaluate("document.querySelector('#families button[aria-pressed=true]').dataset.family"),firstFamily);
+ assert.equal(await b.evaluate('document.activeElement.id'),'explore-title');
+ await b.tap('#summary-families button:first-child');
+
  await b.evaluate("document.querySelector('#search').value='없는이름';document.querySelector('#search').dispatchEvent(new Event('input'))");assert.equal(await b.evaluate('document.querySelectorAll("article").length'),0);await b.tap('#reset-search');assert.equal(await b.evaluate('document.querySelectorAll("article").length'),batch.items.length);
  await b.send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
  await b.send('Page.addScriptToEvaluateOnNewDocument',{source:"Object.defineProperty(window,'localStorage',{get(){throw new Error('blocked')}})"});
