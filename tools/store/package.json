@@ -1,0 +1,12 @@
+{
+  "name": "studio-boos-playstore-store-tools",
+  "private": true,
+  "description": "Google Play 아동용 차트 확장 조사·상세 파싱 도구",
+  "type": "module",
+  "scripts": {
+    "import-details": "node --import ./transport-hooks.mjs import-details.mjs"
+  },
+  "dependencies": {
+    "google-play-scraper": "10.0.1"
+  }
+}

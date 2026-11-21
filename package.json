@@ -1,0 +1,12 @@
+{
+  "name":"studio-boos-playstore",
+  "private":true,
+  "type":"module",
+  "scripts":{
+    "check":"node tools/check-all.mjs",
+    "check:structure":"node tools/content/check.mjs",
+    "generate:contents":"node tools/content/generate.mjs",
+    "test:logic":"node tools/logic/batch60.mjs",
+    "test:browser":"node tools/play/batch60.mjs"
+  }
+}
