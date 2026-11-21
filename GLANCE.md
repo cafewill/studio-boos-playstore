@@ -97,6 +97,10 @@ python3 docs/tools/md_to_html.py --all
 python3 -m http.server 7904 --bind 127.0.0.1
 ```
 
+`npm start`와 `npm run dev`는 위와 동일한 Python 기본 서버를 실행한다. macOS의 `start-local.command`도 같은 명령을 실행한다. 서버가 시작되면 표시된 주소로 브라우저에서 접속한다.
+
+참고 프로젝트 README의 서버 방식과 동일함을 확인했다. 현재 Codex 실행 환경에서는 일반 실행·TTY·npm start 모두 socket.bind에서 Operation not permitted로 실패했으며, 서버 구동 성공이나 로컬 접속 완료로 표시하지 않는다.
+
 사용자 진입은 `http://127.0.0.1:7904/` → `/contents/`이며, 첫 활동은 `/contents/shape-garden/`이다. 가이드 진입은 `/docs/guide/guide.html`이다. 전체 검사 진입점은 `node tools/check-all.mjs`이며 루트 `npm run check`도 같은 검사를 실행한다.
 
 로직 검증: `node tools/logic/batch60.mjs`. 브라우저 검증: 서버 실행 후 `node tools/play/batch60.mjs --representatives`와 `node tools/play/batch60.mjs`. 현재 환경에서는 서버 포트 열기가 차단되어 브라우저 검증은 미실행이다.

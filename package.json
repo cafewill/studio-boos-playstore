@@ -1,12 +1,14 @@
 {
-  "name":"studio-boos-playstore",
-  "private":true,
-  "type":"module",
-  "scripts":{
-    "check":"node tools/check-all.mjs",
-    "check:structure":"node tools/content/check.mjs",
-    "generate:contents":"node tools/content/generate.mjs",
-    "test:logic":"node tools/logic/batch60.mjs",
-    "test:browser":"node tools/play/batch60.mjs"
+  "name": "studio-boos-playstore",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 7904 --bind 127.0.0.1",
+    "dev": "npm run start",
+    "check": "node tools/check-all.mjs",
+    "check:structure": "node tools/content/check.mjs",
+    "generate:contents": "node tools/content/generate.mjs",
+    "test:logic": "node tools/logic/batch60.mjs",
+    "test:browser": "node tools/play/batch60.mjs"
   }
 }
