@@ -23,6 +23,10 @@ try{
   await b.tap('#start');await b.tap('#rest');assert.ok(await b.evaluate("!!document.querySelector('#resume')"));await b.tap('#resume');
   const initial=create(d,7);
   for(let r=0;r<d.roundCount;r++){
+   if(d.engine==='recipe'){for(const index of d.params.recipe)await tapAction('ingredient',String(index));await tapAction('finish');}
+   if(d.engine==='rhythm'){for(const index of [0,5,10])await tapAction('rhythm-toggle',String(index));for(let i=0;i<4;i++)await tapAction('beat');await tapAction('finish');}
+   if(d.engine==='discovery'){for(const pair of [[0,1],[0,2],[1,2]])for(const index of pair)await tapAction('token',String(index));await tapAction('finish');}
+   if(d.engine==='animation'){for(let i=0;i<4;i++){await tapAction('frame-show',String(i));await tapAction('frame-place',String(i*2));}for(let i=0;i<4;i++)await tapAction('frame-show',String(i));await tapAction('finish');}
    if(d.engine==='words')await tapAction('word',String(r));
    if(d.engine==='routine')for(let i=0;i<d.params.steps.length;i++)await tapAction('step',String(i));
    if(d.engine==='scene'){for(let i=0;i<3;i++){await tapAction('prop',String(i));await tapAction('place',String(i));}await tapAction('finish');}

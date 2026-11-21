@@ -1,0 +1,1884 @@
+{
+  "schemaVersion": 1,
+  "batchId": "20261121194837",
+  "sourceSnapshot": "20261121135057-expanded-candidates-kr.json",
+  "selectedCandidateIds": [
+    "E078",
+    "E092",
+    "E095",
+    "E100",
+    "E117",
+    "E127",
+    "E160",
+    "E167",
+    "E169",
+    "E209",
+    "E061",
+    "E203",
+    "E052",
+    "E158",
+    "E170",
+    "E217",
+    "E003",
+    "E115",
+    "E119",
+    "E210",
+    "E215",
+    "E228",
+    "E259",
+    "E058",
+    "E104",
+    "E196",
+    "E305",
+    "E249",
+    "E267",
+    "E322"
+  ],
+  "reviewDocument": "docs/review/20261121194837-expansion30-review.md",
+  "planDocument": "docs/plan/20261121194837-expansion30-plan.md",
+  "items": [
+    {
+      "candidateId": "E078",
+      "sourceAppId": "kr.co.smartstudy.bbspizzagame_android_googlemarket",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=kr.co.smartstudy.bbspizzagame_android_googlemarket&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "sunny-pizza",
+        "title": "햇살 피자 작업대",
+        "engine": "recipe",
+        "variant": "layers",
+        "family": "재료·쌓기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "description": "반죽·토마토·치즈·잎 채소를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+        "params": {
+          "dish": "pizza",
+          "ingredients": [
+            {
+              "label": "반죽",
+              "symbol": "🫓",
+              "color": "#d9b580"
+            },
+            {
+              "label": "토마토",
+              "symbol": "🍅",
+              "color": "#bc6554"
+            },
+            {
+              "label": "치즈",
+              "symbol": "🧀",
+              "color": "#e6c772"
+            },
+            {
+              "label": "잎 채소",
+              "symbol": "🥬",
+              "color": "#81a181"
+            }
+          ],
+          "recipe": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "accent": "#965335",
+        "presentation": {
+          "symbol": "🫓",
+          "detail": "반죽·토마토·치즈·잎 채소"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "원작 테마·레시피·손님/운영 체계와 분리하여 재료 분류·순서 한 활동으로 축소 필요",
+        "evidenceExcerpt": "아기상어와 함께하는 파스타 & 피자 만들기! 우리 아이 창의력을 키우는 요리 게임 \n\n'아기상어 피자만들기 게임'은 아기상어 올리와 함께 알록달록 피자와 파스타를 만들고, 배달까지 체험해볼 수 있는 어린이 게임이에요. 유아, 어린이를 위한 교육적인 무료 요리 음식 게임으로, 놀이처럼 즐",
+        "evidenceSha256": "d22ddc53f40c954fd35881b20e80d8e91421efdda23b07146ff7b168b412f00a",
+        "difference": "신규 재료 쌓기 엔진. 순서 놀이와 달리 재료를 자유롭게 놓고 결과를 비교·되돌린다. 같은 엔진의 재료·그릇 변형 포함."
+      }
+    },
+    {
+      "candidateId": "E092",
+      "sourceAppId": "kr.co.smartstudy.bbsdessert_android_googlemarket",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=kr.co.smartstudy.bbsdessert_android_googlemarket&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "fruit-cup",
+        "title": "과일빛 컵",
+        "engine": "recipe",
+        "variant": "layers",
+        "family": "재료·쌓기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "description": "딸기·우유·바나나·포도를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+        "params": {
+          "dish": "cup",
+          "ingredients": [
+            {
+              "label": "딸기",
+              "symbol": "🍓",
+              "color": "#ca787e"
+            },
+            {
+              "label": "우유",
+              "symbol": "🥛",
+              "color": "#eee5cf"
+            },
+            {
+              "label": "바나나",
+              "symbol": "🍌",
+              "color": "#e7d08a"
+            },
+            {
+              "label": "포도",
+              "symbol": "🍇",
+              "color": "#a79ab9"
+            }
+          ],
+          "recipe": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "accent": "#965335",
+        "presentation": {
+          "symbol": "🍓",
+          "detail": "딸기·우유·바나나·포도"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외",
+        "evidenceExcerpt": "빵 굽는 냄새가 솔솔~ 아기상어가 예쁜 디저트 섬에 아이스크림, 컵케이크, 주스 가게를 오픈했어요!\n\n별을 차곡차곡 모아 가게를 차례대로 열고, 다양한 색깔과 맛의 디저트를 만들어 손님에게 대접하세요.\n밤이 찾아오면 나만의 레시피를 창조해 세상에 하나뿐인 디저트를 창조해요. 유니콘 장식",
+        "evidenceSha256": "8ff8a7735398365bf12d884f05c92ca7a32895d96e78d3f78ff5118632bc4469",
+        "difference": "신규 재료 쌓기 엔진. 순서 놀이와 달리 재료를 자유롭게 놓고 결과를 비교·되돌린다. 같은 엔진의 재료·그릇 변형 포함."
+      }
+    },
+    {
+      "candidateId": "E095",
+      "sourceAppId": "com.devgame.masha.and.bear.pizzeria.games",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.devgame.masha.and.bear.pizzeria.games&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "sharing-pizza",
+        "title": "나누는 피자 한 판",
+        "engine": "recipe",
+        "variant": "layers",
+        "family": "재료·쌓기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "description": "반죽·소스·버섯·옥수수를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+        "params": {
+          "dish": "pizza",
+          "ingredients": [
+            {
+              "label": "반죽",
+              "symbol": "🫓",
+              "color": "#d8bb8d"
+            },
+            {
+              "label": "소스",
+              "symbol": "🍅",
+              "color": "#bc6554"
+            },
+            {
+              "label": "버섯",
+              "symbol": "🍄",
+              "color": "#b7a28f"
+            },
+            {
+              "label": "옥수수",
+              "symbol": "🌽",
+              "color": "#dfc96f"
+            }
+          ],
+          "recipe": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "accent": "#965335",
+        "presentation": {
+          "symbol": "🫓",
+          "detail": "반죽·소스·버섯·옥수수"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외",
+        "evidenceExcerpt": "🤗 음식 만들기 그렇게 흥미 진진한 적이 없습니다! 맛집 셰프 요리하는 법 배우기. 마샤와 함께 다양한 종류의 피자 👧🍕! 추천게임 요리중독 아이들위한! 요리 게임 세계에서 가장 인기있는 요리 인 피자를 요리하는 방법을 알려줍니다 🤩! 이 피자가게 어린이게임 한국어로 완전히 번역되었습니",
+        "evidenceSha256": "4674f9d34685f5c3be9e71e96e932fb5251dd64cbcda12ad7ed931d80259aa5c",
+        "difference": "신규 재료 쌓기 엔진. 순서 놀이와 달리 재료를 자유롭게 놓고 결과를 비교·되돌린다. 같은 엔진의 재료·그릇 변형 포함."
+      }
+    },
+    {
+      "candidateId": "E100",
+      "sourceAppId": "com.sinyee.babybus.restaurant",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.sinyee.babybus.restaurant&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "rainbow-plate",
+        "title": "한 접시 무지개",
+        "engine": "recipe",
+        "variant": "layers",
+        "family": "재료·쌓기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "description": "밥·당근·완두·달걀를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+        "params": {
+          "dish": "plate",
+          "ingredients": [
+            {
+              "label": "밥",
+              "symbol": "🍚",
+              "color": "#e9dfc8"
+            },
+            {
+              "label": "당근",
+              "symbol": "🥕",
+              "color": "#d29a69"
+            },
+            {
+              "label": "완두",
+              "symbol": "🟢",
+              "color": "#82a783"
+            },
+            {
+              "label": "달걀",
+              "symbol": "🥚",
+              "color": "#e1cb85"
+            }
+          ],
+          "recipe": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "accent": "#965335",
+        "presentation": {
+          "symbol": "🍚",
+          "detail": "밥·당근·완두·달걀"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외",
+        "evidenceExcerpt": "만약 여러분이 요리 게임의 열렬한 팬이라면, 아기팬더 레스토랑은 여러분에게 딱맞는 게임입니다! 이곳에서 여러분은 요리사가 되고 싶었던 꿈을 한걸음 한걸음씩 이룰수 있을 거에요! 이 요리 게임안에서 앞치마를 두르고 군침도는 음식을 요리할 준비가 되었나요? 그럼 시작해요!\n\n국제적인 메뉴",
+        "evidenceSha256": "10bc283c321642919da97bfc5ac5b08b8c97dfa7ec384cdf4cb2a5402f8a4d35",
+        "difference": "신규 재료 쌓기 엔진. 순서 놀이와 달리 재료를 자유롭게 놓고 결과를 비교·되돌린다. 같은 엔진의 재료·그릇 변형 포함."
+      }
+    },
+    {
+      "candidateId": "E117",
+      "sourceAppId": "com.piggy.panda.cake.maker.games",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.piggy.panda.cake.maker.games&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "layer-cake",
+        "title": "차곡차곡 케이크",
+        "engine": "recipe",
+        "variant": "layers",
+        "family": "재료·쌓기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "description": "빵·크림·딸기·블루베리를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+        "params": {
+          "dish": "cake",
+          "ingredients": [
+            {
+              "label": "빵",
+              "symbol": "🍰",
+              "color": "#cba17b"
+            },
+            {
+              "label": "크림",
+              "symbol": "🥛",
+              "color": "#eee5d1"
+            },
+            {
+              "label": "딸기",
+              "symbol": "🍓",
+              "color": "#c47e87"
+            },
+            {
+              "label": "블루베리",
+              "symbol": "🫐",
+              "color": "#979db8"
+            }
+          ],
+          "recipe": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "accent": "#965335",
+        "presentation": {
+          "symbol": "🍰",
+          "detail": "빵·크림·딸기·블루베리"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "원작 테마·레시피·손님/운영 체계와 분리하여 재료 분류·순서 한 활동으로 축소 필요",
+        "evidenceExcerpt": "꼬마 요리사들을 위한 즐거운 베이킹 세상, 피기 팬더 케이크 메이커에 오신 것을 환영합니다!\n\n사랑스러운 피기 팬더와 함께 매력적인 베이커리에서 신나는 베이킹을 즐겨보세요. 이 달콤한 케이크 게임은 요리하는 것을 좋아하고 맛있는 간식을 만드는 꿈을 꾸는 아이들에게 안성맞춤입니다!\n\n빵",
+        "evidenceSha256": "54fae1c90edb9584a839a01ea9a2c3287d55e0dbf189ccbda6c6663b0c7c1621",
+        "difference": "신규 재료 쌓기 엔진. 순서 놀이와 달리 재료를 자유롭게 놓고 결과를 비교·되돌린다. 같은 엔진의 재료·그릇 변형 포함."
+      }
+    },
+    {
+      "candidateId": "E127",
+      "sourceAppId": "com.sinyee.babybus.icecream",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.sinyee.babybus.icecream&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "gentle-cone",
+        "title": "포근한 아이스크림 콘",
+        "engine": "recipe",
+        "variant": "layers",
+        "family": "재료·쌓기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "description": "콘·바닐라·딸기·초록 장식를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+        "params": {
+          "dish": "cone",
+          "ingredients": [
+            {
+              "label": "콘",
+              "symbol": "🍦",
+              "color": "#c9a57d"
+            },
+            {
+              "label": "바닐라",
+              "symbol": "🥛",
+              "color": "#eee2c6"
+            },
+            {
+              "label": "딸기",
+              "symbol": "🍓",
+              "color": "#cd8b92"
+            },
+            {
+              "label": "초록 장식",
+              "symbol": "🍃",
+              "color": "#86a08a"
+            }
+          ],
+          "recipe": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "accent": "#965335",
+        "presentation": {
+          "symbol": "🍦",
+          "detail": "콘·바닐라·딸기·초록 장식"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "원작 테마·레시피·손님/운영 체계와 분리하여 재료 분류·순서 한 활동으로 축소 필요",
+        "evidenceExcerpt": "아기팬더의 아이스크림 게임에 오신 것을 환영합니다! 아이들이 꿈꿀 수 있는 아이스크림 파라다이스입니다! 여기에서는 아이스크림 가게, 패스트푸드 트럭, 베이커리 등을 만나볼 수 있습니다! 아이스크림을 만들고, 맛있는 음식을 요리하고, 다양한 아이스크림 챌린지에 참여할 수 있어요! 여기서",
+        "evidenceSha256": "f55a42339f26641c8053920bfe8026d52f15aadcee08c024a722ef6853eb9c90",
+        "difference": "신규 재료 쌓기 엔진. 순서 놀이와 달리 재료를 자유롭게 놓고 결과를 비교·되돌린다. 같은 엔진의 재료·그릇 변형 포함."
+      }
+    },
+    {
+      "candidateId": "E160",
+      "sourceAppId": "com.kigle.cocobi.littlekitchen",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.kigle.cocobi.littlekitchen&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "picnic-sandwich",
+        "title": "소풍 샌드위치 공방",
+        "engine": "recipe",
+        "variant": "layers",
+        "family": "재료·쌓기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "description": "빵·잎 채소·토마토·치즈를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+        "params": {
+          "dish": "sandwich",
+          "ingredients": [
+            {
+              "label": "빵",
+              "symbol": "🍞",
+              "color": "#d5ad7d"
+            },
+            {
+              "label": "잎 채소",
+              "symbol": "🥬",
+              "color": "#8ca788"
+            },
+            {
+              "label": "토마토",
+              "symbol": "🍅",
+              "color": "#bd7866"
+            },
+            {
+              "label": "치즈",
+              "symbol": "🧀",
+              "color": "#e2c77e"
+            }
+          ],
+          "recipe": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "accent": "#965335",
+        "presentation": {
+          "symbol": "🍞",
+          "detail": "빵·잎 채소·토마토·치즈"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "원작 테마·레시피·손님/운영 체계와 분리하여 재료 분류·순서 한 활동으로 축소 필요",
+        "evidenceExcerpt": "코코비 주방 놀이에 오신 것을 환영합니다! \n이곳에선 아이들이 좋아하는 인기 코코비 요리 앱을 모두 즐길 수 있어요. \n요리사 코코와 함께 맛있는 요리를 만들어볼까요?\n\n✔️ 다양한 요리 만들기 🎀\n- 프렌치 레스토랑, 달콤한 베이커리, 아이스크림, 피자까지 21가지 전 세계 요리법이",
+        "evidenceSha256": "405241b058b5b47231104a0d709e56ebd8fefdb77ca60b84bdb316a9e920ee00",
+        "difference": "신규 재료 쌓기 엔진. 순서 놀이와 달리 재료를 자유롭게 놓고 결과를 비교·되돌린다. 같은 엔진의 재료·그릇 변형 포함."
+      }
+    },
+    {
+      "candidateId": "E167",
+      "sourceAppId": "com.iz.cooking.kitchen.games.girls.kids.food",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.iz.cooking.kitchen.games.girls.kids.food&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "salad-bowl",
+        "title": "아삭한 색 바구니",
+        "engine": "recipe",
+        "variant": "layers",
+        "family": "재료·쌓기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "description": "잎 채소·오이·토마토·옥수수를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+        "params": {
+          "dish": "bowl",
+          "ingredients": [
+            {
+              "label": "잎 채소",
+              "symbol": "🥬",
+              "color": "#88a884"
+            },
+            {
+              "label": "오이",
+              "symbol": "🥒",
+              "color": "#a3b999"
+            },
+            {
+              "label": "토마토",
+              "symbol": "🍅",
+              "color": "#c77b72"
+            },
+            {
+              "label": "옥수수",
+              "symbol": "🌽",
+              "color": "#dfcb88"
+            }
+          ],
+          "recipe": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "accent": "#965335",
+        "presentation": {
+          "symbol": "🥬",
+          "detail": "잎 채소·오이·토마토·옥수수"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "원작 테마·레시피·손님/운영 체계와 분리하여 재료 분류·순서 한 활동으로 축소 필요",
+        "evidenceExcerpt": "인기 있는 피자부터 시작해봅시다! 키즈 쿠킹 다이너 게임으로 가장 좋아하는 토핑인 치즈, 페퍼로니, 야채 등을 사용하여 자신만의 가상 주방에서 완벽한 피자를 만들어보세요. 다양한 크러스트와 소스를 시도해 보며, 당신만의 독특하고 맛있는 피자를 만들어보세요.\n이번에는 키즈 요리 게임에서",
+        "evidenceSha256": "fb5bd2f867035aed523da697c7daae94ac263ee9bf7cf7312df472e1d398a0f8",
+        "difference": "신규 재료 쌓기 엔진. 순서 놀이와 달리 재료를 자유롭게 놓고 결과를 비교·되돌린다. 같은 엔진의 재료·그릇 변형 포함."
+      }
+    },
+    {
+      "candidateId": "E169",
+      "sourceAppId": "com.sinyee.babybus.factory",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.sinyee.babybus.factory&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "berry-parfait",
+        "title": "열매빛 층층 컵",
+        "engine": "recipe",
+        "variant": "layers",
+        "family": "재료·쌓기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "description": "크림·블루베리·망고·딸기를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+        "params": {
+          "dish": "cup",
+          "ingredients": [
+            {
+              "label": "크림",
+              "symbol": "🥛",
+              "color": "#eee2cf"
+            },
+            {
+              "label": "블루베리",
+              "symbol": "🫐",
+              "color": "#9298b4"
+            },
+            {
+              "label": "망고",
+              "symbol": "🥭",
+              "color": "#e4ba76"
+            },
+            {
+              "label": "딸기",
+              "symbol": "🍓",
+              "color": "#c77f8d"
+            }
+          ],
+          "recipe": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "accent": "#965335",
+        "presentation": {
+          "symbol": "🥛",
+          "detail": "크림·블루베리·망고·딸기"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "원작 테마·레시피·손님/운영 체계와 분리하여 재료 분류·순서 한 활동으로 축소 필요",
+        "evidenceExcerpt": "아기 팬더의 달콤한 상점이 뜨거운 올여름 오픈합니다! 이곳에서는 어떤 상큼한 디저트를 만나볼 수 있을까요? 그리고 이 디저트들은 어떻게 만들까요? 우리 같이 확인해봐요!\n\n과일 주스\n블루베리 주스? 망고 주스? 딸기 주스? 무엇을 원하세요? 서로 섞어서 만들어볼 수도 있답니다. 마음에",
+        "evidenceSha256": "c22fc56363110fb4cb6e93ecc8a19754474b7f05616119474348d413e3d227ad",
+        "difference": "신규 재료 쌓기 엔진. 순서 놀이와 달리 재료를 자유롭게 놓고 결과를 비교·되돌린다. 같은 엔진의 재료·그릇 변형 포함."
+      }
+    },
+    {
+      "candidateId": "E209",
+      "sourceAppId": "jp.co.ofcr.cm00",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=jp.co.ofcr.cm00&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "rice-bowl",
+        "title": "따뜻한 밥그릇 상상",
+        "engine": "recipe",
+        "variant": "layers",
+        "family": "재료·쌓기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "description": "밥·완두·당근·김를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+        "params": {
+          "dish": "bowl",
+          "ingredients": [
+            {
+              "label": "밥",
+              "symbol": "🍚",
+              "color": "#e7deca"
+            },
+            {
+              "label": "완두",
+              "symbol": "🟢",
+              "color": "#86a282"
+            },
+            {
+              "label": "당근",
+              "symbol": "🥕",
+              "color": "#cf9a73"
+            },
+            {
+              "label": "김",
+              "symbol": "◼️",
+              "color": "#677568"
+            }
+          ],
+          "recipe": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "accent": "#965335",
+        "presentation": {
+          "symbol": "🍚",
+          "detail": "밥·완두·당근·김"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "그림 주문표의 순서대로 가상 재료를 쌓고 확인해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "원작 테마·레시피·손님/운영 체계와 분리하여 재료 분류·순서 한 활동으로 축소 필요",
+        "evidenceExcerpt": "자르고, 볶고, 삶고...\n손가락 하나로 재료를 다듬어 맛있는 요리를 만들어 보세요!\n새로운 감각으로 즐기는 요리 게임을 플레이해 보세요.\n게임 속에 등장하는 맛있는 요리들이 여러분의 식욕을 돋워줄 거예요.\n\n▼요리를 만들자!\n즐겁고 간단한 미니게임으로 조리 과정을 재현했어요. 30가지",
+        "evidenceSha256": "583537f174ceab5e5009f7a43dbd26bb8615612e5ee4113c6b6e6b93d3211dbc",
+        "difference": "신규 재료 쌓기 엔진. 순서 놀이와 달리 재료를 자유롭게 놓고 결과를 비교·되돌린다. 같은 엔진의 재료·그릇 변형 포함."
+      }
+    },
+    {
+      "candidateId": "E061",
+      "sourceAppId": "com.synthesia.synthesia",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.synthesia.synthesia&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "four-beat-piano",
+        "title": "네 박 건반 메모",
+        "engine": "rhythm",
+        "variant": "grid",
+        "family": "리듬·작곡",
+        "ageMin": 6,
+        "ageMax": 9,
+        "roundCount": 1,
+        "objective": "세 소리의 네 박 자리를 켜고 한 박씩 살펴봐요.",
+        "description": "도·미·라의 네 박 칸을 켜고 꺼 보세요. 직접 한 박씩 넘기며 소리 또는 빛으로 패턴을 살펴봐요.",
+        "params": {
+          "tracks": [
+            {
+              "label": "낮은 도",
+              "note": 0
+            },
+            {
+              "label": "미",
+              "note": 2
+            },
+            {
+              "label": "높은 라",
+              "note": 4
+            }
+          ],
+          "timbre": "sine"
+        },
+        "accent": "#52648f",
+        "presentation": {
+          "symbol": "🎹",
+          "detail": "세 소리 · 네 박"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "세 소리의 네 박 자리를 켜고 한 박씩 살펴봐요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "영상·곡·이야기·퀴즈 라이브러리 대신 자체 짧은 활동 1개만 구현",
+        "evidenceExcerpt": "악보를 읽을 수 없더라도 즉시 연주를 시작하십시오. 터치 스크린을 사용하거나 디지털 키보드를 연결하고 실제 피아노 키를 사용하여 연주하십시오!\n\n• 각 손을 따로 또는 함께 사용하여 플레이하십시오.\n• Synthesia는 멜로디 연습 모드에서 올바른 음을 칠 때까지 기다립니다.\n• 자신",
+        "evidenceSha256": "be30ec29d81a0e4f32eb213fdd0402e50b693984cb0e41b8fed8d802af3ed27b",
+        "difference": "신규 격자 리듬. 기존 단일 음 버튼과 달리 3트랙×4박 패턴을 편집·순회한다."
+      }
+    },
+    {
+      "candidateId": "E203",
+      "sourceAppId": "com.sofarsogood.incredibox",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.sofarsogood.incredibox&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "rhythm-weave",
+        "title": "소리 엮는 네 칸",
+        "engine": "rhythm",
+        "variant": "grid",
+        "family": "리듬·작곡",
+        "ageMin": 6,
+        "ageMax": 9,
+        "roundCount": 1,
+        "objective": "울림 세 줄에 네 박 패턴을 만들어 살펴봐요.",
+        "description": "바탕·가운데·높은 울림을 네 박 격자에 놓아요. 한 박씩 눌러 겹치는 소리와 쉼을 확인해요.",
+        "params": {
+          "tracks": [
+            {
+              "label": "바탕 울림",
+              "note": 0
+            },
+            {
+              "label": "가운데 울림",
+              "note": 2
+            },
+            {
+              "label": "높은 울림",
+              "note": 4
+            }
+          ],
+          "timbre": "triangle"
+        },
+        "accent": "#52648f",
+        "presentation": {
+          "symbol": "🎵",
+          "detail": "울림과 쉼의 자리"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "울림 세 줄에 네 박 패턴을 만들어 살펴봐요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "보드·코딩·시뮬레이션·연산의 세부 범위와 난이도·정확성·단순화 경계를 추가 검토해야 함",
+        "evidenceExcerpt": "Incredibox를 사용하면 유쾌한 비트박서 크루의 도움을 받아 나만의 음악을 만들 수 있습니다. 원하는 음악 스타일을 선택하여 믹스를 만들고, 녹음하고, 공유하세요. 힙합 비트, 일렉트로 웨이브, 팝 보이스, 재즈 스윙, 브라질 리듬 등으로 그루브를 즐겨 보세요. 또한 커뮤니티에서",
+        "evidenceSha256": "bd84ed94e1fe182cfad4d57882eb8ec7a952abe54d23e468163c484601d8ed33",
+        "difference": "리듬 엔진의 음색·트랙 이름 변형. 원작 보컬·곡·캐릭터·자동 믹스·공유 미사용."
+      }
+    },
+    {
+      "candidateId": "E052",
+      "sourceAppId": "smellymoo.sand",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=smellymoo.sand&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "grain-lab",
+        "title": "알갱이 상자",
+        "engine": "discovery",
+        "variant": "pairs",
+        "family": "조합·탐색",
+        "ageMin": 6,
+        "ageMax": 9,
+        "roundCount": 1,
+        "objective": "서로 다른 두 요소를 골라 정해진 조합 결과 세 가지를 살펴봐요.",
+        "description": "모래·물·잎의 두 요소를 골라 이 화면에서 정한 조합 그림 세 가지를 찾아요.",
+        "params": {
+          "theme": "texture",
+          "tokens": [
+            {
+              "label": "모래",
+              "symbol": "🟤",
+              "color": "#cab18a"
+            },
+            {
+              "label": "물",
+              "symbol": "💧",
+              "color": "#99bdce"
+            },
+            {
+              "label": "잎",
+              "symbol": "🍃",
+              "color": "#9fb58b"
+            }
+          ],
+          "results": [
+            {
+              "pair": "0-1",
+              "label": "촉촉한 모래",
+              "symbol": "🟫",
+              "color": "#b6a080"
+            },
+            {
+              "pair": "0-2",
+              "label": "잎 위의 모래",
+              "symbol": "🍂",
+              "color": "#aeab7b"
+            },
+            {
+              "pair": "1-2",
+              "label": "젖은 잎",
+              "symbol": "🍃",
+              "color": "#729b8c"
+            }
+          ]
+        },
+        "accent": "#326b70",
+        "presentation": {
+          "symbol": "🟤",
+          "detail": "알갱이 상자"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "서로 다른 두 요소를 골라 정해진 조합 결과 세 가지를 살펴봐요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "자체 퍼즐·명령·도형으로 단일 활동화; 카메라·센서 의존 제외",
+        "evidenceExcerpt": "게임만 즐길 수 있습니다. 광고가 없거든요.\n\n85가지 다른 재료, 물질간의 상호작용등을 고려해서 만들어보세요. 재미있는 결과물이 나올겁니다. 아니면 전부 폭발시키세요.\n\n복잡한 입자간 상호작용을 고려한 심혈을 기울인 게임입니다. \n\n언제든지 문의하세요. 번역기를 이용해서라도 답장합니다",
+        "evidenceSha256": "37248ee9b9f50dd886ac34d2581bdcdd3f6c36f356cf3cf9ef4031b1d977558a",
+        "difference": "신규 두 요소 조합 탐색. 결과는 선언된 가상 모델이며 실제 물리·교육과정·실험 정확성을 보증하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E158",
+      "sourceAppId": "com.ailiyong.world.course",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.ailiyong.world.course&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "color-lab",
+        "title": "세 빛깔 연구대",
+        "engine": "discovery",
+        "variant": "pairs",
+        "family": "조합·탐색",
+        "ageMin": 6,
+        "ageMax": 9,
+        "roundCount": 1,
+        "objective": "서로 다른 두 요소를 골라 정해진 조합 결과 세 가지를 살펴봐요.",
+        "description": "빨강·노랑·파랑 중 둘을 골라 이 화면에서 정한 세 가지 혼합색을 확인해요.",
+        "params": {
+          "theme": "palette",
+          "tokens": [
+            {
+              "label": "빨강",
+              "symbol": "🔴",
+              "color": "#c47e7d"
+            },
+            {
+              "label": "노랑",
+              "symbol": "🟡",
+              "color": "#e4c982"
+            },
+            {
+              "label": "파랑",
+              "symbol": "🔵",
+              "color": "#859fbc"
+            }
+          ],
+          "results": [
+            {
+              "pair": "0-1",
+              "label": "주황빛",
+              "symbol": "🟠",
+              "color": "#d4a374"
+            },
+            {
+              "pair": "0-2",
+              "label": "보랏빛",
+              "symbol": "🟣",
+              "color": "#ae99ba"
+            },
+            {
+              "pair": "1-2",
+              "label": "초록빛",
+              "symbol": "🟢",
+              "color": "#91ad8e"
+            }
+          ]
+        },
+        "accent": "#326b70",
+        "presentation": {
+          "symbol": "🔴",
+          "detail": "세 빛깔 연구대"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "서로 다른 두 요소를 골라 정해진 조합 결과 세 가지를 살펴봐요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "보드·코딩·시뮬레이션·연산의 세부 범위와 난이도·정확성·단순화 경계를 추가 검토해야 함",
+        "evidenceExcerpt": "BabyBus의 키즈 사이언스에 오신 것을 환영합니다! 다양한과학 주제와 기묘한 탐구 활동, 과학실험이 아이들의 과학 흥미를 자극하고 과학의 신비를 쉽게 이해할 수 있게 도와줍니다!\n\n다양한 과학 주제들\n이 기묘한 과학의 세계에서 아이들은 공룡의 신비, 우주 지식, 자연 현상들 등 다양",
+        "evidenceSha256": "ae597015bf0f839c4723750dec2b6c49d08a2927991d21feb7fdac5082d8b209",
+        "difference": "신규 두 요소 조합 탐색. 결과는 선언된 가상 모델이며 실제 물리·교육과정·실험 정확성을 보증하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E170",
+      "sourceAppId": "com.visang.VirtualLab",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.visang.VirtualLab&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "light-lab",
+        "title": "빛과 가림막",
+        "engine": "discovery",
+        "variant": "pairs",
+        "family": "조합·탐색",
+        "ageMin": 6,
+        "ageMax": 9,
+        "roundCount": 1,
+        "objective": "서로 다른 두 요소를 골라 정해진 조합 결과 세 가지를 살펴봐요.",
+        "description": "빛·투명판·가림판을 두 개씩 골라 단순화한 세 가지 가상 장면을 살펴봐요.",
+        "params": {
+          "theme": "light",
+          "tokens": [
+            {
+              "label": "빛",
+              "symbol": "💡",
+              "color": "#e0cd91"
+            },
+            {
+              "label": "투명판",
+              "symbol": "▫️",
+              "color": "#bfd5d6"
+            },
+            {
+              "label": "가림판",
+              "symbol": "◼️",
+              "color": "#839194"
+            }
+          ],
+          "results": [
+            {
+              "pair": "0-1",
+              "label": "빛이 지나는 자리",
+              "symbol": "☀️",
+              "color": "#e3d9af"
+            },
+            {
+              "pair": "0-2",
+              "label": "가려진 자리",
+              "symbol": "◼️",
+              "color": "#85918f"
+            },
+            {
+              "pair": "1-2",
+              "label": "겹친 판",
+              "symbol": "▣",
+              "color": "#a5b6b5"
+            }
+          ]
+        },
+        "accent": "#326b70",
+        "presentation": {
+          "symbol": "💡",
+          "detail": "빛과 가림막"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "서로 다른 두 요소를 골라 정해진 조합 결과 세 가지를 살펴봐요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "보드·코딩·시뮬레이션·연산의 세부 범위와 난이도·정확성·단순화 경계를 추가 검토해야 함",
+        "evidenceExcerpt": "초등 과학 교육과정의 모든 실험이 가상 실험실에 쏘~옥! \n실제로 실험하듯 생생하게 실험을 조작하고, 실험 후의 개념 정리, 확인 문제 풀이를 통해 개념을 재미있게 학습할 수 있어요.\n3~6학년의 모든 과학 실험을 초등 과학 가상 실험실에서 만나요!\n\n[주요 기능]\n1. 360도 관찰:",
+        "evidenceSha256": "1ced3fa06d883cccf63d22d1e33b09f4a2da36ad85f14862560bcb2658d53234",
+        "difference": "신규 두 요소 조합 탐색. 결과는 선언된 가상 모델이며 실제 물리·교육과정·실험 정확성을 보증하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E217",
+      "sourceAppId": "com.bulb.alchemy",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.bulb.alchemy&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "imagination-lab",
+        "title": "상상 조합 수첩",
+        "engine": "discovery",
+        "variant": "pairs",
+        "family": "조합·탐색",
+        "ageMin": 6,
+        "ageMax": 9,
+        "roundCount": 1,
+        "objective": "서로 다른 두 요소를 골라 정해진 조합 결과 세 가지를 살펴봐요.",
+        "description": "구름·별·잎을 둘씩 골라 밤하늘 편지와 바람숲, 반짝잎이라는 상상 조합을 찾아요.",
+        "params": {
+          "theme": "imagination",
+          "tokens": [
+            {
+              "label": "구름",
+              "symbol": "☁️",
+              "color": "#bbced7"
+            },
+            {
+              "label": "별",
+              "symbol": "⭐",
+              "color": "#dfca8a"
+            },
+            {
+              "label": "잎",
+              "symbol": "🍃",
+              "color": "#9bb18d"
+            }
+          ],
+          "results": [
+            {
+              "pair": "0-1",
+              "label": "밤하늘 편지",
+              "symbol": "🌌",
+              "color": "#939bb9"
+            },
+            {
+              "pair": "0-2",
+              "label": "바람숲",
+              "symbol": "🌳",
+              "color": "#9db6a3"
+            },
+            {
+              "pair": "1-2",
+              "label": "반짝잎",
+              "symbol": "🍃",
+              "color": "#b3bc8b"
+            }
+          ]
+        },
+        "accent": "#326b70",
+        "presentation": {
+          "symbol": "☁️",
+          "detail": "상상 조합 수첩"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "서로 다른 두 요소를 골라 정해진 조합 결과 세 가지를 살펴봐요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "보드·코딩·시뮬레이션·연산의 세부 범위와 난이도·정확성·단순화 경계를 추가 검토해야 함",
+        "evidenceExcerpt": "제보 많이 많이 보내주세요! 언제부터인가.. 조합들이 조금씩\nA + B 는 C가 C를 만들기 위해 A B를 한다기보다는 A + B를 알아야 C가 되는듯한..\nC를 유추하기 힘든 조합법들이 많이 오더군요 ㅠㅠ \nA와 B를 합친다! 라는 제보 부탁드립니당! ㅎ\n\n정말 하루 종일 붙잡고 하",
+        "evidenceSha256": "21fbaa9b679ab9adf8a7a0175a657fc32f139fa9bec078280795f12a8bf08e25",
+        "difference": "신규 두 요소 조합 탐색. 결과는 선언된 가상 모델이며 실제 물리·교육과정·실험 정확성을 보증하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E003",
+      "sourceAppId": "com.cateater.stopmotionstudio",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.cateater.stopmotionstudio&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "little-flipbook",
+        "title": "움직임 네 장",
+        "engine": "animation",
+        "variant": "frames",
+        "family": "프레임·이야기",
+        "ageMin": 6,
+        "ageMax": 9,
+        "roundCount": 1,
+        "objective": "네 장면에 연의 위치를 놓고 차례로 넘겨 움직임을 비교해요.",
+        "description": "아홉 자리 중 연의 위치를 네 장면에 정해요. 장면을 하나씩 넘겨 위치가 달라지는 모습을 비교해요.",
+        "params": {
+          "symbol": "🪁",
+          "frameCount": 4
+        },
+        "accent": "#725b8c",
+        "presentation": {
+          "symbol": "🪁",
+          "detail": "네 장면 · 위치 바꾸기"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "네 장면에 연의 위치를 놓고 차례로 넘겨 움직임을 비교해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "자체 도형 프레임 편집만 참고; 촬영·원작 영상과 UI 제외",
+        "evidenceExcerpt": "지금 바로 세계에서 가장 쉬운 스톱 모션 영화 제작 앱인 Stop Motion Studio를 다운로드하세요!\n\n사용하기 쉬운 인터페이스 Stop Motion Studio를 사용하면 월레스와 그로밋과 같은 아름다운 영화나 YouTube에서 멋진 레고 단편을 만들 수 있습니다. 사용이 간편",
+        "evidenceSha256": "010cc5484d35e6d186b70953b4cd23cb4f8b65774135cb420c4a0c29bfb5a481",
+        "difference": "신규 4프레임 위치 편집·수동 넘기기. 촬영·영상·자동 재생·내보내기 기능은 제외한다."
+      }
+    },
+    {
+      "candidateId": "E115",
+      "sourceAppId": "com.hanobit.engbook",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.hanobit.engbook&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "english-weather",
+        "title": "영어 날씨 쪽지",
+        "engine": "words",
+        "variant": "match",
+        "family": "낱말·읽기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 3,
+        "objective": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "description": "rain·snow·cloud 그림을 보고 같은 낱말을 골라요.",
+        "params": {
+          "cards": [
+            {
+              "word": "rain",
+              "symbol": "🌧️"
+            },
+            {
+              "word": "snow",
+              "symbol": "❄️"
+            },
+            {
+              "word": "cloud",
+              "symbol": "☁️"
+            }
+          ]
+        },
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🌧️",
+          "detail": "rain · snow · cloud"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "자체 글자·낱말 활동으로 범위를 확정하고 발음·문해 수준·교재/음원 권리 검토 필요",
+        "evidenceExcerpt": "초등영어단어 1000개를 이미지와 정확한 발음으로 공부.\n초등학생 기초영어공부를 위한 최고의 선택!\n교보문고에서 어린이 영어단어 분야 1위를 기록한 컨텐츠\n\n초등영어, 초등영어단어 (초등영단어)는 하노비트와 함께 하세요.\n기초영어단어 (기초영단어)를 찾는 분에게도 좋습니다. \n\n초등학생",
+        "evidenceSha256": "1a376a3292eff8e3165fe0f1a11fb4b9137d308dcb41ab4dbf0b448a6d8a1c32",
+        "difference": "기존 낱말 연결 엔진의 자체 단어·그림 세트 확장. 별도 메커닉으로 집계하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E119",
+      "sourceAppId": "com.h2kresearch.ps",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.h2kresearch.ps&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "word-sounds",
+        "title": "그림 낱말 동산",
+        "engine": "words",
+        "variant": "match",
+        "family": "낱말·읽기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 3,
+        "objective": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "description": "곰·사슴·여우 그림을 보고 같은 낱말을 골라요.",
+        "params": {
+          "cards": [
+            {
+              "word": "곰",
+              "symbol": "🐻"
+            },
+            {
+              "word": "사슴",
+              "symbol": "🦌"
+            },
+            {
+              "word": "여우",
+              "symbol": "🦊"
+            }
+          ]
+        },
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🐻",
+          "detail": "곰 · 사슴 · 여우"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "자체 글자·낱말 활동으로 범위를 확정하고 발음·문해 수준·교재/음원 권리 검토 필요",
+        "evidenceExcerpt": "영유아를 위한 교육 게임, 두뇌 발달 게임, 한글 동요, 글자 학습을 광고 없이 사용하세요.\n\n한글 떼기는 소중한글이 최고라는데… 하지만 소중한글 시작하기는 아직 좀 어린데…. 하셨던 부모님! [소중한글 동요]로 먼저 즐겁게 한글 노출을 시작해 보세요.\n\n한글의 원리를 자연스럽게 흡수할",
+        "evidenceSha256": "c4dcba770ee6fcd7ab7c10c70ae56a44fa55891e81574557b3bdea80ed1cd37c",
+        "difference": "기존 낱말 연결 엔진의 자체 단어·그림 세트 확장. 별도 메커닉으로 집계하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E210",
+      "sourceAppId": "com.LanguageMonster.KarfarolGames",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.LanguageMonster.KarfarolGames&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "english-home",
+        "title": "영어 집 안 산책",
+        "engine": "words",
+        "variant": "match",
+        "family": "낱말·읽기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 3,
+        "objective": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "description": "chair·bed·door 그림을 보고 같은 낱말을 골라요.",
+        "params": {
+          "cards": [
+            {
+              "word": "chair",
+              "symbol": "🪑"
+            },
+            {
+              "word": "bed",
+              "symbol": "🛏️"
+            },
+            {
+              "word": "door",
+              "symbol": "🚪"
+            }
+          ]
+        },
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🪑",
+          "detail": "chair · bed · door"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "자체 글자·낱말 활동으로 범위를 확정하고 발음·문해 수준·교재/음원 권리 검토 필요",
+        "evidenceExcerpt": "MomoLingo는 언어 학습을 재미있는 모험으로 바꾸고 싶은 사람들을 위한 학습 게임입니다. 올바른 단어 쌍을 맞히는 퀴즈를 풀고, 코인과 별을 모으며, 주인공 모모가 다양한 미션을 완료하도록 도와주세요.\n\nMomoLingo는 단순히 영단어를 외우기만 하는 앱이 아닙니다. 게임을 하듯",
+        "evidenceSha256": "fa1b26c4b5be57a4e3c7c433c478030d357611a6f49af3003b1ea4c64f613285",
+        "difference": "기존 낱말 연결 엔진의 자체 단어·그림 세트 확장. 별도 메커닉으로 집계하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E215",
+      "sourceAppId": "com.gedev.tilelingo",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.gedev.tilelingo&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "english-things",
+        "title": "영어 소품 한 칸",
+        "engine": "words",
+        "variant": "match",
+        "family": "낱말·읽기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 3,
+        "objective": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "description": "key·cup·bell 그림을 보고 같은 낱말을 골라요.",
+        "params": {
+          "cards": [
+            {
+              "word": "key",
+              "symbol": "🔑"
+            },
+            {
+              "word": "cup",
+              "symbol": "☕"
+            },
+            {
+              "word": "bell",
+              "symbol": "🔔"
+            }
+          ]
+        },
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🔑",
+          "detail": "key · cup · bell"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "자체 글자·낱말 활동으로 범위를 확정하고 발음·문해 수준·교재/음원 권리 검토 필요",
+        "evidenceExcerpt": "영어 공부가 이렇게 재미있었던 적은 없었어요! 🀄\n\nTile Lingo는 마작 스타일 타일 맞추기의 클래식한 재미와 어휘 학습을 하나로 합쳤어요. 영어 단어 타일을 올바른 짝과 맞춰 보드를 비우세요. 맞출 때마다 새 단어를 배우고, 레벨을 올릴수록 어휘력이 자라납니다!\n\n게임 방법 🎮",
+        "evidenceSha256": "15f03ee3f8175a3e7fcdc3ef9510166b8190a6216c9e51dce2595fe0efeacf6a",
+        "difference": "기존 낱말 연결 엔진의 자체 단어·그림 세트 확장. 별도 메커닉으로 집계하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E228",
+      "sourceAppId": "com.woodenpharm.choseonggacha",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.woodenpharm.choseonggacha&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "word-clothes",
+        "title": "차림 낱말 수첩",
+        "engine": "words",
+        "variant": "match",
+        "family": "낱말·읽기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 3,
+        "objective": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "description": "양말·장갑·목도리 그림을 보고 같은 낱말을 골라요.",
+        "params": {
+          "cards": [
+            {
+              "word": "양말",
+              "symbol": "🧦"
+            },
+            {
+              "word": "장갑",
+              "symbol": "🧤"
+            },
+            {
+              "word": "목도리",
+              "symbol": "🧣"
+            }
+          ]
+        },
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🧦",
+          "detail": "양말 · 장갑 · 목도리"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "자체 글자·낱말 활동으로 범위를 확정하고 발음·문해 수준·교재/음원 권리 검토 필요",
+        "evidenceExcerpt": "유치원 / 어린이집 무료 제휴 문의 \n전화: 1544 - 2092\n문자: [연락처 생략]\n\n별별한글은 유아를 대상으로 한 한글 단어 학습 앱입니다.\n아이들이 한글을 자연스럽게 익힐 수 있도록 단어 카드, 음성 안내, 놀이형 학습 게임을 결합한 구조로 설계되었습니다.\n\n1. 단어 카드 학",
+        "evidenceSha256": "29b86cb72247aeba69810fdc125a11624edfafbad352fd9e6df2c2af61b5183d",
+        "difference": "기존 낱말 연결 엔진의 자체 단어·그림 세트 확장. 별도 메커닉으로 집계하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E259",
+      "sourceAppId": "com.rvappstudios.abc_kids_toddler_tracing_phonics",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.rvappstudios.abc_kids_toddler_tracing_phonics&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "letter-pictures",
+        "title": "알파벳 그림 첫 장",
+        "engine": "words",
+        "variant": "match",
+        "family": "낱말·읽기",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 3,
+        "objective": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "description": "사과·공·고양이 그림을 보고 영어 이름 apple·ball·cat의 첫 글자 A·B·C를 골라요.",
+        "params": {
+          "cards": [
+            {
+              "word": "A",
+              "symbol": "🍎",
+              "hint": "apple"
+            },
+            {
+              "word": "B",
+              "symbol": "⚽",
+              "hint": "ball"
+            },
+            {
+              "word": "C",
+              "symbol": "🐈",
+              "hint": "cat"
+            }
+          ],
+          "mode": "initial"
+        },
+        "accent": "#456f99",
+        "presentation": {
+          "symbol": "🍎",
+          "detail": "A · B · C"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "일상 그림과 대응하는 낱말 또는 첫 글자를 연결해요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "자체 글자·낱말 활동으로 범위를 확정하고 발음·문해 수준·교재/음원 권리 검토 필요",
+        "evidenceExcerpt": "유아가 파닉스를 배우고 알파벳 글자를 따라가는 데 도움이 되는 재미있고 무료이며 간단한 교육용 앱을 찾고 계십니까? ABC Kids보다 더 이상 보지 마십시오.\n\nABC Kids는 유아부터 미취학 아동 및 유치원생에 이르기까지 어린이들이 재미있게 학습할 수 있도록 해주는 무료 파닉스 및",
+        "evidenceSha256": "7db7b4a7cc960eeaf0ebc099714a1e0a2a4b76baaea85abf208c938095bdb1b8",
+        "difference": "기존 낱말 연결 엔진의 자체 단어·그림 세트 확장. 별도 메커닉으로 집계하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E058",
+      "sourceAppId": "com.kigle.cocobi.babycare.two",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.kigle.cocobi.babycare.two&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "doll-rest",
+        "title": "인형의 낮잠 준비",
+        "engine": "routine",
+        "variant": "order",
+        "family": "생활·순서",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "돌봄과 도움의 한 가지 생활 흐름을 순서대로 살펴봐요.",
+        "description": "인형이 쉴 자리와 천을 준비하고 편히 눕히는 네 걸음을 이어 봐요.",
+        "params": {
+          "steps": [
+            "인형의 쉬는 자리를 살펴봐요",
+            "부드러운 천을 놓아요",
+            "인형을 편히 눕혀요",
+            "조용히 쉬게 해요"
+          ]
+        },
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🧸",
+          "detail": "인형의 낮잠 준비"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "돌봄과 도움의 한 가지 생활 흐름을 순서대로 살펴봐요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외",
+        "evidenceExcerpt": "귀여운 아기 돌보기 게임에 오신 것을 환영합니다! 🎀\n🍼우리 게임에는 귀여운 여섯 아기가 여러분을 기다리고 있어요.\n사랑스러운 아기로 가득한 베이비 하우스에 빨리 와요!💛\n\n✔️귀여운 여섯 아기 돌보기\n- 먹기 : 아기들이 좋아하는 맛있는 음식이 12종류나 있어요! 🍦\n- 기저귀 바꾸기",
+        "evidenceSha256": "ed40edaffd76bf7abe3fc9201a41e4aef08ce0f75ef346dc74ccf36a88e2fd65",
+        "difference": "기존 순서 엔진의 돌봄·도움 주제 확장. 실제 아기·동물 돌봄 지침이나 의료 행위 교육을 대체하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E104",
+      "sourceAppId": "com.kigle.cocobi.babycare",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.kigle.cocobi.babycare&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "doll-play",
+        "title": "인형과 놀이 준비",
+        "engine": "routine",
+        "variant": "order",
+        "family": "생활·순서",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "돌봄과 도움의 한 가지 생활 흐름을 순서대로 살펴봐요.",
+        "description": "장난감 고르기부터 인형과 놀고 정리하기까지 순서 버튼을 골라요.",
+        "params": {
+          "steps": [
+            "함께 놀 장난감을 골라요",
+            "놀이 자리를 정해요",
+            "인형과 함께 놀아요",
+            "장난감을 정리해요"
+          ]
+        },
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🪀",
+          "detail": "인형과 놀이 준비"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "돌봄과 도움의 한 가지 생활 흐름을 순서대로 살펴봐요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외",
+        "evidenceExcerpt": "코코와 친구들이 아기가 되었어요!\n신나는 공원 산책, 알록달록 물감놀이, 꿈속 별나라 여행까지.\n귀여운 아기 코코와 친구들을 돌봐줘요~\n\n■ 사랑스러운 아기 돌보기  \n- 밥 먹기 : 분유, 이유식, 여러 가지 과일 퓌레. 아기에게 다양한 요리를 해줘요~\n- 기저귀 바꾸기 : 기저귀가",
+        "evidenceSha256": "772951ad4f8ea6ffe7691efc1602d47fb40811360908225ce8ab35000e7a5568",
+        "difference": "기존 순서 엔진의 돌봄·도움 주제 확장. 실제 아기·동물 돌봄 지침이나 의료 행위 교육을 대체하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E196",
+      "sourceAppId": "com.kigle.project.pororo.babycare",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.kigle.project.pororo.babycare&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "friend-greeting",
+        "title": "작은 친구의 하루",
+        "engine": "routine",
+        "variant": "order",
+        "family": "생활·순서",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "돌봄과 도움의 한 가지 생활 흐름을 순서대로 살펴봐요.",
+        "description": "인사·놀이·정리·휴식의 한 가지 흐름을 편안하게 이어 봐요.",
+        "params": {
+          "steps": [
+            "친구에게 인사해요",
+            "함께 놀 것을 골라요",
+            "놀이 뒤에 정리해요",
+            "쉬는 시간을 가져요"
+          ]
+        },
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🐧",
+          "detail": "작은 친구의 하루"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "돌봄과 도움의 한 가지 생활 흐름을 순서대로 살펴봐요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "캐릭터·세계관·복합 역할·성장 보상을 제외한 단일 생활·탐색 장면으로 범위 확정 필요",
+        "evidenceExcerpt": "아기 뽀로로와 친구들이 울고 있어요!\n먹기, 목욕하기, 잠자기.. 아기를 정성껏 돌봐주면 점점 자랄 거예요.\n아기들이 걷게 된 다음에는 어떻게 변신할까요?\n\n■ 7가지 종류의 아기 돌보기 놀이!\n- 기저귀 바꾸기 : 기저귀가 지저분해졌어요. 깨끗한 기저귀로 바꿔줘요.\n- 목욕하기 : 보",
+        "evidenceSha256": "d33349ffa02a1a33ca765558f8fbd2131f6a3b86c713ee02d11b3f4f093223d9",
+        "difference": "기존 순서 엔진의 돌봄·도움 주제 확장. 실제 아기·동물 돌봄 지침이나 의료 행위 교육을 대체하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E305",
+      "sourceAppId": "com.sinyee.babybus.petsII",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.sinyee.babybus.petsII&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "pet-help",
+        "title": "동물 친구에게 도움을",
+        "engine": "routine",
+        "variant": "order",
+        "family": "생활·순서",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "돌봄과 도움의 한 가지 생활 흐름을 순서대로 살펴봐요.",
+        "description": "동물을 직접 치료하지 않고 어른에게 도움을 요청하고 편히 쉴 공간을 생각해요.",
+        "params": {
+          "steps": [
+            "어른에게 함께 살펴보자고 말해요",
+            "동물과 안전한 거리를 두어요",
+            "어른이 쉬는 공간을 마련해요",
+            "조용한 곳에서 지켜봐요"
+          ]
+        },
+        "accent": "#28644e",
+        "presentation": {
+          "symbol": "🐾",
+          "detail": "동물 친구에게 도움을"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "돌봄과 도움의 한 가지 생활 흐름을 순서대로 살펴봐요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "치료·투약·수술·신체 자극 표현 대신 배려·도움 요청·위생 활동으로 재설계 필요",
+        "evidenceExcerpt": "반려동물 돌봄 센터에 수의사가 필요해요. 어린이들, 도와줄래요? 아기 팬더와 함께 반려동물을 치료하고 돌봐주고, 동물들과 좋은 친구가 되어봐요! \n\n질병 치료\n토끼가 열사병으로 괴로워해요. 이마에 젖은 수건을 올려주고 통증을 완화시켜요. 고양이 눈에 염증이 생겼어요. 우선, 눈을 깨끗이",
+        "evidenceSha256": "eec05a90e6741c797ee3603f5c9032775ea11cb5cd15c5ef437e099c666a20fd",
+        "difference": "기존 순서 엔진의 돌봄·도움 주제 확장. 실제 아기·동물 돌봄 지침이나 의료 행위 교육을 대체하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E249",
+      "sourceAppId": "com.my.tizi.modern.home.decor.room.design.house",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.my.tizi.modern.home.decor.room.design.house&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "reading-nook",
+        "title": "책 읽는 모서리",
+        "engine": "scene",
+        "variant": "compose",
+        "family": "공간·소품 창작",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "서로 다른 소품을 세 가지 이상 골라 한 장면을 꾸며요.",
+        "description": "책꽂이·의자·등·시계를 놓아 책 읽는 방의 작은 모서리를 구성해요.",
+        "params": {
+          "backdrop": "room",
+          "props": [
+            {
+              "label": "책꽂이",
+              "symbol": "📚"
+            },
+            {
+              "label": "의자",
+              "symbol": "🪑"
+            },
+            {
+              "label": "등",
+              "symbol": "💡"
+            },
+            {
+              "label": "시계",
+              "symbol": "🕰️"
+            }
+          ]
+        },
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "📚",
+          "detail": "책 읽는 모서리"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "서로 다른 소품을 세 가지 이상 골라 한 장면을 꾸며요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "캐릭터·세계관·복합 역할·성장 보상을 제외한 단일 생활·탐색 장면으로 범위 확정 필요",
+        "evidenceExcerpt": "Tizi Town 모던 홈 디자인 게임에 오신 것을 환영합니다. 인테리어 디자이너, 룸 플래너의 창의력을 발휘하여 완벽한 현대식 주방, 가구를 만들고 집 꾸미기 기술을 향상하세요. 침실, 매력적인 스토리 구성, 세련된 거실 공간 디자인 등 이 게임은 인테리어 디자인과 룸 플래너 매니아들",
+        "evidenceSha256": "6601f48daa6104386a63b6c8da3b530de30e1797eae187dd81978781008160b7",
+        "difference": "기존 6자리 소품 배치의 주제 확장. 물리 조립·입체 배치·실제 캠핑·원작 꽃 상품 제작을 의미하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E267",
+      "sourceAppId": "com.kigle.cocobi.camping",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.kigle.cocobi.camping&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "camp-corner",
+        "title": "숲속 소풍 자리",
+        "engine": "scene",
+        "variant": "compose",
+        "family": "공간·소품 창작",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "서로 다른 소품을 세 가지 이상 골라 한 장면을 꾸며요.",
+        "description": "텐트·나무·가방·도시락 소품으로 숲속 소풍 장면을 꾸며요. 불 피우기는 없어요.",
+        "params": {
+          "backdrop": "garden",
+          "props": [
+            {
+              "label": "텐트",
+              "symbol": "⛺"
+            },
+            {
+              "label": "나무",
+              "symbol": "🌲"
+            },
+            {
+              "label": "가방",
+              "symbol": "🎒"
+            },
+            {
+              "label": "도시락",
+              "symbol": "🍱"
+            }
+          ]
+        },
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "⛺",
+          "detail": "숲속 소풍 자리"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "서로 다른 소품을 세 가지 이상 골라 한 장면을 꾸며요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "캐릭터·세계관·복합 역할·성장 보상을 제외한 단일 생활·탐색 장면으로 범위 확정 필요",
+        "evidenceExcerpt": "코코비 캠핑장에 오신 것을 환영해요! 🌲\n깊은 숲 속 캠핑장에는 신나는 놀거리가 정말 많아요. \n캠핑장에서 즐길 수 있는 여러 게임과 숲 탐험! 코코와 친구들과 함께 숲 탐험을 하며 즐겨봐요.\n\n✔️아침부터 저녁까지 신나는 7가지 캠핑장 게임 \n- 텐트 설치 : ⛺텐트 설치 방법을 알고",
+        "evidenceSha256": "69a2c00b6bf251c1a8e212cb4e6ff4ec909ee225fc04345b1bbcbebb4c3ddb27",
+        "difference": "기존 6자리 소품 배치의 주제 확장. 물리 조립·입체 배치·실제 캠핑·원작 꽃 상품 제작을 의미하지 않는다."
+      }
+    },
+    {
+      "candidateId": "E322",
+      "sourceAppId": "com.sinyee.babybus.greenhouse",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=com.sinyee.babybus.greenhouse&hl=ko&gl=KR",
+      "content": {
+        "schemaVersion": 1,
+        "definitionVersion": 1,
+        "slug": "bouquet-corner",
+        "title": "마음을 담는 꽃다발",
+        "engine": "scene",
+        "variant": "compose",
+        "family": "공간·소품 창작",
+        "ageMin": 5,
+        "ageMax": 8,
+        "roundCount": 1,
+        "objective": "서로 다른 소품을 세 가지 이상 골라 한 장면을 꾸며요.",
+        "description": "두 색의 꽃과 잎·리본을 여섯 자리에 놓아 한 장의 꽃다발 구상을 만들어요.",
+        "params": {
+          "backdrop": "studio",
+          "props": [
+            {
+              "label": "노란 꽃",
+              "symbol": "🌼"
+            },
+            {
+              "label": "분홍 꽃",
+              "symbol": "🌸"
+            },
+            {
+              "label": "잎",
+              "symbol": "🍃"
+            },
+            {
+              "label": "리본",
+              "symbol": "🎀"
+            }
+          ]
+        },
+        "accent": "#83628e",
+        "presentation": {
+          "symbol": "🌼",
+          "detail": "마음을 담는 꽃다발"
+        }
+      },
+      "status": "mvp-logic-verified",
+      "browserStatus": "not-run",
+      "ipStatus": "independent-assets; public-name-review-pending",
+      "scopeReview": {
+        "decision": "bounded-prototype",
+        "originalStatus": "조건부",
+        "acceptedScope": "서로 다른 소품을 세 가지 이상 골라 한 장면을 꾸며요.",
+        "excluded": "원작 코드·캐릭터·브랜드·화면·문항·레시피·음원·레벨·촬영·공유·계정·결제·의료·불과 칼 조작 제외",
+        "basis": "기존 조사 스냅샷에 저장된 공식 설명과 범위 검토. 신규 차트·직접 체험·실제 아동 관찰 아님",
+        "sourceScope": "캐릭터·세계관·복합 역할·성장 보상을 제외한 단일 생활·탐색 장면으로 범위 확정 필요",
+        "evidenceExcerpt": "꽃을 좋아하나요? 패션 감각을 키우고 싶나요? 그렇다면 아기 팬더의 패션 플라워 상점에 와서 꽃 상품 DIY를 만들어봐요! \n\n아기 팬더가 다양한 꽃 상품 DIY를 만드는 꽃집을 열었어요! 아기 팬더는 매일 행복한 마음으로 꽃 립스틱, 꽃 케이크, 꽃 소스, 꽃 향주머니, 부케 등 다양",
+        "evidenceSha256": "5bac968685c30c03628d8b7241717b5f05d592726af8c83ed6c75868d284a846",
+        "difference": "기존 6자리 소품 배치의 주제 확장. 물리 조립·입체 배치·실제 캠핑·원작 꽃 상품 제작을 의미하지 않는다."
+      }
+    }
+  ]
+}

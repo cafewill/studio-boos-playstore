@@ -2967,5 +2967,1278 @@ export const CONTENTS = [
     },
     "href": "accessory-shelf/",
     "engine": "scene"
+  },
+  {
+    "slug": "sunny-pizza",
+    "title": "햇살 피자 작업대",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "재료·쌓기",
+    "description": "반죽·토마토·치즈·잎 채소를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+    "preview": {
+      "engine": "recipe",
+      "variant": "layers",
+      "params": {
+        "dish": "pizza",
+        "ingredients": [
+          {
+            "label": "반죽",
+            "symbol": "🫓",
+            "color": "#d9b580"
+          },
+          {
+            "label": "토마토",
+            "symbol": "🍅",
+            "color": "#bc6554"
+          },
+          {
+            "label": "치즈",
+            "symbol": "🧀",
+            "color": "#e6c772"
+          },
+          {
+            "label": "잎 채소",
+            "symbol": "🥬",
+            "color": "#81a181"
+          }
+        ],
+        "recipe": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "presentation": {
+        "symbol": "🫓",
+        "detail": "반죽·토마토·치즈·잎 채소"
+      }
+    },
+    "href": "sunny-pizza/",
+    "engine": "recipe"
+  },
+  {
+    "slug": "fruit-cup",
+    "title": "과일빛 컵",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "재료·쌓기",
+    "description": "딸기·우유·바나나·포도를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+    "preview": {
+      "engine": "recipe",
+      "variant": "layers",
+      "params": {
+        "dish": "cup",
+        "ingredients": [
+          {
+            "label": "딸기",
+            "symbol": "🍓",
+            "color": "#ca787e"
+          },
+          {
+            "label": "우유",
+            "symbol": "🥛",
+            "color": "#eee5cf"
+          },
+          {
+            "label": "바나나",
+            "symbol": "🍌",
+            "color": "#e7d08a"
+          },
+          {
+            "label": "포도",
+            "symbol": "🍇",
+            "color": "#a79ab9"
+          }
+        ],
+        "recipe": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "presentation": {
+        "symbol": "🍓",
+        "detail": "딸기·우유·바나나·포도"
+      }
+    },
+    "href": "fruit-cup/",
+    "engine": "recipe"
+  },
+  {
+    "slug": "sharing-pizza",
+    "title": "나누는 피자 한 판",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "재료·쌓기",
+    "description": "반죽·소스·버섯·옥수수를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+    "preview": {
+      "engine": "recipe",
+      "variant": "layers",
+      "params": {
+        "dish": "pizza",
+        "ingredients": [
+          {
+            "label": "반죽",
+            "symbol": "🫓",
+            "color": "#d8bb8d"
+          },
+          {
+            "label": "소스",
+            "symbol": "🍅",
+            "color": "#bc6554"
+          },
+          {
+            "label": "버섯",
+            "symbol": "🍄",
+            "color": "#b7a28f"
+          },
+          {
+            "label": "옥수수",
+            "symbol": "🌽",
+            "color": "#dfc96f"
+          }
+        ],
+        "recipe": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "presentation": {
+        "symbol": "🫓",
+        "detail": "반죽·소스·버섯·옥수수"
+      }
+    },
+    "href": "sharing-pizza/",
+    "engine": "recipe"
+  },
+  {
+    "slug": "rainbow-plate",
+    "title": "한 접시 무지개",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "재료·쌓기",
+    "description": "밥·당근·완두·달걀를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+    "preview": {
+      "engine": "recipe",
+      "variant": "layers",
+      "params": {
+        "dish": "plate",
+        "ingredients": [
+          {
+            "label": "밥",
+            "symbol": "🍚",
+            "color": "#e9dfc8"
+          },
+          {
+            "label": "당근",
+            "symbol": "🥕",
+            "color": "#d29a69"
+          },
+          {
+            "label": "완두",
+            "symbol": "🟢",
+            "color": "#82a783"
+          },
+          {
+            "label": "달걀",
+            "symbol": "🥚",
+            "color": "#e1cb85"
+          }
+        ],
+        "recipe": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "presentation": {
+        "symbol": "🍚",
+        "detail": "밥·당근·완두·달걀"
+      }
+    },
+    "href": "rainbow-plate/",
+    "engine": "recipe"
+  },
+  {
+    "slug": "layer-cake",
+    "title": "차곡차곡 케이크",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "재료·쌓기",
+    "description": "빵·크림·딸기·블루베리를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+    "preview": {
+      "engine": "recipe",
+      "variant": "layers",
+      "params": {
+        "dish": "cake",
+        "ingredients": [
+          {
+            "label": "빵",
+            "symbol": "🍰",
+            "color": "#cba17b"
+          },
+          {
+            "label": "크림",
+            "symbol": "🥛",
+            "color": "#eee5d1"
+          },
+          {
+            "label": "딸기",
+            "symbol": "🍓",
+            "color": "#c47e87"
+          },
+          {
+            "label": "블루베리",
+            "symbol": "🫐",
+            "color": "#979db8"
+          }
+        ],
+        "recipe": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "presentation": {
+        "symbol": "🍰",
+        "detail": "빵·크림·딸기·블루베리"
+      }
+    },
+    "href": "layer-cake/",
+    "engine": "recipe"
+  },
+  {
+    "slug": "gentle-cone",
+    "title": "포근한 아이스크림 콘",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "재료·쌓기",
+    "description": "콘·바닐라·딸기·초록 장식를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+    "preview": {
+      "engine": "recipe",
+      "variant": "layers",
+      "params": {
+        "dish": "cone",
+        "ingredients": [
+          {
+            "label": "콘",
+            "symbol": "🍦",
+            "color": "#c9a57d"
+          },
+          {
+            "label": "바닐라",
+            "symbol": "🥛",
+            "color": "#eee2c6"
+          },
+          {
+            "label": "딸기",
+            "symbol": "🍓",
+            "color": "#cd8b92"
+          },
+          {
+            "label": "초록 장식",
+            "symbol": "🍃",
+            "color": "#86a08a"
+          }
+        ],
+        "recipe": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "presentation": {
+        "symbol": "🍦",
+        "detail": "콘·바닐라·딸기·초록 장식"
+      }
+    },
+    "href": "gentle-cone/",
+    "engine": "recipe"
+  },
+  {
+    "slug": "picnic-sandwich",
+    "title": "소풍 샌드위치 공방",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "재료·쌓기",
+    "description": "빵·잎 채소·토마토·치즈를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+    "preview": {
+      "engine": "recipe",
+      "variant": "layers",
+      "params": {
+        "dish": "sandwich",
+        "ingredients": [
+          {
+            "label": "빵",
+            "symbol": "🍞",
+            "color": "#d5ad7d"
+          },
+          {
+            "label": "잎 채소",
+            "symbol": "🥬",
+            "color": "#8ca788"
+          },
+          {
+            "label": "토마토",
+            "symbol": "🍅",
+            "color": "#bd7866"
+          },
+          {
+            "label": "치즈",
+            "symbol": "🧀",
+            "color": "#e2c77e"
+          }
+        ],
+        "recipe": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "presentation": {
+        "symbol": "🍞",
+        "detail": "빵·잎 채소·토마토·치즈"
+      }
+    },
+    "href": "picnic-sandwich/",
+    "engine": "recipe"
+  },
+  {
+    "slug": "salad-bowl",
+    "title": "아삭한 색 바구니",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "재료·쌓기",
+    "description": "잎 채소·오이·토마토·옥수수를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+    "preview": {
+      "engine": "recipe",
+      "variant": "layers",
+      "params": {
+        "dish": "bowl",
+        "ingredients": [
+          {
+            "label": "잎 채소",
+            "symbol": "🥬",
+            "color": "#88a884"
+          },
+          {
+            "label": "오이",
+            "symbol": "🥒",
+            "color": "#a3b999"
+          },
+          {
+            "label": "토마토",
+            "symbol": "🍅",
+            "color": "#c77b72"
+          },
+          {
+            "label": "옥수수",
+            "symbol": "🌽",
+            "color": "#dfcb88"
+          }
+        ],
+        "recipe": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "presentation": {
+        "symbol": "🥬",
+        "detail": "잎 채소·오이·토마토·옥수수"
+      }
+    },
+    "href": "salad-bowl/",
+    "engine": "recipe"
+  },
+  {
+    "slug": "berry-parfait",
+    "title": "열매빛 층층 컵",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "재료·쌓기",
+    "description": "크림·블루베리·망고·딸기를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+    "preview": {
+      "engine": "recipe",
+      "variant": "layers",
+      "params": {
+        "dish": "cup",
+        "ingredients": [
+          {
+            "label": "크림",
+            "symbol": "🥛",
+            "color": "#eee2cf"
+          },
+          {
+            "label": "블루베리",
+            "symbol": "🫐",
+            "color": "#9298b4"
+          },
+          {
+            "label": "망고",
+            "symbol": "🥭",
+            "color": "#e4ba76"
+          },
+          {
+            "label": "딸기",
+            "symbol": "🍓",
+            "color": "#c77f8d"
+          }
+        ],
+        "recipe": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "presentation": {
+        "symbol": "🥛",
+        "detail": "크림·블루베리·망고·딸기"
+      }
+    },
+    "href": "berry-parfait/",
+    "engine": "recipe"
+  },
+  {
+    "slug": "rice-bowl",
+    "title": "따뜻한 밥그릇 상상",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "재료·쌓기",
+    "description": "밥·완두·당근·김를 주문표 순서로 올려요. 잘못 놓았으면 한 층을 되돌릴 수 있어요.",
+    "preview": {
+      "engine": "recipe",
+      "variant": "layers",
+      "params": {
+        "dish": "bowl",
+        "ingredients": [
+          {
+            "label": "밥",
+            "symbol": "🍚",
+            "color": "#e7deca"
+          },
+          {
+            "label": "완두",
+            "symbol": "🟢",
+            "color": "#86a282"
+          },
+          {
+            "label": "당근",
+            "symbol": "🥕",
+            "color": "#cf9a73"
+          },
+          {
+            "label": "김",
+            "symbol": "◼️",
+            "color": "#677568"
+          }
+        ],
+        "recipe": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "presentation": {
+        "symbol": "🍚",
+        "detail": "밥·완두·당근·김"
+      }
+    },
+    "href": "rice-bowl/",
+    "engine": "recipe"
+  },
+  {
+    "slug": "four-beat-piano",
+    "title": "네 박 건반 메모",
+    "age": "6–9세와 함께",
+    "ageMin": 6,
+    "ageMax": 9,
+    "category": "리듬·작곡",
+    "description": "도·미·라의 네 박 칸을 켜고 꺼 보세요. 직접 한 박씩 넘기며 소리 또는 빛으로 패턴을 살펴봐요.",
+    "preview": {
+      "engine": "rhythm",
+      "variant": "grid",
+      "params": {
+        "tracks": [
+          {
+            "label": "낮은 도",
+            "note": 0
+          },
+          {
+            "label": "미",
+            "note": 2
+          },
+          {
+            "label": "높은 라",
+            "note": 4
+          }
+        ],
+        "timbre": "sine"
+      },
+      "presentation": {
+        "symbol": "🎹",
+        "detail": "세 소리 · 네 박"
+      }
+    },
+    "href": "four-beat-piano/",
+    "engine": "rhythm"
+  },
+  {
+    "slug": "rhythm-weave",
+    "title": "소리 엮는 네 칸",
+    "age": "6–9세와 함께",
+    "ageMin": 6,
+    "ageMax": 9,
+    "category": "리듬·작곡",
+    "description": "바탕·가운데·높은 울림을 네 박 격자에 놓아요. 한 박씩 눌러 겹치는 소리와 쉼을 확인해요.",
+    "preview": {
+      "engine": "rhythm",
+      "variant": "grid",
+      "params": {
+        "tracks": [
+          {
+            "label": "바탕 울림",
+            "note": 0
+          },
+          {
+            "label": "가운데 울림",
+            "note": 2
+          },
+          {
+            "label": "높은 울림",
+            "note": 4
+          }
+        ],
+        "timbre": "triangle"
+      },
+      "presentation": {
+        "symbol": "🎵",
+        "detail": "울림과 쉼의 자리"
+      }
+    },
+    "href": "rhythm-weave/",
+    "engine": "rhythm"
+  },
+  {
+    "slug": "grain-lab",
+    "title": "알갱이 상자",
+    "age": "6–9세와 함께",
+    "ageMin": 6,
+    "ageMax": 9,
+    "category": "조합·탐색",
+    "description": "모래·물·잎의 두 요소를 골라 이 화면에서 정한 조합 그림 세 가지를 찾아요.",
+    "preview": {
+      "engine": "discovery",
+      "variant": "pairs",
+      "params": {
+        "theme": "texture",
+        "tokens": [
+          {
+            "label": "모래",
+            "symbol": "🟤",
+            "color": "#cab18a"
+          },
+          {
+            "label": "물",
+            "symbol": "💧",
+            "color": "#99bdce"
+          },
+          {
+            "label": "잎",
+            "symbol": "🍃",
+            "color": "#9fb58b"
+          }
+        ],
+        "results": [
+          {
+            "pair": "0-1",
+            "label": "촉촉한 모래",
+            "symbol": "🟫",
+            "color": "#b6a080"
+          },
+          {
+            "pair": "0-2",
+            "label": "잎 위의 모래",
+            "symbol": "🍂",
+            "color": "#aeab7b"
+          },
+          {
+            "pair": "1-2",
+            "label": "젖은 잎",
+            "symbol": "🍃",
+            "color": "#729b8c"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "🟤",
+        "detail": "알갱이 상자"
+      }
+    },
+    "href": "grain-lab/",
+    "engine": "discovery"
+  },
+  {
+    "slug": "color-lab",
+    "title": "세 빛깔 연구대",
+    "age": "6–9세와 함께",
+    "ageMin": 6,
+    "ageMax": 9,
+    "category": "조합·탐색",
+    "description": "빨강·노랑·파랑 중 둘을 골라 이 화면에서 정한 세 가지 혼합색을 확인해요.",
+    "preview": {
+      "engine": "discovery",
+      "variant": "pairs",
+      "params": {
+        "theme": "palette",
+        "tokens": [
+          {
+            "label": "빨강",
+            "symbol": "🔴",
+            "color": "#c47e7d"
+          },
+          {
+            "label": "노랑",
+            "symbol": "🟡",
+            "color": "#e4c982"
+          },
+          {
+            "label": "파랑",
+            "symbol": "🔵",
+            "color": "#859fbc"
+          }
+        ],
+        "results": [
+          {
+            "pair": "0-1",
+            "label": "주황빛",
+            "symbol": "🟠",
+            "color": "#d4a374"
+          },
+          {
+            "pair": "0-2",
+            "label": "보랏빛",
+            "symbol": "🟣",
+            "color": "#ae99ba"
+          },
+          {
+            "pair": "1-2",
+            "label": "초록빛",
+            "symbol": "🟢",
+            "color": "#91ad8e"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "🔴",
+        "detail": "세 빛깔 연구대"
+      }
+    },
+    "href": "color-lab/",
+    "engine": "discovery"
+  },
+  {
+    "slug": "light-lab",
+    "title": "빛과 가림막",
+    "age": "6–9세와 함께",
+    "ageMin": 6,
+    "ageMax": 9,
+    "category": "조합·탐색",
+    "description": "빛·투명판·가림판을 두 개씩 골라 단순화한 세 가지 가상 장면을 살펴봐요.",
+    "preview": {
+      "engine": "discovery",
+      "variant": "pairs",
+      "params": {
+        "theme": "light",
+        "tokens": [
+          {
+            "label": "빛",
+            "symbol": "💡",
+            "color": "#e0cd91"
+          },
+          {
+            "label": "투명판",
+            "symbol": "▫️",
+            "color": "#bfd5d6"
+          },
+          {
+            "label": "가림판",
+            "symbol": "◼️",
+            "color": "#839194"
+          }
+        ],
+        "results": [
+          {
+            "pair": "0-1",
+            "label": "빛이 지나는 자리",
+            "symbol": "☀️",
+            "color": "#e3d9af"
+          },
+          {
+            "pair": "0-2",
+            "label": "가려진 자리",
+            "symbol": "◼️",
+            "color": "#85918f"
+          },
+          {
+            "pair": "1-2",
+            "label": "겹친 판",
+            "symbol": "▣",
+            "color": "#a5b6b5"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "💡",
+        "detail": "빛과 가림막"
+      }
+    },
+    "href": "light-lab/",
+    "engine": "discovery"
+  },
+  {
+    "slug": "imagination-lab",
+    "title": "상상 조합 수첩",
+    "age": "6–9세와 함께",
+    "ageMin": 6,
+    "ageMax": 9,
+    "category": "조합·탐색",
+    "description": "구름·별·잎을 둘씩 골라 밤하늘 편지와 바람숲, 반짝잎이라는 상상 조합을 찾아요.",
+    "preview": {
+      "engine": "discovery",
+      "variant": "pairs",
+      "params": {
+        "theme": "imagination",
+        "tokens": [
+          {
+            "label": "구름",
+            "symbol": "☁️",
+            "color": "#bbced7"
+          },
+          {
+            "label": "별",
+            "symbol": "⭐",
+            "color": "#dfca8a"
+          },
+          {
+            "label": "잎",
+            "symbol": "🍃",
+            "color": "#9bb18d"
+          }
+        ],
+        "results": [
+          {
+            "pair": "0-1",
+            "label": "밤하늘 편지",
+            "symbol": "🌌",
+            "color": "#939bb9"
+          },
+          {
+            "pair": "0-2",
+            "label": "바람숲",
+            "symbol": "🌳",
+            "color": "#9db6a3"
+          },
+          {
+            "pair": "1-2",
+            "label": "반짝잎",
+            "symbol": "🍃",
+            "color": "#b3bc8b"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "☁️",
+        "detail": "상상 조합 수첩"
+      }
+    },
+    "href": "imagination-lab/",
+    "engine": "discovery"
+  },
+  {
+    "slug": "little-flipbook",
+    "title": "움직임 네 장",
+    "age": "6–9세와 함께",
+    "ageMin": 6,
+    "ageMax": 9,
+    "category": "프레임·이야기",
+    "description": "아홉 자리 중 연의 위치를 네 장면에 정해요. 장면을 하나씩 넘겨 위치가 달라지는 모습을 비교해요.",
+    "preview": {
+      "engine": "animation",
+      "variant": "frames",
+      "params": {
+        "symbol": "🪁",
+        "frameCount": 4
+      },
+      "presentation": {
+        "symbol": "🪁",
+        "detail": "네 장면 · 위치 바꾸기"
+      }
+    },
+    "href": "little-flipbook/",
+    "engine": "animation"
+  },
+  {
+    "slug": "english-weather",
+    "title": "영어 날씨 쪽지",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "낱말·읽기",
+    "description": "rain·snow·cloud 그림을 보고 같은 낱말을 골라요.",
+    "preview": {
+      "engine": "words",
+      "variant": "match",
+      "params": {
+        "cards": [
+          {
+            "word": "rain",
+            "symbol": "🌧️"
+          },
+          {
+            "word": "snow",
+            "symbol": "❄️"
+          },
+          {
+            "word": "cloud",
+            "symbol": "☁️"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "🌧️",
+        "detail": "rain · snow · cloud"
+      }
+    },
+    "href": "english-weather/",
+    "engine": "words"
+  },
+  {
+    "slug": "word-sounds",
+    "title": "그림 낱말 동산",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "낱말·읽기",
+    "description": "곰·사슴·여우 그림을 보고 같은 낱말을 골라요.",
+    "preview": {
+      "engine": "words",
+      "variant": "match",
+      "params": {
+        "cards": [
+          {
+            "word": "곰",
+            "symbol": "🐻"
+          },
+          {
+            "word": "사슴",
+            "symbol": "🦌"
+          },
+          {
+            "word": "여우",
+            "symbol": "🦊"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "🐻",
+        "detail": "곰 · 사슴 · 여우"
+      }
+    },
+    "href": "word-sounds/",
+    "engine": "words"
+  },
+  {
+    "slug": "english-home",
+    "title": "영어 집 안 산책",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "낱말·읽기",
+    "description": "chair·bed·door 그림을 보고 같은 낱말을 골라요.",
+    "preview": {
+      "engine": "words",
+      "variant": "match",
+      "params": {
+        "cards": [
+          {
+            "word": "chair",
+            "symbol": "🪑"
+          },
+          {
+            "word": "bed",
+            "symbol": "🛏️"
+          },
+          {
+            "word": "door",
+            "symbol": "🚪"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "🪑",
+        "detail": "chair · bed · door"
+      }
+    },
+    "href": "english-home/",
+    "engine": "words"
+  },
+  {
+    "slug": "english-things",
+    "title": "영어 소품 한 칸",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "낱말·읽기",
+    "description": "key·cup·bell 그림을 보고 같은 낱말을 골라요.",
+    "preview": {
+      "engine": "words",
+      "variant": "match",
+      "params": {
+        "cards": [
+          {
+            "word": "key",
+            "symbol": "🔑"
+          },
+          {
+            "word": "cup",
+            "symbol": "☕"
+          },
+          {
+            "word": "bell",
+            "symbol": "🔔"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "🔑",
+        "detail": "key · cup · bell"
+      }
+    },
+    "href": "english-things/",
+    "engine": "words"
+  },
+  {
+    "slug": "word-clothes",
+    "title": "차림 낱말 수첩",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "낱말·읽기",
+    "description": "양말·장갑·목도리 그림을 보고 같은 낱말을 골라요.",
+    "preview": {
+      "engine": "words",
+      "variant": "match",
+      "params": {
+        "cards": [
+          {
+            "word": "양말",
+            "symbol": "🧦"
+          },
+          {
+            "word": "장갑",
+            "symbol": "🧤"
+          },
+          {
+            "word": "목도리",
+            "symbol": "🧣"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "🧦",
+        "detail": "양말 · 장갑 · 목도리"
+      }
+    },
+    "href": "word-clothes/",
+    "engine": "words"
+  },
+  {
+    "slug": "letter-pictures",
+    "title": "알파벳 그림 첫 장",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "낱말·읽기",
+    "description": "사과·공·고양이 그림을 보고 영어 이름 apple·ball·cat의 첫 글자 A·B·C를 골라요.",
+    "preview": {
+      "engine": "words",
+      "variant": "match",
+      "params": {
+        "cards": [
+          {
+            "word": "A",
+            "symbol": "🍎",
+            "hint": "apple"
+          },
+          {
+            "word": "B",
+            "symbol": "⚽",
+            "hint": "ball"
+          },
+          {
+            "word": "C",
+            "symbol": "🐈",
+            "hint": "cat"
+          }
+        ],
+        "mode": "initial"
+      },
+      "presentation": {
+        "symbol": "🍎",
+        "detail": "A · B · C"
+      }
+    },
+    "href": "letter-pictures/",
+    "engine": "words"
+  },
+  {
+    "slug": "doll-rest",
+    "title": "인형의 낮잠 준비",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "생활·순서",
+    "description": "인형이 쉴 자리와 천을 준비하고 편히 눕히는 네 걸음을 이어 봐요.",
+    "preview": {
+      "engine": "routine",
+      "variant": "order",
+      "params": {
+        "steps": [
+          "인형의 쉬는 자리를 살펴봐요",
+          "부드러운 천을 놓아요",
+          "인형을 편히 눕혀요",
+          "조용히 쉬게 해요"
+        ]
+      },
+      "presentation": {
+        "symbol": "🧸",
+        "detail": "인형의 낮잠 준비"
+      }
+    },
+    "href": "doll-rest/",
+    "engine": "routine"
+  },
+  {
+    "slug": "doll-play",
+    "title": "인형과 놀이 준비",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "생활·순서",
+    "description": "장난감 고르기부터 인형과 놀고 정리하기까지 순서 버튼을 골라요.",
+    "preview": {
+      "engine": "routine",
+      "variant": "order",
+      "params": {
+        "steps": [
+          "함께 놀 장난감을 골라요",
+          "놀이 자리를 정해요",
+          "인형과 함께 놀아요",
+          "장난감을 정리해요"
+        ]
+      },
+      "presentation": {
+        "symbol": "🪀",
+        "detail": "인형과 놀이 준비"
+      }
+    },
+    "href": "doll-play/",
+    "engine": "routine"
+  },
+  {
+    "slug": "friend-greeting",
+    "title": "작은 친구의 하루",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "생활·순서",
+    "description": "인사·놀이·정리·휴식의 한 가지 흐름을 편안하게 이어 봐요.",
+    "preview": {
+      "engine": "routine",
+      "variant": "order",
+      "params": {
+        "steps": [
+          "친구에게 인사해요",
+          "함께 놀 것을 골라요",
+          "놀이 뒤에 정리해요",
+          "쉬는 시간을 가져요"
+        ]
+      },
+      "presentation": {
+        "symbol": "🐧",
+        "detail": "작은 친구의 하루"
+      }
+    },
+    "href": "friend-greeting/",
+    "engine": "routine"
+  },
+  {
+    "slug": "pet-help",
+    "title": "동물 친구에게 도움을",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "생활·순서",
+    "description": "동물을 직접 치료하지 않고 어른에게 도움을 요청하고 편히 쉴 공간을 생각해요.",
+    "preview": {
+      "engine": "routine",
+      "variant": "order",
+      "params": {
+        "steps": [
+          "어른에게 함께 살펴보자고 말해요",
+          "동물과 안전한 거리를 두어요",
+          "어른이 쉬는 공간을 마련해요",
+          "조용한 곳에서 지켜봐요"
+        ]
+      },
+      "presentation": {
+        "symbol": "🐾",
+        "detail": "동물 친구에게 도움을"
+      }
+    },
+    "href": "pet-help/",
+    "engine": "routine"
+  },
+  {
+    "slug": "reading-nook",
+    "title": "책 읽는 모서리",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "공간·소품 창작",
+    "description": "책꽂이·의자·등·시계를 놓아 책 읽는 방의 작은 모서리를 구성해요.",
+    "preview": {
+      "engine": "scene",
+      "variant": "compose",
+      "params": {
+        "backdrop": "room",
+        "props": [
+          {
+            "label": "책꽂이",
+            "symbol": "📚"
+          },
+          {
+            "label": "의자",
+            "symbol": "🪑"
+          },
+          {
+            "label": "등",
+            "symbol": "💡"
+          },
+          {
+            "label": "시계",
+            "symbol": "🕰️"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "📚",
+        "detail": "책 읽는 모서리"
+      }
+    },
+    "href": "reading-nook/",
+    "engine": "scene"
+  },
+  {
+    "slug": "camp-corner",
+    "title": "숲속 소풍 자리",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "공간·소품 창작",
+    "description": "텐트·나무·가방·도시락 소품으로 숲속 소풍 장면을 꾸며요. 불 피우기는 없어요.",
+    "preview": {
+      "engine": "scene",
+      "variant": "compose",
+      "params": {
+        "backdrop": "garden",
+        "props": [
+          {
+            "label": "텐트",
+            "symbol": "⛺"
+          },
+          {
+            "label": "나무",
+            "symbol": "🌲"
+          },
+          {
+            "label": "가방",
+            "symbol": "🎒"
+          },
+          {
+            "label": "도시락",
+            "symbol": "🍱"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "⛺",
+        "detail": "숲속 소풍 자리"
+      }
+    },
+    "href": "camp-corner/",
+    "engine": "scene"
+  },
+  {
+    "slug": "bouquet-corner",
+    "title": "마음을 담는 꽃다발",
+    "age": "5–8세와 함께",
+    "ageMin": 5,
+    "ageMax": 8,
+    "category": "공간·소품 창작",
+    "description": "두 색의 꽃과 잎·리본을 여섯 자리에 놓아 한 장의 꽃다발 구상을 만들어요.",
+    "preview": {
+      "engine": "scene",
+      "variant": "compose",
+      "params": {
+        "backdrop": "studio",
+        "props": [
+          {
+            "label": "노란 꽃",
+            "symbol": "🌼"
+          },
+          {
+            "label": "분홍 꽃",
+            "symbol": "🌸"
+          },
+          {
+            "label": "잎",
+            "symbol": "🍃"
+          },
+          {
+            "label": "리본",
+            "symbol": "🎀"
+          }
+        ]
+      },
+      "presentation": {
+        "symbol": "🌼",
+        "detail": "마음을 담는 꽃다발"
+      }
+    },
+    "href": "bouquet-corner/",
+    "engine": "scene"
   }
 ];

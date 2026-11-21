@@ -1,3 +1,4 @@
+import {notesAt} from './engines/rhythm.js';
 import {create,dispatch,progress} from './core/model.js';
 import {validateDefinition} from './core/definition.js';
 import {createStore} from './core/storage.js';
@@ -33,7 +34,8 @@ export function mount(def){
  function send(event){
   if(!state)return;
   const before=state;const result=dispatch(state,event,def);state=result.state;remember();
-  if(event.type==='play'&&before.phase==='playing'&&Number.isInteger(event.value)&&event.value>=0&&event.value<=4)play(event.value,def.params.timbre);
+  if(event.type==='beat'&&def.engine==='rhythm'&&before.phase==='playing'){for(const note of notesAt(before.data,def,before.round))play(note,def.params.timbre);}
+  else if(event.type==='play'&&before.phase==='playing'&&Number.isInteger(event.value)&&event.value>=0&&event.value<=4)play(event.value,def.params.timbre);
   else if(state.phase==='feedback'&&before.phase==='playing')play(2,'sine');
   const focused=document.activeElement;
   const focusId=before.phase!==state.phase?focusDefault():null;

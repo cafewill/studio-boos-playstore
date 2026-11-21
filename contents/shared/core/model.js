@@ -1,3 +1,7 @@
+import * as recipe from '../engines/recipe.js';
+import * as rhythm from '../engines/rhythm.js';
+import * as discovery from '../engines/discovery.js';
+import * as animation from '../engines/animation.js';
 import * as choice from '../engines/choice.js';
 import * as drawing from '../engines/drawing.js';
 import * as assembly from '../engines/assembly.js';
@@ -10,7 +14,7 @@ import * as routine from '../engines/routine.js';
 import * as scene from '../engines/scene.js';
 import {integer} from './utils.js';
 export const ENGINE_VERSION=1;
-export const ENGINES=Object.freeze({choice,drawing,assembly,clock,sound,commands,feelings,words,routine,scene});
+export const ENGINES=Object.freeze({choice,drawing,assembly,clock,sound,commands,feelings,words,routine,scene,recipe,rhythm,discovery,animation});
 export function create(def,seed=Date.now()>>>0){return{version:2,contentId:def.slug,definitionVersion:def.definitionVersion,engineVersion:ENGINE_VERSION,seed:seed>>>0,phase:'playing',previous:null,round:0,data:ENGINES[def.engine].create(def,seed>>>0)};}
 export function dispatch(state,event,def){
  if(!event||typeof event.type!=='string'||state.contentId!==def.slug||state.definitionVersion!==def.definitionVersion||state.engineVersion!==ENGINE_VERSION)return{state};
