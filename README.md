@@ -22,9 +22,11 @@ Google Play 스토어의 아이들용 게임·교육·창작·이야기 콘텐�
 3. [가이드 목차](docs/guide/guide.md): 조사·개발·아동 안전 기준
 4. [초기 계획](docs/plan/20261121114958-foundation-plan.md): 다음 작업과 완료 기준
 
-대한민국 차트 조사를 고유 앱 322개로 확장했고 적합 후보 60개를 [배치 계획](docs/plan/20261121140822-batch60-plan.md)에 따라 구성했다. 현재는 후보별 MVP 정의 60개·공통 엔진 7개다. 문항·그림 가이드·테마 변형이 포함되므로 독립 메커닉 60개나 최종 완료 60개를 뜻하지 않는다.
+대한민국 차트 조사를 고유 앱 322개로 확장했고 적합 후보 60개를 [배치 계획](docs/plan/20261121140822-batch60-plan.md)에 따라 구성했다. 기존 60개에 조건부 후보를 좁은 독립 활동으로 제한한 40개를 추가해 현재는 후보별 MVP 정의 100개·공통 엔진 10개다. 원본 적합 후보 판정 60개는 유지한다. 문항·그림 가이드·테마 변형이 포함되므로 독립 메커닉 100개나 최종 완료 100개를 뜻하지 않는다.
 
 [공통 구조 가이드](docs/guide/guide-content-architecture.md)에 따라 등록 레지스트리·단일 정의 원본·공통 셸·엔진·저장 경계를 사용한다. 전체 구조·로직 검증을 통과했고 브라우저·실제 기기 검증은 대기 중이다.
+
+[확장 계획](docs/plan/20261121165203-expansion40-plan.md)과 [40개 범위 검토](docs/review/20261121165203-expansion40-review.md)에 추가 활동·출처·제외 조건을 기록했다.
 
 ### 🚀 로컬 실행
 
@@ -46,7 +48,7 @@ node tools/content/generate.mjs
 node tools/check-all.mjs
 ```
 
-정본은 `data/implementation/registry.json`에 등록한 배치이며 현재 `batch60.json`이다. 생성 파일을 직접 편집하지 않는다. 새 배치는 같은 규약으로 등록하며 검사 개수는 레지스트리에서 계산한다.
+정본은 `data/implementation/registry.json`에 등록한 배치이며 현재 `batch60.json`과 `expansion40.json`이다. 생성 파일을 직접 편집하지 않는다. 새 배치는 같은 규약으로 등록하며 검사 개수는 레지스트리에서 계산한다.
 
 ## 📌 요약 정보
 
@@ -54,7 +56,7 @@ node tools/check-all.mjs
 |---|---|
 | 조사 대상 | 대한민국 Google Play 스토어 우선, 다른 국가는 명시하여 비교 |
 | 연령 설계 | 5세 이하·6–8세·9–12세를 참고하되 콘텐츠별 구체적 대상 지정 |
-| 콘텐츠 경로 | `contents/{slug}/` 정의·진입·설명 60개, 공통 코드 `contents/shared/` |
+| 콘텐츠 경로 | `contents/{slug}/` 정의·진입·설명 100개, 공통 코드 `contents/shared/` |
 | 기본 구현 | HTML/CSS + Vanilla JavaScript ES Modules, DOM 또는 Canvas |
 | 기본 운영 | 광고·결제·계정·추적·외부 통신 없음 |
 | 참고 프로젝트 리뷰 | [검토 기록](docs/review/20261121114958-reference-project-review.md) |

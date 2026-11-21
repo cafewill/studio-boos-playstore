@@ -1,1 +1,7 @@
-{"schemaVersion":1,"batches":["batch60.json"]}
+{
+  "schemaVersion": 1,
+  "batches": [
+    "batch60.json",
+    "expansion40.json"
+  ]
+}

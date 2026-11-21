@@ -23,6 +23,9 @@ try{
   await b.tap('#start');await b.tap('#rest');assert.ok(await b.evaluate("!!document.querySelector('#resume')"));await b.tap('#resume');
   const initial=create(d,7);
   for(let r=0;r<d.roundCount;r++){
+   if(d.engine==='words')await tapAction('word',String(r));
+   if(d.engine==='routine')for(let i=0;i<d.params.steps.length;i++)await tapAction('step',String(i));
+   if(d.engine==='scene'){for(let i=0;i<3;i++){await tapAction('prop',String(i));await tapAction('place',String(i));}await tapAction('finish');}
    if(d.engine==='choice'){const correct=await b.evaluate("document.querySelector('#target').dataset.correct");await b.tap(`#choice-${correct}`);}
    if(d.engine==='drawing'){await tapAction('stamp',4);await tapAction('finish');}
    if(d.engine==='assembly'){

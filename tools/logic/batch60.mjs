@@ -10,6 +10,25 @@ const batch=loadRegistry();
 let sessions=0,rounds=0;
 function event(s,e,d){const result=dispatch(s,e,d);assert.ok(restore(result.state,d),'전이 후 저장 상태 유효');return result.state;}
 function finishRound(s,d){
+ if(d.engine==='words'){
+  const wrong=s.data.options[s.round].find(v=>v!==String(s.round));assert.deepEqual(event(s,{type:'word',value:wrong},d),s);
+  assert.deepEqual(event(s,{type:'word',value:99},d),s);
+  return event(s,{type:'word',value:String(s.round)},d);
+ }
+ if(d.engine==='routine'){
+  assert.deepEqual(event(s,{type:'step',value:'1'},d),s);
+  s=event(s,{type:'step',value:'0'},d);s=event(s,{type:'routine-reset'},d);assert.deepEqual(s.data.paths[s.round],[]);
+  for(let i=0;i<d.params.steps.length;i++)s=event(s,{type:'step',value:String(i)},d);return s;
+ }
+ if(d.engine==='scene'){
+  assert.equal(event(s,{type:'finish'},d).phase,'playing');
+  assert.deepEqual(event(s,{type:'place',value:'99'},d),s);assert.deepEqual(event(s,{type:'prop',value:'-1'},d),s);
+  s=event(s,{type:'place',value:'0'},d);s=event(s,{type:'scene-clear'},d);assert.ok(s.data.boards[s.round].every(v=>v===null));
+  for(let i=0;i<3;i++)s=event(s,{type:'place',value:String(i)},d);
+  assert.equal(event(s,{type:'finish'},d).phase,'playing','같은 소품 반복은 서로 다른 소품 세 개를 대신하지 않음');
+  for(let i=0;i<3;i++){s=event(s,{type:'prop',value:String(i)},d);s=event(s,{type:'place',value:String(i)},d);}
+  return event(s,{type:'finish'},d);
+ }
  if(d.engine==='choice'){
   const q=s.data.rounds[s.round];
   assert.equal(new Set(q.options).size,q.options.length);assert.equal(q.options.filter(v=>v===q.correct).length,1);
@@ -67,9 +86,51 @@ createStore(shape,backend).clear();
 values.set('shape-garden:v1:session',JSON.stringify(oldCreate(7)));values.set('shape-garden:v1:sound','on');const migratedStore=createStore(shape,backend);assert.ok(migratedStore.load());assert.equal(migratedStore.sound(),true);migratedStore.setSound(false);assert.equal(migratedStore.sound(),false);migratedStore.clear();assert.equal(values.get('shape-garden:v1:session'),undefined);assert.equal(values.get('unrelated:v1:save'),'keep');
 // 범위 밖 좌표·잘못된 입력은 진행에 반영하지 않는다.
 const draw=batch.items.find(i=>i.content.engine==='drawing').content;let d=create(draw,7);assert.deepEqual(event(d,{type:'stroke',points:[[Infinity,0]]},draw),d);assert.deepEqual(event(d,{type:'stroke',points:[[-1,0]]},draw),d);assert.deepEqual(event(d,{type:'stamp',cell:99},draw),d);
-console.log(`통과: 콘텐츠${batch.items.length}·${sessions}개 시드 세션·${rounds}개 문항/작업, 7엔진의 완료·오답·중단·복원·저장 격리·차단·v1 마이그레이션·비정상 입력`);
+console.log(`통과: 콘텐츠${batch.items.length}·${sessions}개 시드 세션·${rounds}개 문항/작업, ${new Set(batch.items.map(i=>i.content.engine)).size}엔진의 완료·오답·중단·복원·저장 격리·차단·v1 마이그레이션·비정상 입력`);
 const {stage}=await import('../../contents/shared/ui/stage.js');
 for(const {content:d}of batch.items){const s=create(d,7),html=stage(s,d);assert.match(html,/id="question"/);assert.ok(!html.includes('undefined'));assert.ok(html.includes('button'));}
 const feeling=batch.items.find(i=>i.content.engine==='feelings').content;
 const changed=structuredClone(feeling);changed.params.scenes[0].title='<script>alert(1)</script>';assert.ok(stage(create(changed,7),changed).includes('&lt;script&gt;'));assert.ok(!stage(create(changed,7),changed).includes('<script>'));
 console.log('표시 어댑터 통과: 등록 콘텐츠 전체 초기 화면 생성·상태 텍스트·장면 문구 이스케이프 (브라우저 검증과 별도)');
+
+// 신규 엔진은 조작 이력·선택 범위·완료 조건이 손상된 저장을 복구하지 않는다.
+for(const engine of ['words','routine','scene']){
+ const def=batch.items.find(i=>i.content.engine===engine)?.content;if(!def)continue;
+ const state=create(def,7),bad=structuredClone(state);
+ if(engine==='words')bad.data.options[0]=['99'];
+ if(engine==='routine')bad.data.paths[0]=[1];
+ if(engine==='scene')bad.data.finished[0]=true;
+ assert.equal(restore(bad,def),null,`${engine} 손상 저장 거부`);
+}
+console.log('확장 엔진 통과: 낱말 오답·생활 순서 초기화·장면 소품 선택/배치/완료·손상 저장 거부');
+
+const {validateDefinition}=await import('../../contents/shared/core/definition.js');
+for(const [engine,corrupt] of [
+ ['words',d=>{d.params.cards[1].word=d.params.cards[0].word;}],
+ ['routine',d=>{d.params.steps=['한 걸음','한 걸음','다음 걸음'];}],
+ ['scene',d=>{d.params.backdrop='unknown';}]
+]){
+ const def=batch.items.find(i=>i.content.engine===engine)?.content;if(!def)continue;
+ const bad=structuredClone(def);corrupt(bad);assert.throws(()=>validateDefinition(bad));
+}
+for(const engine of ['words','routine','scene']){
+ const def=batch.items.find(i=>i.content.engine===engine)?.content;if(!def)continue;
+ const changed=structuredClone(def),text='<img src=x onerror=alert(1)>';
+ if(engine==='words')changed.params.cards[0].word=text;
+ if(engine==='routine')changed.params.steps[0]=text;
+ if(engine==='scene')changed.params.props[0].label=text;
+ const html=stage(create(changed,7),changed);assert.ok(!html.includes(text));assert.ok(html.includes('&lt;img'));
+}
+console.log('확장 계약 통과: 중복 낱말·중복 순서·미등록 배경 거부, 신규 표시 3종 사용자 문자열 이스케이프');
+
+const {welcomeArt}=await import('../../contents/shared/ui/welcome.js');
+for(const {content:def} of batch.items){const html=welcomeArt(def);assert.ok(html.length>20&&!html.includes('undefined'));}
+for(const engine of ['words','routine','scene']){
+ const original=batch.items.find(i=>i.content.engine===engine)?.content;if(!original)continue;
+ const d=structuredClone(original),text='<script>bad()</script>';
+ if(engine==='words')d.params.cards[0].word=text;
+ if(engine==='routine')d.params.steps[0]=text;
+ if(engine==='scene')d.params.props[0].symbol=text;
+ assert.ok(welcomeArt(d).includes('&lt;script&gt;'));assert.ok(!welcomeArt(d).includes(text));
+}
+console.log('시작 미리보기 통과: 전체 정의·신규 3유형 문자열 이스케이프');

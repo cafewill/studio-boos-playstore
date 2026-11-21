@@ -4,6 +4,10 @@ export function illustration(engine, variant=0){
  const accent=colors[variant%colors.length];
  const flower=(x,y,c)=>`<g transform="translate(${x} ${y})"><path d="M0 0V65M0 40Q-32 14-30 38Q-10 56 0 48M0 30Q28 9 30 30Q12 46 0 40" fill="#5d997c" stroke="#5d997c" stroke-width="5"/><g fill="${c}"><ellipse rx="17" ry="32"/><ellipse rx="17" ry="32" transform="rotate(60)"/><ellipse rx="17" ry="32" transform="rotate(120)"/></g><circle r="12" fill="#fff2ba"/></g>`;
  const art={
+ words:`<path d="M65 55Q116 35 170 55Q224 35 275 55V170Q220 150 170 170Q115 150 65 170Z" fill="#fffcf4" stroke="#8ca5ba" stroke-width="4"/><path d="M170 55v115M195 85h50m-50 24h40m-40 24h46" stroke="#8ca5ba" stroke-width="5" stroke-linecap="round"/>${flower(118,95,accent)}`,
+ routine:`<path d="M65 160h74v-54h75V55h55" fill="none" stroke="#fffaf0" stroke-width="25" stroke-linejoin="round"/>${[ [65,160],[139,106],[214,55] ].map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="22" fill="${colors[(variant+i)%4]}"/><path d="m${x-9} ${y} 6 7 13-15" fill="none" stroke="#385a49" stroke-width="3"/>`).join('')}`,
+ scene:`<path d="m58 94 112-65 112 65v93H58Z" fill="#fffaf0"/><rect x="91" y="85" width="52" height="46" rx="6" fill="#b9d5e0"/><path d="M117 85v46M91 108h52" stroke="#fff" stroke-width="4"/><rect x="179" y="132" width="55" height="38" rx="9" fill="${accent}"/><path d="M180 170v13m53-13v13" stroke="#6d8972" stroke-width="6"/>${flower(260,116,'#e5bd69')}`,
+
  garden:`${flower(100,102,accent)}${flower(174,82,colors[(variant+1)%4])}${flower(244,116,colors[(variant+2)%4])}`,
  drawing:`<rect x="88" y="35" width="155" height="135" rx="14" fill="#fffcf4" transform="rotate(-8 165 100)"/>${flower(155,95,accent)}<path d="m225 159 42-100 16 7-42 100-16 15Z" fill="#637fbc"/><path d="m225 159 16 7-16 15Z" fill="#d1a580"/>`,
  assembly:`<rect x="62" y="116" width="74" height="64" rx="12" fill="#8bb3a6"/><rect x="143" y="116" width="69" height="64" rx="12" fill="${accent}"/><path d="m142 108 35-60 37 60Z" fill="#e8bc68"/><rect x="101" y="40" width="42" height="42" rx="10" fill="#9db9df" transform="rotate(-13 122 61)"/><circle cx="248" cy="151" r="29" fill="#b6a9d5"/>`,

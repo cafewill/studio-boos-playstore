@@ -14,10 +14,18 @@ const eligible=new Map();
 for(const sourceBatch of batch.batches){
  assert.ok(fs.existsSync(path.join(root,sourceBatch.reviewDocument)));assert.ok(fs.existsSync(path.join(root,sourceBatch.planDocument)));
  const survey=JSON.parse(fs.readFileSync(path.join(root,'data/store',sourceBatch.sourceSnapshot),'utf8'));
- const available=new Map(survey.apps.filter(a=>a.assessment.status==='적합 후보').map(a=>[a.researchId,a]));
- const selected=sourceBatch.selectedCandidateIds??[...available.keys()];
+ const available=new Map(survey.apps.map(a=>[a.researchId,a]));
+ const originallyEligible=survey.apps.filter(a=>a.assessment.status==='적합 후보').map(a=>a.researchId);
+ const selected=sourceBatch.selectedCandidateIds??originallyEligible;
  assert.deepEqual(new Set(sourceBatch.items.map(i=>i.candidateId)),new Set(selected));
- for(const item of sourceBatch.items){assert.ok(available.has(item.candidateId));assert.equal(item.sourceAppId,available.get(item.candidateId).appId);eligible.set(item.sourceAppId,available.get(item.candidateId));}
+ for(const item of sourceBatch.items){assert.ok(available.has(item.candidateId));
+  const original=available.get(item.candidateId);
+  if(original.assessment.status!=='적합 후보'){
+   const r=item.scopeReview;assert.equal(original.assessment.status,'조건부');assert.equal(r?.decision,'bounded-prototype');assert.equal(r.originalStatus,'조건부');
+   for(const key of ['acceptedScope','excluded','basis','sourceScope','evidenceExcerpt'])assert.ok(typeof r[key]==='string'&&r[key].trim(),`범위 검토 누락: ${item.candidateId}/${key}`);
+   assert.equal(r.sourceScope,original.assessment.independentScope);assert.equal(r.acceptedScope,item.content.objective);assert.ok(fs.readFileSync(path.join(root,sourceBatch.reviewDocument),'utf8').includes(item.candidateId));
+  }
+ assert.equal(item.sourceAppId,available.get(item.candidateId).appId);eligible.set(item.sourceAppId,available.get(item.candidateId));}
 }
 assert.equal(CONTENTS.length,batch.items.length);
 const contentDirs=fs.readdirSync(path.join(root,'contents'),{withFileTypes:true}).filter(e=>e.isDirectory()&&e.name!=='shared').map(e=>e.name);assert.deepEqual(new Set(contentDirs),new Set(batch.items.map(i=>i.content.slug)),'미등록·누락 콘텐츠 디렉터리');
