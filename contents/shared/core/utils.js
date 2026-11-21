@@ -12,3 +12,5 @@ export const integer = (n,min,max) => Number.isInteger(n)&&n>=min&&n<=max;
 export const SHAPES = ['circle','square','triangle'];
 export const NAMES = {circle:'동그라미',square:'네모',triangle:'세모',leaf:'잎',flower:'꽃',blank:'빈칸'};
 export const COLORS = [{id:'green',name:'초록',hex:'#477a53'},{id:'blue',name:'파랑',hex:'#456f99'},{id:'orange',name:'주황',hex:'#b86335'},{id:'purple',name:'보라',hex:'#83628e'},{id:'yellow',name:'노랑',hex:'#b39132'}];
+// 버튼의 문자열 인덱스만 허용한다. null·빈 문자열·지수 표기 등을 숫자로 강제 변환하지 않는다.
+export const selectionIndex=(value,max)=>typeof value==='string'&&/^(0|[1-9][0-9]*)$/.test(value)&&integer(Number(value),0,max)?Number(value):null;

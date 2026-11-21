@@ -10,6 +10,25 @@ const batch=loadRegistry();
 let sessions=0,rounds=0;
 function event(s,e,d){const result=dispatch(s,e,d);assert.ok(restore(result.state,d),'전이 후 저장 상태 유효');return result.state;}
 function finishRound(s,d){
+ if(d.engine==='recipe'){
+  assert.equal(event(s,{type:'finish'},d).phase,'playing');
+  for(const index of d.params.recipe)s=event(s,{type:'ingredient',value:String(index)},d);
+  return event(s,{type:'finish'},d);
+ }
+ if(d.engine==='rhythm'){
+  for(const index of [0,5,10])s=event(s,{type:'rhythm-toggle',value:String(index)},d);
+  for(let i=0;i<4;i++)s=event(s,{type:'beat'},d);
+  return event(s,{type:'finish'},d);
+ }
+ if(d.engine==='discovery'){
+  for(const pair of [[0,1],[0,2],[1,2]])for(const index of pair)s=event(s,{type:'token',value:String(index)},d);
+  return event(s,{type:'finish'},d);
+ }
+ if(d.engine==='animation'){
+  for(let i=0;i<4;i++){s=event(s,{type:'frame-show',value:String(i)},d);s=event(s,{type:'frame-place',value:String(i*2)},d);}
+  for(let i=0;i<4;i++)s=event(s,{type:'frame-show',value:String(i)},d);
+  return event(s,{type:'finish'},d);
+ }
  if(d.engine==='words'){
   const wrong=s.data.options[s.round].find(v=>v!==String(s.round));assert.deepEqual(event(s,{type:'word',value:wrong},d),s);
   assert.deepEqual(event(s,{type:'word',value:99},d),s);
@@ -147,4 +166,4 @@ for(const {content:def}of batch.items){
 }
 const drawingPreviews=batch.items.filter(i=>i.content.engine==='drawing').map(i=>activityArtwork(i.content));
 assert.equal(new Set(drawingPreviews).size,17,'색뿐 아니라 안내선이 다름');
-console.log('소개·그림 계약 통과: 100개 소개 대응·17종 안내선·카드/시작 화면 그림 일치');
+console.log(`소개·그림 계약 통과: ${batch.items.length}개 소개 대응·17종 안내선·카드/시작 화면 그림 일치`);

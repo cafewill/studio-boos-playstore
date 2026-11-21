@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "batches": [
     "batch60.json",
-    "expansion40.json"
+    "expansion40.json",
+    "expansion30.json"
   ]
 }

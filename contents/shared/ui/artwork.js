@@ -1,3 +1,4 @@
+import {expansionArtwork} from './expansion-artwork.js';
 import {escape,glyph} from './graphics.js';
 // 직접 작성한 선 그림. 미술 카드와 실제 그리기 안내선이 같은 정본을 쓴다.
 export const DRAWING_PATHS=Object.freeze({
@@ -22,10 +23,11 @@ export const DRAWING_PATHS=Object.freeze({
 const text=(x,y,value,size=24)=>`<text x="${x}" y="${y}" text-anchor="middle" font-size="${size}" fill="#294d43" font-family="system-ui,sans-serif">${escape(value)}</text>`;
 const card=(x,y,w,h,fill='#fffaf0')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="${fill}"/>`;
 export function activityArtwork(def){
+ if(['recipe','rhythm','discovery','animation'].includes(def.engine))return expansionArtwork(def);
  const p=def.params,e=def.engine,v=def.variant,presentation=def.presentation??{symbol:'',detail:def.objective??''};
  let art='';
  if(e==='drawing')art=`${card(40,15,260,190)}<g fill="none" stroke="#638ba4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">${DRAWING_PATHS[p.template].map(d=>`<path d="${d}"/>`).join('')}</g><path d="m265 180 27-80 10 4-27 80-12 10Z" fill="#bd7956"/>`;
- if(e==='words')art=`${card(35,25,125,165,'#fdf7e7')}${card(179,50,130,115,'#dce9e7')}${text(97,125,p.cards[0].symbol,65)}${text(244,115,p.cards[0].word,27)}${text(170,197,p.cards.slice(1).map(c=>c.word).join(' · '),16)}`;
+ if(e==='words')art=`${card(35,25,125,165,'#fdf7e7')}${card(179,50,130,115,'#dce9e7')}${text(97,125,p.cards[0].symbol,65)}${text(244,115,p.cards[0].word,27)}${p.cards[0].hint?text(244,145,p.cards[0].hint,16):''}${text(170,197,p.cards.slice(1).map(c=>c.word).join(' · '),16)}`;
  if(e==='routine')art=`<path d="M62 146H170V85H280" fill="none" stroke="#c1d3bd" stroke-width="18" stroke-linejoin="round"/>${text(63,124,presentation.symbol,45)}${card(123,35,93,52)}${text(170,70,'차근차근',15)}${card(210,123,110,55)}${text(265,157,presentation.detail,16)}${text(170,207,p.steps[0].slice(0,20),14)}`;
  if(e==='scene'){
  const surfaces={room:'#dce7df',garden:'#c6dab5',table:'#e9d5b8',studio:'#e4ddeb'};
