@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+<title>확장 40개 독립 활동 검토</title>
+<script>
+/* 첫 페인트 전에 저장된 테마·컬러 스킨·글자 크기를 적용해 깜빡임을 막는다. 저장소 접근 실패는 무시한다. */
+(function(){try{var r=document.documentElement,t=localStorage.getItem('boos-guide-theme');
+if(t==='light'||t==='dark')r.setAttribute('data-theme',t);
+var k=localStorage.getItem('boos-guide-skin');
+if(['spring','summer','autumn','winter'].indexOf(k)>=0)r.setAttribute('data-skin',k);
+var f=parseInt(localStorage.getItem('boos-guide-font'),10);
+if(f>=12&&f<=20)r.style.setProperty('--fz',f/15);}catch(e){}})();
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css">
+<style>
+:root{
+  /* 컬러 스킨 기본값 = Spring.io 그린. 봄·여름·가을·겨울은 아래 [data-skin] 이 --sk-* 만 바꾼다 */
+  --sk-accent:#6db33f; --sk-accent2:#86dc3d; --sk-hero-l:#e8efee; --sk-hero-d:#24292e;
+  --sk-text-l:#3f7a1f; --sk-text-d:#86dc3d; --sk-soft-l:#eef6e8; --sk-soft-d:rgba(109,179,63,.14);
+  --sk-ibg-l:#eef3ef; --sk-ibg-d:rgba(134,220,61,.12); --sk-itx-l:#335f1a; --sk-itx-d:#a6e36f;
+  --fz:1;   /* 글자 크기 배율(본문 15px 기준) — 헤더 글자 크기 버튼이 바꾼다 */
+  --bg:#ffffff; --bg-soft:#f7f8f8; --hero:var(--sk-hero-l); --header:#ffffff; --card:#ffffff;
+  --border:#dfe3e3; --border-strong:#191e1e;
+  --text:#191e1e; --text2:#4f5657; --text3:#7b8384;
+  --accent:var(--sk-accent); --accent-2:var(--sk-accent2); --accent-text:var(--sk-text-l); --accent-soft:var(--sk-soft-l);
+  --th:#f1f4f4; --code-bg:#1b1f23; --code-text:#e6e8e8; --inline-bg:var(--sk-ibg-l); --inline-text:var(--sk-itx-l);
+  --warn:#b7791f; --warn-soft:#fdf6e7; --danger:#c0392b; --danger-soft:#fbeeee;
+  --info:#2f6f8f; --info-soft:#eaf3f7; --shadow:0 1px 2px rgba(0,0,0,.06);
+  --nav-h:64px; --radius:4px; --gutter:clamp(32px,3vw,64px);
+  --font-head:'Montserrat','Metropolis','Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+  --font-body:'Open Sans','Pretendard','Apple SD Gothic Neo','Malgun Gothic',-apple-system,'Segoe UI',system-ui,sans-serif;
+  --font-mono:'D2Coding ligature','D2Coding','JetBrains Mono','SF Mono',Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1b1f23; --bg-soft:#20252a; --hero:var(--sk-hero-d); --header:#1b1f23; --card:#20252a;
+    --border:#343b41; --border-strong:#e6e8e8;
+    --text:#f1f2f2; --text2:#bcc3c6; --text3:#8e979b;
+    --accent-text:var(--sk-text-d); --accent-soft:var(--sk-soft-d);
+    --th:#262c31; --code-bg:#121518; --inline-bg:var(--sk-ibg-d); --inline-text:var(--sk-itx-d);
+    --warn:#e0b24f; --warn-soft:rgba(224,178,79,.12); --danger:#ef7a6d; --danger-soft:rgba(239,122,109,.12);
+    --info:#6fb6d8; --info-soft:rgba(111,182,216,.12); --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1b1f23; --bg-soft:#20252a; --hero:var(--sk-hero-d); --header:#1b1f23; --card:#20252a;
+  --border:#343b41; --border-strong:#e6e8e8;
+  --text:#f1f2f2; --text2:#bcc3c6; --text3:#8e979b;
+  --accent-text:var(--sk-text-d); --accent-soft:var(--sk-soft-d);
+  --th:#262c31; --code-bg:#121518; --inline-bg:var(--sk-ibg-d); --inline-text:var(--sk-itx-d);
+  --warn:#e0b24f; --warn-soft:rgba(224,178,79,.12); --danger:#ef7a6d; --danger-soft:rgba(239,122,109,.12);
+  --info:#6fb6d8; --info-soft:rgba(111,182,216,.12); --shadow:none;
+}
+/* 컬러 스킨 — 봄(벚꽃 핑크) · 여름(바다 블루) · 가을(단풍 오렌지) · 겨울(설원 인디고). 주간/야간 값을 함께 둔다 */
+:root[data-skin="spring"]{
+  --sk-accent:#e0607e; --sk-accent2:#f4a6b8; --sk-hero-l:#fbecef; --sk-hero-d:#2a2326;
+  --sk-text-l:#b03a5b; --sk-text-d:#f59ab0; --sk-soft-l:#fdeef2; --sk-soft-d:rgba(224,96,126,.14);
+  --sk-ibg-l:#fcf0f3; --sk-ibg-d:rgba(245,154,176,.12); --sk-itx-l:#9c2f4f; --sk-itx-d:#f7b3c4;
+}
+:root[data-skin="summer"]{
+  --sk-accent:#1e9bd7; --sk-accent2:#4fd1e8; --sk-hero-l:#e6f2f8; --sk-hero-d:#20282e;
+  --sk-text-l:#146c99; --sk-text-d:#6cc8f0; --sk-soft-l:#e8f5fb; --sk-soft-d:rgba(30,155,215,.14);
+  --sk-ibg-l:#ebf4f8; --sk-ibg-d:rgba(108,200,240,.12); --sk-itx-l:#0f5c85; --sk-itx-d:#8fd6f5;
+}
+:root[data-skin="autumn"]{
+  --sk-accent:#d9731f; --sk-accent2:#f2b134; --sk-hero-l:#f6ece2; --sk-hero-d:#2a2520;
+  --sk-text-l:#9c4f10; --sk-text-d:#f2a65a; --sk-soft-l:#fbf1e6; --sk-soft-d:rgba(217,115,31,.14);
+  --sk-ibg-l:#f8f0e8; --sk-ibg-d:rgba(242,166,90,.12); --sk-itx-l:#8a4510; --sk-itx-d:#f5bb82;
+}
+:root[data-skin="winter"]{
+  --sk-accent:#4a5fc1; --sk-accent2:#8fa8ec; --sk-hero-l:#e9ecf6; --sk-hero-d:#22252e;
+  --sk-text-l:#34449a; --sk-text-d:#a3b4f5; --sk-soft-l:#eceffa; --sk-soft-d:rgba(74,95,193,.16);
+  --sk-ibg-l:#eef0f8; --sk-ibg-d:rgba(163,180,245,.12); --sk-itx-l:#2f3d8a; --sk-itx-d:#b6c3f7;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);
+  font-size:calc(15px*var(--fz));line-height:1.75;overflow-wrap:break-word;transition:background .2s,color .2s}
+a{color:var(--accent-text)}
+
+/* ── 헤더: sticky 로 문서 흐름 안에 둔다(fixed + 고정 padding 은 좁은 폭에서 본문을 덮는다) ── */
+.site-header{position:sticky;top:0;z-index:100;background:var(--header);
+  border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;gap:20px;
+  padding:0 var(--gutter);min-height:var(--nav-h);flex-wrap:nowrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);
+  font-family:var(--font-head);font-weight:800;font-size:19px;letter-spacing:-.2px;white-space:nowrap}
+.brand-mark{width:30px;height:30px;border-radius:50%;background:var(--accent);display:grid;
+  place-items:center;font-size:16px;line-height:1}
+.brand small{font-weight:600;font-size:12.5px;color:var(--accent-text)}
+.nav-links{display:flex;gap:2px;flex:1 1 0;flex-wrap:nowrap;min-width:0;overflow-x:auto;
+  scrollbar-width:none;-ms-overflow-style:none}
+.nav-links::-webkit-scrollbar{display:none}
+/* 탭이 많아도 헤더 버튼을 밀어내지 않는다 — 탭 영역만 가로 스크롤, 탭은 오른쪽 정렬 */
+.nav-links>:first-child{margin-left:auto}
+.nav-link{border:none;background:transparent;color:var(--text);font-family:var(--font-head);
+  font-weight:700;font-size:14px;padding:20px 12px 17px;cursor:pointer;white-space:nowrap;
+  border-bottom:3px solid transparent}
+.nav-link:hover{color:var(--accent-text)}
+.nav-link.active{border-bottom-color:var(--accent);color:var(--accent-text)}
+/* 우측 상단 보조 기능(목차·PDF·주간/야간)은 탭보다 작게 둔다 — 글자는 가독 하한 10px */
+.header-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.hbtn{border:1px solid var(--border);background:transparent;color:var(--text);font-family:var(--font-head);
+  font-weight:700;font-size:10px;line-height:1.2;padding:3px 7px;border-radius:var(--radius);cursor:pointer;
+  text-decoration:none;white-space:nowrap}
+.hbtn:hover{border-color:var(--accent);color:var(--accent-text)}
+/* 주간/야간 스위치 — 트랙 위 노브가 좌(주간 ☀)↔우(야간 ☾)로 이동한다 */
+.theme-switch{position:relative;width:28px;height:14px;border-radius:7px;border:none;cursor:pointer;
+  background:var(--border);padding:0;flex-shrink:0}
+.theme-switch .knob{position:absolute;top:-2px;left:-2px;width:18px;height:18px;border-radius:50%;
+  background:var(--text);color:var(--bg);display:grid;place-items:center;font-size:10px;
+  transition:transform .2s ease;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.theme-switch[aria-checked="true"] .knob{transform:translateX(14px)}
+.theme-switch:focus-visible,.nav-link:focus-visible,.hbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* 보기 설정 — 우측 상단 ⚙ 설정 버튼이 레이어(팝오버)를 연다. 주간/야간 · 컬러 스킨 · 글자 크기를 담는다 */
+.header-actions{position:relative}
+.hbtn[aria-expanded="true"]{border-color:var(--accent);color:var(--accent-text);background:var(--accent-soft)}
+.prefs-panel{position:absolute;right:0;top:calc(100% + 10px);z-index:200;width:min(264px,calc(100vw - 32px));
+  background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px 12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);font-family:var(--font-head)}
+.prefs-panel[hidden]{display:none}
+.prefs-title{font-weight:800;font-size:13px;margin:0 0 6px;color:var(--text)}
+.pref-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;
+  border-top:1px solid var(--border)}
+.pref-label{font-weight:700;font-size:12px;color:var(--text2);white-space:nowrap}
+.pref-ctrl{display:flex;align-items:center;gap:8px}
+.pref-note{font-size:11px;color:var(--text3);white-space:nowrap}
+.skin-dots{display:flex;gap:8px}
+.skin-dot{width:18px;height:18px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--dot);
+  box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.skin-dot[aria-checked="true"]{box-shadow:0 0 0 2px var(--card),0 0 0 3.5px var(--text)}
+.skin-dot:hover{transform:scale(1.12)}
+.skin-name{display:block;text-align:right;font-size:11px;color:var(--text3);margin-top:-4px;padding-bottom:6px}
+.font-btn{border:1px solid var(--border);background:transparent;color:var(--text);font-family:var(--font-head);font-weight:700;
+  font-size:12px;line-height:1;padding:5px 8px;border-radius:var(--radius);cursor:pointer;white-space:nowrap}
+.font-btn:hover{border-color:var(--accent);color:var(--accent-text)}
+.font-btn:disabled{opacity:.35;cursor:default;border-color:var(--border);color:var(--text)}
+.font-val{font-weight:700;font-size:12px;color:var(--text);min-width:20px;text-align:center}
+.prefs-reset{display:block;margin:4px 0 0 auto;border:none;background:transparent;color:var(--accent-text);
+  font-family:var(--font-head);font-weight:700;font-size:11px;cursor:pointer;padding:4px 0}
+.skin-dot:focus-visible,.font-btn:focus-visible,.prefs-reset:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ── 히어로 + 투톤 그린 바 ── */
+.hero{background:var(--hero)}
+.hero-inner{display:flex;align-items:center;gap:40px;padding:56px var(--gutter)}
+.hero-icon{font-size:96px;line-height:1;flex-shrink:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.12))}
+.hero h1{font-family:var(--font-head);font-weight:800;font-size:calc(40px*var(--fz));line-height:1.25;margin:0 0 12px;
+  letter-spacing:-.5px}
+.hero .meta{color:var(--text2);font-size:calc(15.5px*var(--fz));margin:0}
+.green-bar{height:10px;background:linear-gradient(to right,var(--accent) 0 60%,var(--accent-2) 60% 100%)}
+
+/* ── 본문: 좌 사이드바(On this page) + 콘텐츠 — 최대 폭 제한 없이 화면 전체 폭을 쓴다 ── */
+.wrap{padding:40px var(--gutter) 80px}
+.section{display:none}.section.active{display:block}
+.section.has-side.active{display:grid;grid-template-columns:clamp(230px,16vw,300px) minmax(0,1fr);gap:clamp(40px,3vw,64px)}
+.side{position:sticky;top:calc(var(--nav-h) + 20px);align-self:start;max-height:calc(100vh - var(--nav-h) - 40px);
+  overflow:auto;border-right:1px solid var(--border);padding-right:18px}
+.side-title{font-family:var(--font-head);font-weight:800;font-size:calc(15px*var(--fz));margin:0 0 12px}
+.side-link{display:block;color:var(--text2);text-decoration:none;font-size:calc(13.5px*var(--fz));line-height:1.45;
+  padding:7px 0 7px 12px;border-left:2px solid transparent}
+.side-link:hover{color:var(--accent-text);border-left-color:var(--accent)}
+.content{min-width:0}
+h2,h3,h4,h5,h6{font-family:var(--font-head);scroll-margin-top:calc(var(--nav-h) + 16px)}
+h2{font-size:calc(26px*var(--fz));font-weight:800;margin:0 0 20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+h3{font-size:calc(19px*var(--fz));font-weight:700;margin:40px 0 12px}
+h4{font-size:calc(15.5px*var(--fz));font-weight:700;margin:26px 0 8px;color:var(--text2)}
+h5{font-size:calc(14.5px*var(--fz));margin:20px 0 6px;color:var(--text2)}
+h6{font-size:calc(14px*var(--fz));margin:18px 0 6px;color:var(--text3)}
+p{margin:10px 0}
+ul,ol{padding-left:22px}li{margin:5px 0}
+.code-block{background:var(--code-bg);color:var(--code-text);border-radius:var(--radius);padding:20px 22px;
+  font-family:var(--font-mono);font-size:calc(13px*var(--fz));line-height:1.7;overflow-x:auto;margin:16px 0;position:relative;
+  white-space:pre-wrap;word-wrap:break-word;border-left:4px solid var(--accent)}
+.code-block .label{position:absolute;top:8px;right:12px;font-size:calc(10.5px*var(--fz));color:#9aa3a6;
+  background:rgba(255,255,255,.08);padding:2px 8px;border-radius:3px;font-family:var(--font-head);font-weight:700}
+/* 흐름 다이어그램 — 단(stage)별 색. 좁은 화면에서는 세로로 쌓고 화살표를 아래로 돌린다 */
+.flow{margin:22px 0;padding:20px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-soft);
+  container-type:inline-size;container-name:flow}
+.flow-row{display:flex;align-items:stretch;justify-content:center;gap:0}
+.flow-row+.flow-row{margin-top:18px;padding-top:18px;border-top:1px dashed var(--border)}
+.fnode{flex:1 1 0;min-width:0;max-width:260px;border:1.5px solid var(--st-bd);background:var(--st-bg);border-radius:8px;
+  padding:10px 8px 9px;text-align:center;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.fnode-badge{font-family:var(--font-head);font-size:calc(10.5px*var(--fz));font-weight:800;letter-spacing:.4px;color:var(--st-fg);opacity:.85}
+.fnode-title{font-family:var(--font-head);font-weight:800;font-size:calc(13.5px*var(--fz));color:var(--st-fg);line-height:1.35;margin:2px 0}
+.fnode-sub{font-size:calc(12px*var(--fz));color:var(--text2);line-height:1.5}
+.fnode code.inline,.farrow code.inline{font-size:calc(11px*var(--fz));padding:0 3px;overflow-wrap:normal;word-break:keep-all}
+.farrow code.inline{font-size:calc(10.5px*var(--fz))}
+.fnode-title code.inline{font-size:calc(12.5px*var(--fz))}
+.farrow{flex:0 1 128px;min-width:84px;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:0 8px;text-align:center;--fa:var(--accent)}
+.farrow.fa-danger{--fa:var(--danger)}
+.farrow-label{font-family:var(--font-head);font-weight:700;font-size:calc(11.5px*var(--fz));color:var(--fa);line-height:1.4;margin-bottom:5px}
+.farrow-sub{font-size:calc(11px*var(--fz));color:var(--text3);line-height:1.4;margin-top:5px}
+.farrow-line{position:relative;width:100%;height:2px;background:var(--fa)}
+.farrow-line::after{content:"";position:absolute;right:-1px;top:-5px;border:6px solid transparent;border-left:9px solid var(--fa);border-right:0}
+.flow figcaption{margin-top:14px;font-size:calc(12.5px*var(--fz));color:var(--text3);text-align:center;line-height:1.6}
+.st-org{--st-bg:#f6efe4;--st-bd:#d9c3a2;--st-fg:#8a6433}
+.st-mig{--st-bg:#eef6e8;--st-bd:#86c25a;--st-fg:#3f7a1f}
+.st-dev{--st-bg:#e8f3f7;--st-bd:#6aa9c2;--st-fg:#2f6f8f}
+.st-prd{--st-bg:#ebeffb;--st-bd:#7d91d6;--st-fg:#3a4f9e}
+.st-file{--st-bg:#f2f4f4;--st-bd:#aab2b5;--st-fg:#4f5657}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .st-org{--st-bg:rgba(217,195,162,.09);--st-bd:#7f6a4c;--st-fg:#e3c89f}
+  :root:not([data-theme="light"]) .st-mig{--st-bg:rgba(109,179,63,.12);--st-bd:#4f8a2c;--st-fg:#8fdc55}
+  :root:not([data-theme="light"]) .st-dev{--st-bg:rgba(106,169,194,.12);--st-bd:#3f7f99;--st-fg:#7cc3e0}
+  :root:not([data-theme="light"]) .st-prd{--st-bg:rgba(125,145,214,.13);--st-bd:#5364a8;--st-fg:#a9b8f2}
+  :root:not([data-theme="light"]) .st-file{--st-bg:rgba(255,255,255,.05);--st-bd:#59636a;--st-fg:#c3cacd}
+}
+:root[data-theme="dark"] .st-org{--st-bg:rgba(217,195,162,.09);--st-bd:#7f6a4c;--st-fg:#e3c89f}
+:root[data-theme="dark"] .st-mig{--st-bg:rgba(109,179,63,.12);--st-bd:#4f8a2c;--st-fg:#8fdc55}
+:root[data-theme="dark"] .st-dev{--st-bg:rgba(106,169,194,.12);--st-bd:#3f7f99;--st-fg:#7cc3e0}
+:root[data-theme="dark"] .st-prd{--st-bg:rgba(125,145,214,.13);--st-bd:#5364a8;--st-fg:#a9b8f2}
+:root[data-theme="dark"] .st-file{--st-bg:rgba(255,255,255,.05);--st-bd:#59636a;--st-fg:#c3cacd}
+
+/* 노드가 많은 줄은 다이어그램 폭이 부족하면 세로로 쌓는다(노드 4개 이상 760px · 3개 560px · 그 외 440px) */
+@container flow (max-width:760px){
+  .flow-row.n4,.flow-row.n5{flex-direction:column;align-items:stretch}
+  .n4 .fnode,.n5 .fnode{max-width:none}
+  .n4 .farrow,.n5 .farrow{flex:0 0 auto;min-width:0;padding:6px 0;flex-direction:row;gap:10px;justify-content:center}
+  .n4 .farrow-line,.n5 .farrow-line{width:2px;height:26px;order:0;flex:0 0 2px}
+  .n4 .farrow-line::after,.n5 .farrow-line::after{right:auto;left:-5px;top:auto;bottom:-2px;border:6px solid transparent;border-top:9px solid var(--fa);border-bottom:0}
+  .n4 .farrow-label,.n5 .farrow-label{order:1;margin:0;text-align:left}
+  .n4 .farrow-sub,.n5 .farrow-sub{order:2;margin:0;text-align:left}
+}
+@container flow (max-width:560px){
+  .flow-row.n3{flex-direction:column;align-items:stretch}
+  .n3 .fnode{max-width:none}
+  .n3 .farrow{flex:0 0 auto;min-width:0;padding:6px 0;flex-direction:row;gap:10px;justify-content:center}
+  .n3 .farrow-line{width:2px;height:26px;order:0;flex:0 0 2px}
+  .n3 .farrow-line::after{right:auto;left:-5px;top:auto;bottom:-2px;border:6px solid transparent;border-top:9px solid var(--fa);border-bottom:0}
+  .n3 .farrow-label{order:1;margin:0;text-align:left}
+  .n3 .farrow-sub{order:2;margin:0;text-align:left}
+}
+@container flow (max-width:440px){
+  .flow-row{flex-direction:column;align-items:stretch}
+  .fnode{max-width:none}
+  .farrow{flex:0 0 auto;min-width:0;padding:6px 0;flex-direction:row;gap:10px;justify-content:center}
+  .farrow-line{width:2px;height:26px;order:0;flex:0 0 2px}
+  .farrow-line::after{right:auto;left:-5px;top:auto;bottom:-2px;border:6px solid transparent;border-top:9px solid var(--fa);border-bottom:0}
+  .farrow-label{order:1;margin:0;text-align:left}
+  .farrow-sub{order:2;margin:0;text-align:left}
+}
+
+/* 코드 블록 복사 버튼 — 우상단. 언어 라벨은 버튼 왼쪽으로 비킨다 */
+.code-wrap{position:relative;margin:16px 0}
+.code-wrap .code-block{margin:0;padding-top:40px}
+.code-wrap .code-block .label{right:92px}
+.copy-btn{position:absolute;top:8px;right:10px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);
+  color:#e6e8e8;font-family:var(--font-head);font-weight:700;font-size:calc(11.5px*var(--fz));padding:4px 10px;border-radius:3px;
+  cursor:pointer;line-height:1.4}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent-2)}
+.copy-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.copy-btn.done{border-color:var(--accent);background:rgba(255,255,255,.14);color:var(--accent-2)}
+code.inline{font-family:var(--font-mono);font-size:calc(13px*var(--fz));background:var(--inline-bg);border-radius:3px;
+  padding:1px 6px;color:var(--inline-text)}
+
+/* 표 = 카드. 좁은 화면에서는 가로 스크롤하며 양 끝 그림자로 잘린 열을 표시한다 */
+.table-wrap{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch;
+  background:
+    linear-gradient(to right,var(--bg) 30%,transparent),
+    linear-gradient(to right,transparent,var(--bg) 70%) 100% 0,
+    radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.18),transparent),
+    radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.18),transparent) 100% 0;
+  background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%,14px 100%;
+  background-attachment:local,local,scroll,scroll}
+.comp-table{width:100%;border-collapse:collapse;font-size:calc(14px*var(--fz));background:var(--card);
+  border:1px solid var(--border);box-shadow:var(--shadow)}
+.comp-table th{background:var(--th);padding:12px 14px;text-align:left;font-family:var(--font-head);
+  font-weight:700;font-size:calc(13px*var(--fz));border-bottom:2px solid var(--accent);white-space:nowrap}
+.comp-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;word-break:break-word}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tbody tr:hover td{background:var(--bg-soft)}
+
+/* 콜아웃: 주의(decision) · 위험(danger-box) · 확인/참고(info-box) */
+.decision,.danger-box,.info-box{border:1px solid var(--border);border-left:4px solid var(--warn);
+  background:var(--warn-soft);border-radius:var(--radius);padding:14px 18px;margin:20px 0}
+.danger-box{border-left-color:var(--danger);background:var(--danger-soft)}
+.info-box{border-left-color:var(--info);background:var(--info-soft)}
+.decision h4,.danger-box h4,.info-box h4{margin:0 0 6px;font-size:calc(14px*var(--fz))}
+.decision h4{color:var(--warn)}.danger-box h4{color:var(--danger)}.info-box h4{color:var(--info)}
+.doc-footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--border);color:var(--text2);
+  font-size:calc(14px*var(--fz));text-align:center;font-family:var(--font-head);font-weight:700}
+
+/* ── 태블릿 ── */
+@media (max-width:1024px){
+  .section.has-side.active{display:block}
+  .side{position:static;max-height:none;border-right:none;padding:0 0 14px;margin:0 0 24px;
+    border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;gap:6px}
+  .side-title{width:100%;margin-bottom:4px}
+  .side-link{border:1px solid var(--border);border-radius:3px;padding:4px 10px;font-size:calc(12.5px*var(--fz))}
+  .side-link:hover{border-color:var(--accent)}
+}
+@media (max-width:900px){
+  :root{--nav-h:56px}
+  .header-inner{padding:0 18px;gap:12px;flex-wrap:wrap}
+  .nav-links{order:3;flex:1 1 100%;width:100%;margin-left:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
+    border-top:1px solid var(--border)}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links>:first-child{margin-left:0}
+  .nav-link{padding:12px 12px 9px}
+  .header-actions{margin-left:auto}
+  .hero-inner{padding:40px 18px;gap:24px}
+  .hero-icon{font-size:64px}
+  .hero h1{font-size:calc(30px*var(--fz))}
+  .wrap{padding:28px 18px 60px}
+  h2{font-size:calc(22px*var(--fz))} h3{font-size:calc(17.5px*var(--fz))}
+}
+/* ── 모바일 ── */
+@media (max-width:640px){
+  body{font-size:calc(14.5px*var(--fz))}
+  .brand small{display:none}
+  .hero-inner{flex-direction:column;align-items:flex-start;padding:28px 16px;gap:14px}
+  .hero-icon{font-size:48px}
+  .hero h1{font-size:calc(24px*var(--fz))} .hero .meta{font-size:calc(13.5px*var(--fz))}
+  .green-bar{height:8px}
+  .wrap{padding:22px 16px 48px}
+  h2{font-size:calc(20px*var(--fz))} h3{font-size:calc(16.5px*var(--fz));margin-top:30px}
+  .code-block{padding:14px;font-size:calc(12px*var(--fz))}
+  .flow{padding:16px 12px}
+  .comp-table{font-size:calc(13px*var(--fz))} .comp-table th{white-space:normal;padding:10px} .comp-table td{padding:9px 10px}
+  /* 열이 많은 표가 한 글자 폭으로 찌그러지지 않도록 열 최소 폭을 두고 가로 스크롤에 맡긴다 */
+  .comp-table th,.comp-table td{min-width:88px}
+  .decision,.danger-box,.info-box{padding:12px 14px}
+  .nav-link,.hbtn{min-height:40px}   /* 터치 타깃 */
+  .skin-dot{width:24px;height:24px} .skin-dots{gap:10px}
+  .font-btn{min-width:40px;min-height:36px}
+}
+@media (max-width:400px){
+  .btn-text{display:none}
+  .brand{font-size:calc(17px*var(--fz))}
+}
+@media print{
+  :root,:root[data-theme="dark"]{--bg:#fff;--bg-soft:#fff;--hero:#fff;--card:#fff;--text:#000;--text2:#333;
+    --border:#ccc;--th:#f1f4f4;--hero:#fff;--accent-text:var(--sk-text-l);--inline-bg:var(--sk-ibg-l);--inline-text:var(--sk-itx-l)}
+  .site-header,.side,.copy-btn{display:none!important}
+  .code-wrap .code-block{padding-top:20px}
+  .hero-inner{padding:0 0 12px} .wrap{padding:0;max-width:none}
+  .section,.section.has-side.active{display:block!important;page-break-after:always}
+  .section:last-of-type{page-break-after:auto}
+  h2,h3{page-break-after:avoid}
+  .table-wrap{overflow:visible;background:none}
+  .comp-table,.decision,.danger-box,.info-box,.code-block,.flow{break-inside:avoid;page-break-inside:avoid}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../guide/guide.html"><span class="brand-mark">📚</span>studio-boos <small>Guides</small></a>
+    <nav class="nav-links" aria-label="문서 탭">
+      <button class="nav-link active" onclick="show(event,'개요')">📖 개요</button><button class="nav-link" onclick="show(event,'주요-내용')">🧩 주요 내용</button><button class="nav-link" onclick="show(event,'요약-정보')">📌 요약 정보</button>
+    </nav>
+    <div class="header-actions">
+      <a class="hbtn" href="../guide/guide.html">📚 <span class="btn-text">목차</span></a>
+      <button class="hbtn" onclick="window.print()">🖨 <span class="btn-text">PDF</span></button>
+      <button class="hbtn" id="prefsBtn" type="button" aria-haspopup="dialog" aria-expanded="false"
+        aria-controls="prefsPanel" title="보기 설정" onclick="togglePrefs()">⚙️ <span class="btn-text">설정</span></button>
+      <div class="prefs-panel" id="prefsPanel" role="dialog" aria-label="보기 설정" hidden>
+        <div class="prefs-title">⚙️ 보기 설정</div>
+        <div class="pref-row">
+          <span class="pref-label">화면 모드</span>
+          <span class="pref-ctrl"><span class="pref-note" id="themeName">주간</span>
+            <button class="theme-switch" id="themeSwitch" role="switch" aria-checked="false"
+              aria-label="야간 모드" title="주간/야간 전환" onclick="toggleTheme()"><span class="knob">☀</span></button></span>
+        </div>
+        <div class="pref-row">
+          <span class="pref-label">컬러 스킨</span>
+          <span class="pref-ctrl skin-dots" role="radiogroup" aria-label="컬러 스킨"><button class="skin-dot" type="button" role="radio" aria-checked="false" data-skin="green" style="--dot:#6db33f" aria-label="기본 (Spring.io 그린)" title="기본 (Spring.io 그린)" onclick="setSkin('green')"></button><button class="skin-dot" type="button" role="radio" aria-checked="false" data-skin="spring" style="--dot:#e0607e" aria-label="봄 (벚꽃 핑크)" title="봄 (벚꽃 핑크)" onclick="setSkin('spring')"></button><button class="skin-dot" type="button" role="radio" aria-checked="false" data-skin="summer" style="--dot:#1e9bd7" aria-label="여름 (바다 블루)" title="여름 (바다 블루)" onclick="setSkin('summer')"></button><button class="skin-dot" type="button" role="radio" aria-checked="false" data-skin="autumn" style="--dot:#d9731f" aria-label="가을 (단풍 오렌지)" title="가을 (단풍 오렌지)" onclick="setSkin('autumn')"></button><button class="skin-dot" type="button" role="radio" aria-checked="false" data-skin="winter" style="--dot:#4a5fc1" aria-label="겨울 (설원 인디고)" title="겨울 (설원 인디고)" onclick="setSkin('winter')"></button></span>
+        </div>
+        <span class="skin-name" id="skinName"></span>
+        <div class="pref-row">
+          <span class="pref-label">글자 크기</span>
+          <span class="pref-ctrl" role="group" aria-label="글자 크기">
+            <button class="font-btn" id="fontDown" type="button" onclick="stepFont(-1)" aria-label="글자 작게" title="글자 작게">가−</button>
+            <span class="font-val" id="fontVal" aria-live="polite">15</span>
+            <button class="font-btn" id="fontUp" type="button" onclick="stepFont(1)" aria-label="글자 크게" title="글자 크게">가+</button>
+          </span>
+        </div>
+        <button class="prefs-reset" type="button" onclick="resetPrefs()">↺ 기본값으로</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-icon" aria-hidden="true">🔎</div>
+    <div>
+      <h1>확장 40개 독립 활동 검토</h1>
+      <p class="meta">작성일: 2026년 11월 21일 · 작성자: 지순이(ChatGPT), 로컬 작업자 Bill(min@cafewill.com) · 호스트 nano</p>
+    </div>
+  </div>
+</section>
+<div class="green-bar"></div>
+
+<main class="wrap">
+<div id="sec-개요" class="section active"><div class="content"><h2 id="개요">📖 개요</h2><p>기존 322개 조사 스냅샷의 조건부 후보 중 40개를 좁은 독립 활동으로 검토한다. 원본 적합 후보 60개·조건부 178개 판정은 변경하지 않는다. 최신 차트·앱 체험·법적 권리 확보를 뜻하지 않는다. 구현은 원작 전체가 아닌 일반 활동의 자체 프로토타입이다.</p></div></div><div id="sec-주요-내용" class="section has-side"><aside class="side"><div class="side-title">On this page</div><a href="#e018-낱말-잎사귀" class="side-link">🧩 E018 · 낱말 잎사귀</a><a href="#e019-낱말-열매-바구니" class="side-link">🧩 E019 · 낱말 열매 바구니</a><a href="#e020-영어-정원-산책" class="side-link">🧩 E020 · 영어 정원 산책</a><a href="#e025-그림-낱말-소풍" class="side-link">🧩 E025 · 그림 낱말 소풍</a><a href="#e032-영어-열매-친구" class="side-link">🧩 E032 · 영어 열매 친구</a><a href="#e041-영어-하늘-엽서" class="side-link">🧩 E041 · 영어 하늘 엽서</a><a href="#e043-하늘-낱말-편지" class="side-link">🧩 E043 · 하늘 낱말 편지</a><a href="#e074-바다-낱말-산책" class="side-link">🧩 E074 · 바다 낱말 산책</a><a href="#e086-동물-낱말-모임" class="side-link">🧩 E086 · 동물 낱말 모임</a><a href="#e123-일상-낱말-앨범" class="side-link">🧩 E123 · 일상 낱말 앨범</a><a href="#e026-아침-준비-산책" class="side-link">🧩 E026 · 아침 준비 산책</a><a href="#e035-과일-한-접시" class="side-link">🧩 E035 · 과일 한 접시</a><a href="#e037-산책-준비-한-걸음" class="side-link">🧩 E037 · 산책 준비 한 걸음</a><a href="#e054-버스-나들이-준비" class="side-link">🧩 E054 · 버스 나들이 준비</a><a href="#e056-소풍-도시락-준비" class="side-link">🧩 E056 · 소풍 도시락 준비</a><a href="#e091-작은-장보기-수첩" class="side-link">🧩 E091 · 작은 장보기 수첩</a><a href="#e110-장난감-쉼터" class="side-link">🧩 E110 · 장난감 쉼터</a><a href="#e176-함께-먹는-시간" class="side-link">🧩 E176 · 함께 먹는 시간</a><a href="#e248-바구니-나들이" class="side-link">🧩 E248 · 바구니 나들이</a><a href="#e250-저녁-쉼표" class="side-link">🧩 E250 · 저녁 쉼표</a><a href="#e013-포근한-방-한-칸" class="side-link">🧩 E013 · 포근한 방 한 칸</a><a href="#e022-작은-마을-쉼터" class="side-link">🧩 E022 · 작은 마을 쉼터</a><a href="#e023-자연-보물-선반" class="side-link">🧩 E023 · 자연 보물 선반</a><a href="#e024-창가의-작은-자리" class="side-link">🧩 E024 · 창가의 작은 자리</a><a href="#e044-조각-마을-구상" class="side-link">🧩 E044 · 조각 마을 구상</a><a href="#e050-리본-빛깔-공방" class="side-link">🧩 E050 · 리본 빛깔 공방</a><a href="#e053-뜰-안의-작은-쉼터" class="side-link">🧩 E053 · 뜰 안의 작은 쉼터</a><a href="#e057-누구나의-축하-식탁" class="side-link">🧩 E057 · 누구나의 축하 식탁</a><a href="#e062-작은-도서-쉼터" class="side-link">🧩 E062 · 작은 도서 쉼터</a><a href="#e066-우리의-놀이-자리" class="side-link">🧩 E066 · 우리의 놀이 자리</a><a href="#e071-이웃과-나눔-식탁" class="side-link">🧩 E071 · 이웃과 나눔 식탁</a><a href="#e075-색과-무늬-소품함" class="side-link">🧩 E075 · 색과 무늬 소품함</a><a href="#e076-함께-쉬는-거실" class="side-link">🧩 E076 · 함께 쉬는 거실</a><a href="#e090-동네-공원-한-장면" class="side-link">🧩 E090 · 동네 공원 한 장면</a><a href="#e094-이야기-소품-상자" class="side-link">🧩 E094 · 이야기 소품 상자</a><a href="#e105-반가운-손님-자리" class="side-link">🧩 E105 · 반가운 손님 자리</a><a href="#e122-상상-소품-작업실" class="side-link">🧩 E122 · 상상 소품 작업실</a><a href="#e125-빛깔-전시-한-칸" class="side-link">🧩 E125 · 빛깔 전시 한 칸</a><a href="#e137-함께-노는-작은-방" class="side-link">🧩 E137 · 함께 노는 작은 방</a><a href="#e141-누구나의-소품-선반" class="side-link">🧩 E141 · 누구나의 소품 선반</a></aside><div class="content"><h2 id="주요-내용">🧩 주요 내용</h2><p>낱말 10개·생활 순서 10개·공간 및 소품 창작 20개를 추가한다. 낱말은 자체 선정 일상 단어와 OS 그림 문자, 순서는 자체 작성 문장, 장면은 6자리 공간과 시스템 그림 문자를 사용한다. 원작 그림·캐릭터·교재·음원·대사·레벨·UI는 복제하지 않는다. OS 그림 문자의 기기별 외형은 달라질 수 있으며 글꼴 파일을 배포하지 않는다.</p><p>순서 놀이는 가능한 생활 흐름 한 가지를 연습하며 가정별 생활의 정답을 평가하지 않는다. 도구·불·의료·투약 조작은 제공하지 않는다. 낱말 읽기는 음성·음운 교육 전체를 대체하지 않는다. 공간 꾸미기는 누구나 선택하며 성별 제한·외모 우열·사회적 점수를 제공하지 않는다.</p><h3 id="e018-낱말-잎사귀">🧩 E018 · 낱말 잎사귀</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.enuma.todohangeul&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">토도한글 : 문해력이 싹트는 읽기독립</a> · 기존 조건부 유지</li><li>저장된 설명 근거: "2026 대한민국 교육박람회 어워드 수상!  전문가들이 인정한 커리큘럼으로 우리 아이들의 한글 학습을 책임집니다."  [매일 즐겁게 15분 한글 수업, 꿈만 같다고요?] 질릴 수가 없는 3,500여 가지의 액티비티로 한글을 다 뗄 때까지 아이의 흥미, 꽉 잡아드릴게요.  [무겁게 한글 전집 모으지 말고, 앱 하나로 끝] 토도한글 도서관에는 무려 200여 권이 책들이 있어요. 원한다면 문장마</li><li>원래 독립 범위: 자체 단어·도형으로 기초 읽기·따라쓰기만 추출; 음성·교재·구독 서비스 제외</li><li>이번 허용 범위: 그림과 어울리는 낱말을 연결해요. 엔진 words · 자체 가칭 word-leaves · 5–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e019-낱말-열매-바구니">🧩 E019 · 낱말 열매 바구니</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.h2kresearch.preciousHangul&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">소중한글: 즐거운 속도로 배우는 한글공부</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 60만명의 부모님과 300여개 초등학교가 선택한 1등 한글 교육 앱, 소중한글! 한글떼기부터 받아쓰기, 문해력까지 소중한글 하나로 시작하세요.  ───────────────  ■ AI 선생님이 진단하고, 아이 맞춤 한글공부를 설계합니다.  “우리 아이가 느린 걸까?” “어디서부터 시작해야 하지?” 걱정하지 마세요.  소중한글은 한글 교육 전문가(언어재활사, 교사)와 카이스트 인공지능 전문가</li><li>원래 독립 범위: 자체 단어·도형으로 기초 읽기·따라쓰기만 추출; 음성·교재·구독 서비스 제외</li><li>이번 허용 범위: 그림과 어울리는 낱말을 연결해요. 엔진 words · 자체 가칭 word-basket · 5–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e020-영어-정원-산책">🧩 E020 · 영어 정원 산책</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=es.monkimun.lingokids&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Lingokids: 영어 게임</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 아이들이 사랑하는 모든 것! Lingokids는 타협 없는 즐거움을 제공하는 최고의 어린이 플랫폼입니다. 4000개 이상의 인터랙티브 게임, 노래, 프로그램을 제공하며 전 세계 아이들이 사랑하고 부모들이 신뢰합니다. 광고 없이 연령에 맞게 설계된 Lingokids는 KidSAFE 인증을 받은 프리미엄 경험을 제공하며, 자연스럽게 학습이 이루어집니다.   Lingokids에 디즈니 액티비티가</li><li>원래 독립 범위: 자체 단어·도형으로 기초 읽기·따라쓰기만 추출; 음성·교재·구독 서비스 제외</li><li>이번 허용 범위: 그림과 어울리는 낱말을 연결해요. 엔진 words · 자체 가칭 english-garden · 5–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e025-그림-낱말-소풍">🧩 E025 · 그림 낱말 소풍</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.spindle.tapas&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">리딩앤</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 영국 80% 초등학교에서 읽는 세계적인 베스트 셀러 Oxford Reading Tree (ORT) 전 단계 전 권 수록! 영국 내 10,000개 이상의 도서관에서 애용하는 Collins Big Cat 시리즈 탑재!  파닉스 리딩부터 장편 리딩까지 프리미엄 원서들로만 구성된 디지털 도서관을 언제 어디서든 들고 다니세요  #장점 1. 영국 교실에서 벌어지는 학습 과정을 디지털로 재현한 5단계 멀</li><li>원래 독립 범위: 자체 단어·도형으로 기초 읽기·따라쓰기만 추출; 음성·교재·구독 서비스 제외</li><li>이번 허용 범위: 그림과 어울리는 낱말을 연결해요. 엔진 words · 자체 가칭 word-picnic · 5–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e032-영어-열매-친구">🧩 E032 · 영어 열매 친구</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.enuma.todoenglish&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">토도영어</a> · 기존 조건부 유지</li><li>저장된 설명 근거: [토도영어, 우리 아이와 잘 맞을까?] 고민되신다면 먼저 무료체험해 보세요! 토도영어는 회원가입 즉시 7일 무료체험이 가능합니다. 7일이면 충분히 알 수 있어요.  [매일 해도 800일이나 할 수 있다고?] 토도영어는 A~Z까지 무려 26개 레벨, 800일의 커리큘럼을 제공해요. 레벨 테스트로 수준에 맞는 레벨을 선택하고, 학습 여정을 떠나보세요! 한 단계 한 단계 레벨 업! 하며 아이 스스</li><li>원래 독립 범위: 자체 단어·도형으로 기초 읽기·따라쓰기만 추출; 음성·교재·구독 서비스 제외</li><li>이번 허용 범위: 그림과 어울리는 낱말을 연결해요. 엔진 words · 자체 가칭 english-fruit · 5–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e041-영어-하늘-엽서">🧩 E041 · 영어 하늘 엽서</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.duolingo.literacy&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Learn to Read - Duolingo ABC</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 세계 최고의 교육 앱인 듀오링고의 제작자들이 듀오링고 ABC를 제공합니다! 듀오링고 ABC는 자녀가 영어로 읽고 쓰는 법을 배울 수 있는 재미있고 실제적인 방법입니다! 유치원부터 1학년까지, 아이들을 위한 유쾌한 이야기와 알파벳, 파닉스, 시각 단어, 어휘 등을 가르치는 한입 크기의 수업으로 자녀의 참여를 유도하십시오.  듀오링고 ABC 어린이 독서 앱은 어린이들이 읽고 사랑하는 데 도움이</li><li>원래 독립 범위: 자체 단어·도형으로 기초 읽기·따라쓰기만 추출; 음성·교재·구독 서비스 제외</li><li>이번 허용 범위: 그림과 어울리는 낱말을 연결해요. 엔진 words · 자체 가칭 english-sky · 5–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e043-하늘-낱말-편지">🧩 E043 · 하늘 낱말 편지</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=kr.co.smartstudy.hangulganada_android_googlemarket&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">핑크퐁 가나다 한글: ㄱㄴㄷ 쓰기, 기초 한글 공부</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 우리 아이 첫 가나다 한글공부는 핑크퐁과 함께! ㄱㄴㄷㄹ, 한글 자음을 따라쓰고 신나는 한글 게임으로 복습하며 한글 실력도 자신감도 쑥쑥!   가나다라부터 아야어여까지, 16종의 한글 동요 애니메이션 - 가, 나, 다로 시작하는 단어는 뭐가 있을까? 다양한 단어를 보여주는 동요 영상으로 우리 아이의 흥미를 높여요. - 가재, 가면, 가방~♫ 아이들이 좋아하는 핑크퐁 동요를 따라 부르며 반복</li><li>원래 독립 범위: 자체 단어·도형으로 기초 읽기·따라쓰기만 추출; 음성·교재·구독 서비스 제외</li><li>이번 허용 범위: 그림과 어울리는 낱말을 연결해요. 엔진 words · 자체 가칭 word-sky · 5–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e074-바다-낱말-산책">🧩 E074 · 바다 낱말 산책</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.hitek.flashcard&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">바닷속 한글놀이-한글공부</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 우리아이 한글공부를 [바닷속 한글놀이] 앱으로 시작하세요! 1,000 가지가 넘는 다양한 카테고리별 단어를 레벨별로 공부하고, 반복학습으로 한글가르치기에 도움을 줍니다. [바닷속 한글놀이] 앱은 아이가 한글낱말카드를 스스로 즐겁게 학습하며 단어를 익힐 수 있게 도움을 주는 유아용 한글공부어플입니다. 단어퀴즈와 한글퍼즐을 풀고  아이 본인의 랭킹을 확인하며 선의의 경쟁도 할수 있습니다. 한글게</li><li>원래 독립 범위: 자체 단어·도형으로 기초 읽기·따라쓰기만 추출; 음성·교재·구독 서비스 제외</li><li>이번 허용 범위: 그림과 어울리는 낱말을 연결해요. 엔진 words · 자체 가칭 word-sea · 5–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e086-동물-낱말-모임">🧩 E086 · 동물 낱말 모임</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.becoslabs.malnori&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">링고애니 - 한글 말놀이 (5~8세)</a> · 기존 조건부 유지</li><li>저장된 설명 근거: * 고객센터: 카카오톡 플러스친구 @링고애니     문의는 리뷰가 아닌 고객센터로 연락 부탁드립니다.    (리뷰 답변으로는 자세한 답변 및 안내가 어렵습니다.)  ★ 2020년 하반기 문화체육관광부 장관상 이달의 우수게임 기능성 게임 부분 수상작! 유저투표 1위! ★  소중한 우리 아이와 한글공부의 재미있고 신나는 첫 만남! 하루 15분 말놀이와 함께 아이의 한글능력을 쑥쑥 키워주세요.</li><li>원래 독립 범위: 자체 단어·도형으로 기초 읽기·따라쓰기만 추출; 음성·교재·구독 서비스 제외</li><li>이번 허용 범위: 그림과 어울리는 낱말을 연결해요. 엔진 words · 자체 가칭 word-animal · 5–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e123-일상-낱말-앨범">🧩 E123 · 일상 낱말 앨범</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.lingoany.hanplay&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">링고애니 - 첫 한글놀이 (3~5세)</a> · 기존 조건부 유지</li><li>저장된 설명 근거: * 고객센터: 카카오톡 플러스친구 @링고애니     문의는 리뷰가 아닌 고객센터로 연락 부탁드립니다.    (리뷰 답변으로는 자세한 답변 및 안내가 어렵습니다.)  ★한국콘텐츠진흥원 2024년 상반기 이달의 우수게임 기능성 게임 부분 수상작★ 우리 아이와 첫 한글공부는 재미있고 신나는 한글놀이로 시작하세요! 하루 20분 한글놀이와 함께 아이의 한글능력을 쑥쑥 키워주세요.  총 27권 분량의</li><li>원래 독립 범위: 자체 글자·낱말 활동으로 범위를 확정하고 발음·문해 수준·교재/음원 권리 검토 필요</li><li>이번 허용 범위: 그림과 어울리는 낱말을 연결해요. 엔진 words · 자체 가칭 word-day · 5–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e026-아침-준비-산책">🧩 E026 · 아침 준비 산책</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=kr.co.smartstudy.bebefinntown_android_googlemarket&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">베베핀 타운: 아기 집 탐험, 교육 시뮬레이션 게임</a> · 기존 조건부 유지</li><li>저장된 설명 근거: [베베핀 타운] – 내 손 안에 펼쳐지는 베베핀 세상!  안녕! 나는 베베핀이야! 나랑 우리집에서 함께 놀자! 유튜브 인기 스타 베베핀을 3D 키즈 시뮬레이션 게임으로 만나요. 아이 스스로 몰입하는 3D 세상에서 놀면서 배우고, 베베핀 세계관 그대로 끝없는 인터랙티브 경험을 할 수 있답니다! 베베핀과 함께 집 안을 돌아다니며 다양한 가족 롤플레잉, 일상 생활 게임을 경험하는 동안 자연스럽게</li><li>원래 독립 범위: 배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외</li><li>이번 허용 범위: 오늘의 작은 일들을 순서대로 이어 봐요. 엔진 routine · 자체 가칭 morning-path · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e035-과일-한-접시">🧩 E035 · 과일 한 접시</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.kigle.pororocook.pack&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">뽀로로 요리놀이 - 주방, 키친, 쉐프, 베이킹, 쿠킹</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 뽀로로 요리놀이 앱이 업데이트되었어요!  ▶ 총 30종의 다양한 메뉴!   한식, 중식, 양식, 간식 등 아이들이 좋아하는 요리를 만나보세요!  ▶ 맛있는 요리를 만들어요!   루피와 함께 요리를 만들며 즐거운 시간을 보내보세요.   하나씩 만들다 보면 어느새 멋진 요리 완성!     ▶ 음식을 골고루 먹을 수 있어요!    건강한 식습관을 가질 수 있도록 다양한 음식과 재료를 준비했어요.</li><li>원래 독립 범위: 배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외</li><li>이번 허용 범위: 오늘의 작은 일들을 순서대로 이어 봐요. 엔진 routine · 자체 가칭 fruit-table · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e037-산책-준비-한-걸음">🧩 E037 · 산책 준비 한 걸음</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.sinyee.babybus.kidsgames.safety.education.learning&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">래브라도 안전 게임</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 어린이 게임: 안전 교육에서는 3-6세 취학 전 아이들이 안전에 대해 배울 수 있도록 재밌는 상호 활동 학습 기회를 제공해요. 어린이들이 좋아하는 캐릭터 래브라도 경장의 안내에 따라 여러 가지 재밌는 게임을 하고 카툰과 스토리를 보면서 어린이들은 자신을 보호하고 위험에서 멀어지는 법에 대해 배우게 될 거예요!  130개 이상의 필수 안전 팁 이 안전 교육 게임에는 130개 이상의 안전 팁이</li><li>원래 독립 범위: 배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외</li><li>이번 허용 범위: 오늘의 작은 일들을 순서대로 이어 봐요. 엔진 routine · 자체 가칭 walk-ready · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e054-버스-나들이-준비">🧩 E054 · 버스 나들이 준비</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.sinyee.babybus.taxi&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">아기 팬더의 스쿨버스</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 아기 팬더의 스쿨버스는 아이들을 위해 설계된 3D 스쿨버스 운전 시뮬레이션 게임입니다. 이 운전 게임에서는 스쿨버스 운전뿐만 아니라 다른 멋진 자동차를 운전하는 시뮬레이션도 경험할 수 있습니다. 신나는 자동차 모험을 떠나 스쿨버스 운전사, 버스 운전사, 소방차 운전사, 엔지니어링 트럭 운전사로 운전의 즐거움을 느껴보세요!  다양한 차량 선택 스쿨버스, 관광버스, 경찰차, 소방차, 건설 차량</li><li>원래 독립 범위: 배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외</li><li>이번 허용 범위: 오늘의 작은 일들을 순서대로 이어 봐요. 엔진 routine · 자체 가칭 bus-greeting · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e056-소풍-도시락-준비">🧩 E056 · 소풍 도시락 준비</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.bimiboo.kids.cooking.games&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">키즈 요리 게임: 피자게임, 베이킹 그리고 음식 만들기</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 비미 부의 키즈 요리 게임: 어린이 셰프로 주니어 셰프를 양성하세요!  이 게임은 2-5세 영유아에게 완벽하며, 시뮬레이터 게임, 음식 만들기 게임, 그리고 키즈 요리 게임이 독특하게 결합하여 아이들이 새로운 것을 즐기고 배우면서 마치 어린이 셰프가 된 듯한 기분을 느끼게 해줘요. 이 게임은 유아게임과 애기들을 위한 학습 경험을 제공합니다.  게임 특징: -플레이할 수 있는 10개의 레스토랑</li><li>원래 독립 범위: 배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외</li><li>이번 허용 범위: 오늘의 작은 일들을 순서대로 이어 봐요. 엔진 routine · 자체 가칭 picnic-order · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e091-작은-장보기-수첩">🧩 E091 · 작은 장보기 수첩</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.sinyee.babybus.shopping&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">마트놀이 - 베이비버스</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 아기 팬더의 슈퍼마켓에서는 쇼핑을 즐길 수 있을 뿐만 아니라 점원이 되어 물건을 계산하는 놀이도 할 수 있어요! 그뿐만 아니라, 슈퍼마켓에는 참여할 수 있는 다양하고 재미있는 이벤트도 마련되어 있답니다. 지금 바로 여러분의 쇼핑 리스트를 가지고 슈퍼마켓 게임으로 장보러 오세요!  다양한 종류의 제품들 슈퍼마켓에는 식품, 장난감,아동복, 과일, 화장품,그리고 일용품과 같은 300가지 이상의 상</li><li>원래 독립 범위: 배려·순서·선택을 자체 일상 놀이로 재설계; 공포·성별 고정관념·의료 행위 모방 제외</li><li>이번 허용 범위: 오늘의 작은 일들을 순서대로 이어 봐요. 엔진 routine · 자체 가칭 market-path · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e110-장난감-쉼터">🧩 E110 · 장난감 쉼터</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.kigle.cocobi.goodhabits&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">코코비 습관 놀이 - 정리, 요리, 화장실, 청소</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 이런, 코코비 친구들의 모습이 엉망이 되었어요!😭 코코비 친구들이 깔끔한 모습으로 외출할 수 있도록 도와주세요!  ✔️올바른 생활 습관 기르기! - 화장실 가기 : 🚽화장실을 올바르게 사용하고, 깨끗하게 손을 씻어요 - 양치질, 세수 : 양치질로 충치균을 물리치고 얼굴을 닦아요 - 목욕 : 욕조에서 몸을 씻고 머리를 감아요🛁 - 정리 정돈 : 지저분한 방을 깔끔하게 정리해요 - 식사 : 맛있</li><li>원래 독립 범위: 캐릭터·세계관·복합 역할·성장 보상을 제외한 단일 생활·탐색 장면으로 범위 확정 필요</li><li>이번 허용 범위: 오늘의 작은 일들을 순서대로 이어 봐요. 엔진 routine · 자체 가칭 tidy-path · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e176-함께-먹는-시간">🧩 E176 · 함께 먹는 시간</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.kigle.project.pororo.eat&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">뽀로로 식사하기 - 어린이 식습관, 밥 먹기, 식사예절</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 꼬르륵~ 뽀로로 친구들이 배가 고픈가 봐요! 어서 친구들에게 맛있는 음식을 골고루 먹여주세요~  ▶ 총 6명의 캐릭터 친구들에게 음식을 먹여줄 수 있어요. ▶ 캐릭터마다 다양한 종류의 국과 반찬을 먹여주세요. ▶ 음식을 남기지 않고 골고루 먹으며 올바른 식습관을 형성해요. ▶ 한글/ 영어 2가지 언어를 선택할 수 있어요.  ‘뽀로로콘’ 앱에서 더욱 풍부한 어린이 학습 콘텐츠를 만날 수 있어요</li><li>원래 독립 범위: 캐릭터·세계관·복합 역할·성장 보상을 제외한 단일 생활·탐색 장면으로 범위 확정 필요</li><li>이번 허용 범위: 오늘의 작은 일들을 순서대로 이어 봐요. 엔진 routine · 자체 가칭 meal-greeting · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e248-바구니-나들이">🧩 E248 · 바구니 나들이</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.elepant.kids.shopping.games.girls.supermarket.free&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">슈퍼마켓 게임 어린이 쇼핑</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 슈퍼마켓 게임: 쇼핑, 요리 &amp; 놀이 - 유아 및 미취학 아동을 위한 최고의 역할 놀이 세상에 오신 것을 환영합니다! 이 인터랙티브한 마트 게임은 아이들이 직접 쇼핑하고, 요리하고, 운전하고, 꾸미고, 상상 속의 활기찬 세상을 탐험할 수 있는 신나는 미니 게임들로 가득해요. 유아와 어린이를 위해 특별히 만들어진 이 다채롭고 상호작용적인 마트 시뮬레이터는 배우고 즐기기에 완벽합니다.  미미와</li><li>원래 독립 범위: 원작 테마·레시피·손님/운영 체계와 분리하여 재료 분류·순서 한 활동으로 축소 필요</li><li>이번 허용 범위: 오늘의 작은 일들을 순서대로 이어 봐요. 엔진 routine · 자체 가칭 basket-order · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e250-저녁-쉼표">🧩 E250 · 저녁 쉼표</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.sinyee.babybus.selfcare&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">아기팬더의 일상 습관</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 이번에 BabyBus가 아이들의 생활 습관을 키우는 데 초점을 맞춘 게임을 선보였습니다. 아기팬더와 함께 가서 확인해 보세요!  8가지의 매일습관 이 게임은 아이들의 8가지 생활 습관을 기르는 것을 목표로 합니다. 예를들면 혼자 화장실에 가거나, 제 시간에 자거나, 균형 잡힌 식사를 하는 것등. 재미있는 상호작용을 통해서, 아이들은 스스로 화장실에 가는 것과 같은 삶의 기술을 배우고, 좋은</li><li>원래 독립 범위: 캐릭터·세계관·복합 역할·성장 보상을 제외한 단일 생활·탐색 장면으로 범위 확정 필요</li><li>이번 허용 범위: 오늘의 작은 일들을 순서대로 이어 봐요. 엔진 routine · 자체 가칭 evening-path · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e013-포근한-방-한-칸">🧩 E013 · 포근한 방 한 칸</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.tocaboca.tocalifeworld&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Toca Boca World</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 상상력이 가장 먼저 펼쳐지는 세상에 잘 오셨습니다! ✨ 알록달록한 장소에서 이야기를 만들고, 직접 건물을 꾸며 보세요. 옷차림도 직접 스타일링할 수 있어요!  Toca Boca World는 정해진 답 없이 자유롭게 노는 곳이에요. 🥳 규칙은 없고, 창의력을 펼칠 수 있는 다채로운 방법만 가득하죠. 월드를 직접 만들고, 캐릭터와 반려동물, 상점, 온갖 집들로 채워 보세요!  Toca Boca</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 cozy-room · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e022-작은-마을-쉼터">🧩 E022 · 작은 마을 쉼터</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.sinyee.babybus.gameworld.design.home.friends.fun.life.story&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Kalliu Game World</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 더 크게! 더 자유롭게! 더 와일드하게! 잠금 해제할 비밀들. 정복할 모험들. 이것은 Kalliu Game World의 첫 번째 챕터일 뿐입니다. 더 거대한 Kalliu World가 곧 찾아옵니다. 그 세계로 들어갈 준비가 되었나요?  이 완전히 열린 세계에서 캐릭터를 만들고, 집을 디자인하고, 모든 장소를 탐험하며 숨겨진 놀라움을 발견할 수 있습니다. 건설하고, 발견하고, 업그레이드하세요—</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 tiny-village · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e023-자연-보물-선반">🧩 E023 · 자연 보물 선반</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.ferrero.applayduGP&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Applaydu: Talk &amp; Play ​</a> · 기존 조건부 유지</li><li>저장된 설명 근거: Applaydu 시즌 7: 어린이를 위한 새로운 엔터테인먼트 플랫폼을 통해 Talk &amp; Play, 발견, 창작, 학습을 모두 경험해 보세요!  Kinder의 Applaydu는 화려한 수상 경력을 자랑하는 어린이와 부모를 위한 게임, 엔터테인먼트 플랫폼입니다. 안전하고 창의적인 Kinder 세계에서 아이들은 놀이를 통해 대화하고, 상상하고, 배우며 마법 같은 세계와 사랑스러운 캐릭터들을 발견할</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 nature-shelf · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e024-창가의-작은-자리">🧩 E024 · 창가의 작은 자리</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.pazugames.avatarworld&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Avatar World ®</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 2024년 가장 혁신적인 롤플레잉 게임인 아바타 월드에 오신 것을 환영합니다. 놀라운 장소, 마을, 도시, 캐릭터, 상호 작용할 수 있는 끝없는 아이템과 아바타로 가득한 재미있고 귀여운 세계를 탐험하고 경험하세요. (우리는 플레이어 여러분을 위해 이 특별한 게임을 만들게 되어 매우 기쁩니다! 우리를 선택해 주셔서 감사하며, 여러분과 소통하고 원하는 것을 만들 수 있기를 기대합니다!)  아바타</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 window-corner · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e044-조각-마을-구상">🧩 E044 · 조각 마을 구상</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.lego.common.legoplay&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">LEGO® Play</a> · 기존 조건부 유지</li><li>저장된 설명 근거: LEGO® Play는 레고를 좋아하는 누구나 안전하게 즐길 수 있는 크리에이티브 앱입니다. 원하는 걸 만들고, 마음껏 실험하며, 창의성을 펼칠 수 있는 디지털 창작 도구를 나만의 방식으로 자유롭게 플레이하세요!  여러분의 창의성을 마음껏 펼쳐보세요  영감이 떠오른다고요? 아이들을 위해 만들어진 재미있는 도구로 창의력을 마음껏 펼쳐 보세요. 그림 그리기와 스토리 만들기부터 영상 제작, LEGO</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 block-corner · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e050-리본-빛깔-공방">🧩 E050 · 리본 빛깔 공방</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.tocaboca.tocahairsalon4&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Toca Boca Hair Salon 4</a> · 기존 조건부 유지</li><li>저장된 설명 근거: Toca Boca Hair Salon 4에 오신 것을 환영합니다! 클리퍼, 염색약, 메이크업을 준비하고 수상 경력에 빛나는 스튜디오 Toca Boca의 재미있는 헤어 커트 게임에서 창의력을 발휘해 보세요. 헤어 커트 게임, 메이크업 게임, 드레스업 게임의 모든 것을 여기에서 찾을 수 있습니다!  Toca Boca Hair Salon 4는 Piknik의 일부입니다. 구독 한 번으로 무한한 방법</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 ribbon-studio · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e053-뜰-안의-작은-쉼터">🧩 E053 · 뜰 안의 작은 쉼터</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.tocaboca.tocakitchen2&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Toca Boca Jr: Fun Kids Games</a> · 기존 조건부 유지</li><li>저장된 설명 근거: <b>따뜻하게 옷을 입고 헬로 키티®와 함께 토카 보카 파티에서 아늑한 겨울 피크닉을 즐겨보세요! 마시멜로를 얹은 핫초코를 마시고, 맛있는 페이스트리를 맛보고, 사탕 지팡이도 잊지 마세요! 12월 19일까지 플레이하세요.</b>  하나의 앱에 담긴 인기 게임 1억 가구 이상이 사랑하는 토카 보카 파티에서 2~8세 어린이를 위한 최고의 게임들을 만나보세요! 토카 보카의 가장 사랑받는 게임들을 하나의</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 garden-corner · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e057-누구나의-축하-식탁">🧩 E057 · 누구나의 축하 식탁</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.kigle.cocobi.princessparty&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">코코비 공주 파티 - 메이크업, 드레스, 키즈 패션</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 👑💐어서오세요. 공주님의 성에 오신 걸 환영해요!  아름다운 드레스, 반짝이는 귀걸이, 예쁜 구두까지! 여러가지 아이템으로 공주님을 더욱 눈부시게 꾸밀 수 있어요.  귀여운 요정 코코핑과 함께 나만의 공주님을 만들어요!  ✔️사랑스러운 공주님 꾸미기 - 헤어 스타일 : 공주님의 헤어 스타일을 바꿔봐요. 긴 생머리부터 높게 묶은 포니테일까지 다양한 모습으로 바꿀 수 있어요.  - 드레스 : 오</li><li>원래 독립 범위: 공주·외모 서열·성별 제한을 재현하지 않고 누구나 하는 꾸미기로 전환</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 celebration-table · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e062-작은-도서-쉼터">🧩 E062 · 작은 도서 쉼터</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.sinyee.babybus.world&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">아기팬더 월드 - BabyBus 키즈 게임</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 아기 팬더의 세상은 아이들을 위해 특별히 제작된 앱으로, BabyBus의 가장 인기 있는 게임, 동요, 애니메이션을 하나의 신나는 세상속에 담았습니다!  팬더의 친구 키키,묘묘와 함께 신나는 모험을 떠나보세요! 이 게임 세상에서 아이들은 마음껏 놀고, 만들며, 새로운 것들을 발견할 수 있습니다!  🎈 원하는 대로 플레이하세요 나만의 아바타, 아이돌, 또는 공주를 만들어 보세요. 좋아하는 옷과</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 little-library · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e066-우리의-놀이-자리">🧩 E066 · 우리의 놀이 자리</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.sinyee.babybus.recommendapp.global&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">아기팬더의 키즈 플레이</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 아기 팬더 키즈 게임은 인기 BabyBus 게임과 애니메이션을 모두 모아 귀여운 키키와 묘묘가 아이들과 함께 세상을 탐험하는 여정을 떠나는 이야기입니다!  타운 생활, 공주 옷 입기, 자동차 운전 등 다양한 테마를 다룹니다! 재미있는 게임을 통해 아이들은 만들고, 탐험하고, 디자인하고, 상상하며, 실생활에 적용하는 법을 배웁니다!  오픈 월드 게임 타운 시리즈 게임이 속속 출시됩니다! 아파트</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 play-corner · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e071-이웃과-나눔-식탁">🧩 E071 · 이웃과 나눔 식탁</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.kigle.cocobi.world.four&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">코코비 월드 4 - 키즈 게임, 어린이 놀이, 역할놀이</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 코코비 월드 4는 코코비의 새로운 인기 앱을 모아둔 시리즈앱입니다! 아이들이 좋아하는 재밌는 코코비 게임이 모두 있어요!  요정 코코핑이 되어 공주님의 성에 놀러 가고, 솜사탕 고양이를 돌봐줘요. 유치원에서 코코비 친구들과 클레이 놀이와 보물찾기를 할 수 있어요.  재미있게 놀이한 다음에는 깨끗히 씻고 정리하는 생활습관을 배울 수 있답니다. 또 패션 디자이너가 되어 손님에게 어울리는 옷을 만</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 neighbor-table · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e075-색과-무늬-소품함">🧩 E075 · 색과 무늬 소품함</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.bimiboo.kids.games.beauty.salon&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">여아를 위한 미용실 게임: 손톱 게임, 머리자르기게임</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 창의력, 재미, 그리고 상상력이 가득한 세계에 오신 것을 환영합니다 - Bimi Boo !  우리의 미용실 게임은 2세에서 7세 어린이를 위해 특별히 설계된 재미와 상상이 완벽하게 조화를 이루는 어린이 전용 패션 게임입니다. 이 다채로운 앱은 가상 살롱 방문을 흥미진진한 교육적 모험으로 바꾸며, 재미있는 화장 게임, 헤어 스타일링, 편안한 스파 게임 및 탐험 등을 즐길 수 있도록 구성되어 있</li><li>원래 독립 범위: 여아 전용·외모 평가를 제외하고 누구나 선택하는 색·질감 창작으로 전환</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 pattern-tray · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e076-함께-쉬는-거실">🧩 E076 · 함께 쉬는 거실</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.miaworld.life.avatar.doll.dressup.design.makeover&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Mia World: Life Sims 어린이 가족게임</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 미아 월드는 아이들의 창의력, 패션 감각, 그리고 상상력을 키워줄 마법 같은 옷 입히기 시뮬레이션 게임입니다. 아이들을 위한 이 교육용 게임에서는 특별한 이야기를 만들고, 나만의 세계를 디자인하고, 수집한 모든 아바타 캐릭터를 개성 있게 꾸밀 수 있습니다! 💞  이 옷 입히기 게임은 다양하고 신나는 환경🏡🏖️🏞️에서 펼쳐지며, 각 환경은 인터랙티브 요소와 패션 감각으로 가득합니다. 인형 캐릭</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 family-corner · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e090-동네-공원-한-장면">🧩 E090 · 동네 공원 한 장면</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.kigle.cocobi.lifeworld&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">코코비 라이프 월드 - 시티,세상,아바타,어린이 게임</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 코코비 라이프 월드에 오신 것을 환영해요! 💛 여기에서는 내가 주인공이고, 마음껏 놀 수 있어요.  다양한 캐릭터와 무한한 창의력으로 이 세상을 탐험해봐요.  여행이 떠나고 싶어지는 공항, 모든 치료를 받을 수 있는 병원, 범인이 잡혀 있는 경찰서!  라이프 월드에서 나만의 새로운 이야기를 만들어요.  ✔️ 5개의 새로운 장소! - 공항, 경찰서, 아쿠아리움, 동물농장, 으스스한 귀신의 집!</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 park-corner · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e094-이야기-소품-상자">🧩 E094 · 이야기 소품 상자</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.tutotoons.app.dopplesworld&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Dopples World</a> · 기존 조건부 유지</li><li>저장된 설명 근거: Dopples World에 오신 것을 환영합니다. 여기에서는 원하는 사람이 될 수 있습니다! 아바타를 커스터마이징하고 어떻게 진행될지 모두 결정하세요. 할 수 있는 일에 제한이 없습니다. 스토리를 만들고, 시크릿 영역을 탐색하고, 상상할 수 있는 모든 캐릭터를 구현하세요. 나만의 우주이므로, 나만의 규칙을 만들고 꿈을 실현할 수 있습니다!  독특한 아바타 만들기 캐릭터를 완벽하게 커스터마이징</li><li>원래 독립 범위: 공간 꾸미기·창작 한 장면만 자체 구성; IP·커뮤니티·대형 월드 제외</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 story-corner · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e105-반가운-손님-자리">🧩 E105 · 반가운 손님 자리</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.kigle.cocobi.world.one&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">코코비 월드 1 - 키즈 게임, 어린이 놀이, 역할놀이</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 코코비 월드는 코코비의 인기 앱을 모아둔 시리즈앱입니다! 아이가 좋아하던 게임을 여기서 모두 찾아볼 수 있어요~  병원, 놀이공원, 바닷가 등 다양한 지역에서 놀 수 있고, 경찰, 동물구조대 등 다양한 역할을 플레이해볼 수도 있어요. 코코, 러비와 함께 끝없는 모험을 떠나요!  ■ 6개의 인기 코코비 앱! - 코코비 병원놀이 : 의사 코코와 러비가 아픈 친구들을 치료해 줄 거예요. - 코코비</li><li>원래 독립 범위: 캐릭터·세계관·복합 역할·성장 보상을 제외한 단일 생활·탐색 장면으로 범위 확정 필요</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 welcome-corner · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e122-상상-소품-작업실">🧩 E122 · 상상 소품 작업실</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.kigle.cocobi.pinkblackhero&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">코코비 핑크 블랙 히어로 - 공주, 꾸미기, 변신 마법</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 비상! 몬스터가 코코비 마을을 엉망으로 만들고 있어요. 사랑과 어둠의 힘으로 널 용서하지 않겠어! 핑크 블랙 히어로 출동!  ✔️변신! 핑크 블랙 히어로! - 달콤한 사랑의 힘으로 나쁜 마음을 정화하는 핑크 히어로!🩷 - 강력한 어둠의 힘으로 몬스터를 제압하는 블랙 히어로!🖤 - 팬던트에 마법의 기운을 담아 화려한 모습으로 변신해요.  ✔️히어로 미션! - 구조 활동 : 시민을 안전한 곳으로</li><li>원래 독립 범위: 캐릭터·세계관·복합 역할·성장 보상을 제외한 단일 생활·탐색 장면으로 범위 확정 필요</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 cape-studio · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e125-빛깔-전시-한-칸">🧩 E125 · 빛깔 전시 한 칸</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.sinyee.babybus.princess_coloring_fantasy_magic_girls_games&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">프린세스 게임: 판타지 컬러링</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 환상적인 공주 판타지 색칠하기 세상에 오신 것을 환영합니다! 이곳에서 여러분은 상상력을 발휘해 여러 공주들의 사진 프레임을 색칠할 수 있어요. 공주와 예술에 대한 열정이 가득한 아이도 어른도 이 게임이 정말 마음에 들 거예요!  아름다운 색칠하기 페이지 공주 판타지 색칠하기에서는 공주, 요정, 인어공주, 꽃동산, 유니콘 등 다양한 사진 프레임을 제공합니다. 각각의 캐릭터는 아름답게 제작되어</li><li>원래 독립 범위: 성별 제한·외모 우열을 재현하지 않고 누구나 하는 색·질감 창작으로 전환 필요</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 color-display · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e137-함께-노는-작은-방">🧩 E137 · 함께 노는 작은 방</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.budgestudios.googleplay.BlueyBLU&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">블루이: 같이 놀아요</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 블루이의 집에서 탐험하고, 상상하고, 만드세요 할 일이 정말 많아요. 블루이와 친구, 가족들과 함께하세요! 재미있고 쉬우며 편안한 영유아 학습 게임으로 모든 나이와 성별의 아이들이 즐길 수 있습니다.  부모님도 함께할 수 있어요! 탐험하기 TV에서 본 것처럼 집을 탐험하고 즐거운 시간을 보내세요!  숨어있는 깜짝 선물을 모두 찾아낼 수 있을까요? 상상하기 모든 방에서 깊이 있는 상상력 게임을</li><li>원래 독립 범위: 캐릭터·세계관·복합 역할·성장 보상을 제외한 단일 생활·탐색 장면으로 범위 확정 필요</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 shared-playroom · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul><h3 id="e141-누구나의-소품-선반">🧩 E141 · 누구나의 소품 선반</h3><ul><li>참고: <a href="https://play.google.com/store/apps/details?id=com.Kidoverse.HairSalon&amp;hl=ko&amp;gl=KR" target="_blank" rel="noopener">Hair Salon Games For Kids</a> · 기존 조건부 유지</li><li>저장된 설명 근거: 키도 헤어 살롱에 오신 것을 환영합니다! 아이들을 위한 신나는 헤어 스타일링 어드벤처 게임이에요 ✂️🎨 아이들아, 최고의 헤어스타일리스트가 되어 이 창의적인 헤어 살롱 게임에서 마음껏 스타일을 연출해 봐!  *** 키도 게임은 매우 안전합니다. 광고가 없어요 🚫📢 무료 콘텐츠도 제공됩니다 🎁 키도는 아이들과 부모님 모두가 즐겁고 안전하며 방해받지 않고 게임을 즐길 수 있도록 최선을 다하고 있</li><li>원래 독립 범위: 성별 제한·외모 우열을 재현하지 않고 누구나 하는 색·질감 창작으로 전환 필요</li><li>이번 허용 범위: 좋아하는 소품을 골라 나만의 장면을 만들어요. 엔진 scene · 자체 가칭 accessory-shelf · 4–8세 가설</li><li>제외·잔여: 원작 캐릭터·브랜드·UI·문항·음원·레벨·촬영·계정·공유·결제·광고·의료 행위·외모 평가 제외. 원작 전체 구현과 동일하다고 주장하지 않음. 공개 전 이름·상표 및 연령·교육 내용 검토 필요.</li></ul></div></div><div id="sec-요약-정보" class="section"><div class="content"><h2 id="요약-정보">📌 요약 정보</h2><p>40개 좁은 범위의 구현 검토를 기록했다. 앱 자체의 적합 판정을 승격하지 않는다. 출처 앱 수·MVP 정의 수·엔진 수·최종 검증 완료 수를 각각 관리한다.</p></div></div>
+<div class="doc-footer">🙏 감사합니다!</div>
+</main>
+
+<script>
+function show(ev, name){
+  var btn = ev.currentTarget;
+  document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active');});
+  document.querySelectorAll('.nav-link').forEach(function(l){l.classList.remove('active');});
+  document.getElementById('sec-'+name).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0,0);
+  // 좁은 화면의 탭 줄은 가로 스크롤이라 선택한 탭이 화면 밖일 수 있다. 세로 위치는 건드리지 않는다.
+  if (btn.scrollIntoView) btn.scrollIntoView({block:'nearest', inline:'center'});
+}
+/* 코드 복사: Clipboard API(https·file) → 실패 시 textarea + execCommand 폴백 */
+function copyCode(btn){
+  var pre = btn.parentNode.querySelector('pre');
+  var clone = pre.cloneNode(true);
+  var lab = clone.querySelector('.label'); if (lab) lab.remove();
+  var text = clone.textContent.replace(/\n$/, '');
+  function done(ok){
+    var s = btn.querySelector('span');
+    btn.classList.toggle('done', ok);
+    s.textContent = ok ? '복사됨' : '복사 실패';
+    setTimeout(function(){ btn.classList.remove('done'); s.textContent = '복사'; }, 1500);
+  }
+  function fallback(){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false; try { ok = document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta); done(ok);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(function(){ done(true); }, fallback);
+  } else { fallback(); }
+}
+function isDark(){
+  var t = document.documentElement.getAttribute('data-theme');
+  if (t) return t === 'dark';
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+function syncSwitch(){
+  var sw = document.getElementById('themeSwitch'); if (!sw) return;
+  var d = isDark();
+  sw.setAttribute('aria-checked', d ? 'true' : 'false');
+  sw.querySelector('.knob').textContent = d ? '☾' : '☀';
+  var n = document.getElementById('themeName'); if (n) n.textContent = d ? '야간' : '주간';
+}
+function toggleTheme(){
+  var next = isDark() ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('boos-guide-theme', next); } catch(e) {}
+  syncSwitch();
+}
+/* 컬러 스킨: 기본(Spring.io 그린)은 data-skin 을 지운다 */
+function setSkin(k){
+  var r = document.documentElement;
+  if (k === 'green') r.removeAttribute('data-skin'); else r.setAttribute('data-skin', k);
+  try { localStorage.setItem('boos-guide-skin', k); } catch(e) {}
+  syncSkin();
+}
+function syncSkin(){
+  var cur = document.documentElement.getAttribute('data-skin') || 'green';
+  document.querySelectorAll('.skin-dot').forEach(function(d){
+    var on = d.getAttribute('data-skin') === cur;
+    d.setAttribute('aria-checked', on ? 'true' : 'false');
+    if (on) document.getElementById('skinName').textContent = d.getAttribute('aria-label');
+  });
+}
+/* 글자 크기: 본문 기준 px(12~20)을 --fz 배율로 적용한다. 헤더 글자는 고정이다 */
+function curFont(){
+  var z = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--fz')) || 1;
+  return Math.round(z * 15);
+}
+function syncFont(){
+  var f = curFont();
+  document.getElementById('fontVal').textContent = f;
+  document.getElementById('fontDown').disabled = f <= 12;
+  document.getElementById('fontUp').disabled = f >= 20;
+}
+function stepFont(d){
+  var f = Math.min(20, Math.max(12, curFont() + d));
+  document.documentElement.style.setProperty('--fz', f / 15);
+  try { localStorage.setItem('boos-guide-font', f); } catch(e) {}
+  syncFont();
+}
+/* 보기 설정 레이어: ⚙ 버튼으로 열고, 바깥 클릭·Esc 로 닫는다 */
+function togglePrefs(open){
+  var btn = document.getElementById('prefsBtn'), panel = document.getElementById('prefsPanel');
+  if (open === undefined) open = panel.hidden;
+  panel.hidden = !open;
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function resetPrefs(){
+  var r = document.documentElement;
+  r.removeAttribute('data-theme'); r.removeAttribute('data-skin'); r.style.removeProperty('--fz');
+  try { ['boos-guide-theme','boos-guide-skin','boos-guide-font'].forEach(function(k){ localStorage.removeItem(k); }); } catch(e) {}
+  syncSwitch(); syncSkin(); syncFont();
+}
+document.addEventListener('click', function(e){
+  var panel = document.getElementById('prefsPanel');
+  if (!panel.hidden && !panel.contains(e.target) && !document.getElementById('prefsBtn').contains(e.target)) togglePrefs(false);
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape' && !document.getElementById('prefsPanel').hidden) {
+    togglePrefs(false); document.getElementById('prefsBtn').focus();
+  }
+});
+if (window.matchMedia) {
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  if (mq.addEventListener) mq.addEventListener('change', syncSwitch);
+}
+syncSwitch(); syncSkin(); syncFont();
+</script>
+</body>
+</html>

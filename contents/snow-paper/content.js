@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 1,
   "objective": "눈송이 그림 종이에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요.",
-  "description": "눈송이 그림 종이에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "여섯 방향으로 뻗은 눈송이 가지에 선과 무늬를 더해요.",
   "params": {
     "template": "snow"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "눈송이 가지"
+  }
 };

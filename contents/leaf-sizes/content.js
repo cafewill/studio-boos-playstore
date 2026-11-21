@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 6,
   "objective": "같은 크기의 물체를 찾아요.",
-  "description": "같은 크기의 물체를 찾아요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "잎 그림의 크기를 비교하고 목표와 같은 크기를 선택해요.",
   "params": {
     "motif": "leaf"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "같은 크기 찾기"
+  }
 };

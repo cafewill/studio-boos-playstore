@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 1,
   "objective": "낮고 높은 소리 버튼을 자유롭게 탐색해요.",
-  "description": "낮고 높은 소리 버튼을 자유롭게 탐색해요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "낮은 도부터 높은 라까지 직접 눌러 음 높이의 차이를 들어 봐요.",
   "params": {
     "timbre": "sine"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "낮은 소리부터 높은 소리까지"
+  }
 };

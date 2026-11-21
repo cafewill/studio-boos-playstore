@@ -1,3 +1,4 @@
+import {DRAWING_PATHS} from './artwork.js';
 import {COLORS,NAMES} from '../core/utils.js';
 import {PARTS,target} from '../engines/assembly.js';
 import {goal} from '../engines/commands.js';
@@ -7,6 +8,11 @@ const button=(label,type,value,extra='')=>`<button type="button" class="secondar
 const dots=(count,motif='circle')=>`<div class="dots" role="img" aria-label="${count}개">${Array.from({length:count},()=>glyph(motif)).join('')}</div>`;
 export function stage(state,def){
  const data=state.data,r=state.round;
+ if(def.engine==='words'){
+  const card=def.params.cards[r];return `<div class="word-book"><span class="eyebrow">그림과 낱말의 만남</span><h2 id="question" tabindex="-1">그림에 어울리는 낱말은 무엇일까요?</h2><div class="word-picture" role="img" aria-label="${escape(card.word)} 그림">${escape(card.symbol)}</div><p>함께 읽어도 좋아요. 천천히 골라 보세요.</p><div class="word-options">${data.options[r].map(i=>button(escape(def.params.cards[Number(i)].word),'word',i)).join('')}</div></div>`;
+ }
+ if(def.engine==='routine')return `<div class="routine-workshop"><span class="eyebrow">한 걸음씩 이어 보기</span><h2 id="question" tabindex="-1">${escape(def.objective)}</h2><ol class="routine-path" aria-label="이어 놓은 순서">${def.params.steps.map((step,i)=>`<li class="${i<data.paths[r].length?'is-ready':''}">${i<data.paths[r].length?escape(step):'다음 한 걸음'}</li>`).join('')}</ol><div class="routine-options">${data.options[r].map(i=>button(escape(def.params.steps[Number(i)]),'step',i,data.paths[r].includes(Number(i))?'disabled':'')).join('')}</div>${button('순서 다시 살펴보기','routine-reset')}</div>`;
+ if(def.engine==='scene')return `<div class="scene-workshop"><span class="eyebrow">내가 만드는 작은 세상</span><h2 id="question" tabindex="-1">${escape(def.objective)}</h2><p>소품을 고르고 놓을 자리를 눌러요. 서로 다른 소품 세 가지로 장면을 만들어요.</p><div class="prop-tray" aria-label="소품 고르기">${def.params.props.map((p,i)=>button(`<span aria-hidden="true">${escape(p.symbol)}</span><span>${escape(p.label)}</span>`,'prop',String(i),`aria-pressed="${data.selected===String(i)}"`)).join('')}</div><div class="scene-canvas backdrop-${escape(def.params.backdrop)}" aria-label="소품 놓는 공간">${data.boards[r].map((v,i)=>button(`${v===null?'<span aria-hidden="true">＋</span>':`<span aria-hidden="true">${escape(def.params.props[Number(v)].symbol)}</span>`}<span class="sr-only">${i+1}번 자리, ${v===null?'빈자리':escape(def.params.props[Number(v)].label)}. 여기에 놓기</span>`,'place',String(i))).join('')}</div><div class="actions">${button('소품 다시 놓기','scene-clear')}${button('나의 장면 완성하기','finish')}</div></div>`;
  if(def.engine==='choice'){
   const q=data.rounds[r];let sample='';
   if(q.kind==='shape')sample=glyph(q.correct);
@@ -48,8 +54,7 @@ export function stage(state,def){
 export function attachDrawing(root,state,def,emit){
  const canvas=root.querySelector('#draw-surface');if(!canvas)return()=>{};
  const ctx=canvas.getContext('2d');let points=[];let pointer=null;
- function draw(){ctx.clearRect(0,0,800,480);ctx.fillStyle='#fffef9';ctx.fillRect(0,0,800,480);ctx.strokeStyle='#d9e2d1';ctx.lineWidth=3;ctx.setLineDash([7,9]);const theme=def.params.template;
-  ctx.beginPath();if(['house','kite','tree','forest'].includes(theme)){ctx.moveTo(210,360);ctx.lineTo(210,190);ctx.lineTo(400,60);ctx.lineTo(590,190);ctx.lineTo(590,360);ctx.closePath();}else if(['waves','rainbow','sky'].includes(theme)){for(let y=120;y<=360;y+=80){ctx.moveTo(100,y);ctx.bezierCurveTo(260,y-90,540,y+90,700,y);}}else if(['flower','garden','leaf','fruit','butterfly'].includes(theme)){for(let i=0;i<5;i++){ctx.moveTo(400,240);ctx.ellipse(400+90*Math.cos(i*2*Math.PI/5),240+90*Math.sin(i*2*Math.PI/5),75,55,i*2*Math.PI/5,0,Math.PI*2);}}else{for(let i=0;i<7;i++){ctx.moveTo(150+i*80,200);ctx.arc(150+i*80,240,26+i%3*9,0,Math.PI*2);}}ctx.stroke();ctx.setLineDash([]);
+ function draw(){ctx.clearRect(0,0,800,480);ctx.fillStyle='#fffef9';ctx.fillRect(0,0,800,480);ctx.strokeStyle='#a2b4bf';ctx.save();ctx.scale(800/340,480/220);ctx.lineWidth=1.3;ctx.setLineDash([3,4]);for(const path of DRAWING_PATHS[def.params.template])ctx.stroke(new Path2D(path));ctx.restore();ctx.setLineDash([]);
   const renderStroke=s=>{ctx.strokeStyle=colorHex(s.color);ctx.fillStyle=colorHex(s.color);ctx.lineWidth=8;ctx.lineCap='round';ctx.lineJoin='round';const first=s.points[0];ctx.beginPath();ctx.moveTo(first[0]*800,first[1]*480);for(const [x,y]of s.points)ctx.lineTo(x*800,y*480);ctx.stroke();if(s.points.length===1){ctx.beginPath();ctx.arc(first[0]*800,first[1]*480,s.stamp?13:4,0,Math.PI*2);ctx.fill();}};
   state.data.strokes.forEach(renderStroke);if(points.length)renderStroke({points,color:state.data.color});
  }

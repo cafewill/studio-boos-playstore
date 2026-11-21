@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 6,
   "objective": "세 개씩 놓은 묶음의 전체 수를 세어 봐요.",
-  "description": "세 개씩 놓은 묶음의 전체 수를 세어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "세 개씩 들어 있는 점 묶음을 모두 합쳐 세어 봐요.",
   "params": {
     "min": 3,
     "max": 3,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "3개씩 묶어 세기"
+  }
 };

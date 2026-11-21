@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 6,
   "objective": "열매를 나눈 뒤 남은 수를 살펴봐요.",
-  "description": "열매를 나눈 뒤 남은 수를 살펴봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "그림에서 나누어 준 개수를 빼고 남은 수를 찾아요.",
   "params": {
     "min": 3,
     "max": 8,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "남은 수 찾기"
+  }
 };

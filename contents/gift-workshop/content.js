@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 1,
   "objective": "기하 조각 세 개 이상을 골라 나만의 작품을 조립해요.",
-  "description": "기하 조각 세 개 이상을 골라 나만의 작품을 조립해요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "꽃·잎·기본 도형을 아홉 칸에 조합해 나만의 조각 작품을 만들어요.",
   "params": {
     "template": "flower"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "자유 조각 배치"
+  }
 };

@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 1,
   "objective": "기하 조각 세 개 이상을 골라 나만의 작품을 조립해요.",
-  "description": "기하 조각 세 개 이상을 골라 나만의 작품을 조립해요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "집을 상상하며 네모와 세모 등 도형을 골라 아홉 칸에 자유롭게 놓아요.",
   "params": {
     "template": "house"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "자유 조각 배치"
+  }
 };

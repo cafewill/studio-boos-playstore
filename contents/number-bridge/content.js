@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 6,
   "objective": "한 칸씩 늘어나는 숫자의 다음을 찾아요.",
-  "description": "한 칸씩 늘어나는 숫자의 다음을 찾아요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "숫자 뒤의 빈자리를 보고 다음에 이어질 수를 찾아요.",
   "params": {
     "min": 1,
     "max": 8,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "다음 수 찾기"
+  }
 };

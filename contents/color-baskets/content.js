@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 6,
   "objective": "같은 색을 모양과 이름 단서와 함께 찾아요.",
-  "description": "같은 색을 모양과 이름 단서와 함께 찾아요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "세 가지 빛깔을 구별하고 안내된 색을 같은 색 버튼과 연결해요.",
   "params": {
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "색 이름과 빛깔"
+  }
 };

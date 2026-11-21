@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 6,
   "objective": "서로 다른 수에서 더 많은 쪽을 찾아요.",
-  "description": "서로 다른 수에서 더 많은 쪽을 찾아요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "서로 다른 숫자 세 개를 비교해 가장 큰 수를 골라요.",
   "params": {
     "min": 1,
     "max": 7,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "수의 크기 비교"
+  }
 };

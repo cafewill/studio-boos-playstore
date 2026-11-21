@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 3,
   "objective": "그림을 살펴보고 기하 조각을 같은 자리에 놓아요.",
-  "description": "그림을 살펴보고 기하 조각을 같은 자리에 놓아요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "작은 참고 그림의 아홉 자리를 보고, 각 자리에 같은 도형을 놓아요.",
   "params": {
     "targets": [
       [
@@ -50,5 +50,9 @@ export const definition = {
     ],
     "template": "mosaic"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "참고 그림 맞추기"
+  }
 };

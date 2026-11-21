@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 6,
   "objective": "1부터 5까지 물체를 세고 숫자와 연결해요.",
-  "description": "1부터 5까지 물체를 세고 숫자와 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "그림 속 물체를 하나씩 세고, 개수에 맞는 숫자 버튼을 골라요.",
   "params": {
     "min": 1,
     "max": 5,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "1부터 5까지 세기"
+  }
 };

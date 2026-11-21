@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 6,
   "objective": "점의 수와 숫자를 연결해요.",
-  "description": "점의 수와 숫자를 연결해요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "그림의 점을 하나씩 짚어 보고 맞는 숫자를 찾아요.",
   "params": {
     "min": 3,
     "max": 7,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "3부터 7까지 세기"
+  }
 };

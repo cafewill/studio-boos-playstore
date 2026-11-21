@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 6,
   "objective": "두 개씩 모인 묶음의 전체 수를 알아봐요.",
-  "description": "두 개씩 모인 묶음의 전체 수를 알아봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "두 개씩 모인 점 묶음이 모두 몇 개인지 세어 봐요.",
   "params": {
     "min": 2,
     "max": 2,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "2개씩 묶어 세기"
+  }
 };

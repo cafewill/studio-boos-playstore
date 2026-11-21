@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 1,
   "objective": "구름 물감놀이에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요.",
-  "description": "구름 물감놀이에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "둥근 구름 안내선에 색을 칠하고, 구름 밖으로도 자유롭게 그려요.",
   "params": {
     "template": "cloud"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "구름의 윤곽"
+  }
 };

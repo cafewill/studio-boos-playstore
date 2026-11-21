@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 6,
   "objective": "두 바구니의 물체를 함께 세어 봐요.",
-  "description": "두 바구니의 물체를 함께 세어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "두 묶음의 그림을 함께 세고, 더한 수를 골라요.",
   "params": {
     "min": 1,
     "max": 5,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "두 묶음 더하기"
+  }
 };

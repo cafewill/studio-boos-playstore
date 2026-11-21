@@ -1,6 +1,7 @@
 import {CONTENTS} from './catalog.js';
 import {escape} from './shared/ui/graphics.js';
 import {illustration} from './portal-art.js';
+import {activityArtwork} from './shared/ui/artwork.js';
 const filter=document.querySelector('#families'),cards=document.querySelector('#cards'),search=document.querySelector('#search');
 let family='전체';
 const families=['전체',...new Set(CONTENTS.map(c=>c.category))];
@@ -9,7 +10,7 @@ function render(){
  const term=search.value.trim().toLocaleLowerCase('ko');
  const items=CONTENTS.filter(c=>(family==='전체'||c.category===family)&&`${c.title} ${c.description} ${c.category}`.toLocaleLowerCase('ko').includes(term));
  document.querySelector('#result-count').textContent=`함께 만나볼 놀이 ${items.length}개`;
- cards.innerHTML=items.length?items.map(c=>{const index=CONTENTS.indexOf(c);return `<article class="play-card tone-${index%4}"><a class="card-link" href="${escape(c.href)}"><div class="card-art">${illustration(c.engine,index)}<span class="card-age">${escape(c.age)}</span></div><div class="card-body"><span class="card-tag">${escape(c.category)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p><span class="card-action">놀이 만나기 <span aria-hidden="true">✦</span></span></div></a></article>`;}).join(''):'<div class="empty"><p>아직 찾지 못했어요. 다른 이름으로 찾아볼까요?</p><button id="reset-search" class="secondary" type="button">모든 놀이 보기</button></div>';
+ cards.innerHTML=items.length?items.map(c=>{const index=CONTENTS.indexOf(c);return `<article class="play-card tone-${index%4}"><a class="card-link" href="${escape(c.href)}"><div class="card-art">${activityArtwork(c.preview)}<span class="card-age">${escape(c.age)}</span></div><div class="card-body"><span class="card-tag">${escape(c.category)}</span><h3>${escape(c.title)}</h3><p>${escape(c.description)}</p><span class="card-action">놀이 만나기 <span aria-hidden="true">✦</span></span></div></a></article>`;}).join(''):'<div class="empty"><p>아직 찾지 못했어요. 다른 이름으로 찾아볼까요?</p><button id="reset-search" class="secondary" type="button">모든 놀이 보기</button></div>';
 }
 filter.addEventListener('click',event=>{const b=event.target.closest('button');if(!b)return;family=b.dataset.family;filter.querySelectorAll('button').forEach(el=>el.setAttribute('aria-pressed',String(el===b)));render();});
 search.addEventListener('input',render);

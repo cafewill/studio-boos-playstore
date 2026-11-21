@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 6,
   "objective": "번갈아 나타나는 모양의 다음을 찾아요.",
-  "description": "번갈아 나타나는 모양의 다음을 찾아요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "이미 놓인 모양 세 개를 보고 다음에 이어질 모양을 예상해요.",
   "params": {
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "도형의 반복 규칙"
+  }
 };

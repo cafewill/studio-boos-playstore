@@ -2,8 +2,9 @@ import {create,dispatch,progress} from './core/model.js';
 import {validateDefinition} from './core/definition.js';
 import {createStore} from './core/storage.js';
 import {stage,attachDrawing} from './ui/stage.js';
-import {glyph,escape,garden} from './ui/graphics.js';
+import {escape,garden} from './ui/graphics.js';
 import {createAudio} from './ui/audio.js';
+import {welcomeArt} from './ui/welcome.js';
 export function mount(def){
  validateDefinition(def);
  const root=document.querySelector('#app'),announce=document.querySelector('#announcement'),store=createStore(def),audio=createAudio();
@@ -20,7 +21,7 @@ export function mount(def){
   detach();const count=state?progress(state,def):0;
   const actions=welcome?`<div class="actions"><button class="primary" id="start">${state&&state.phase!=='complete'?'새로 시작하기':'함께 시작하기'}</button>${state&&state.phase!=='complete'?'<button class="secondary" id="continue">이어서 하기</button>':''}</div><p class="small-note">${def.ageMin}–${def.ageMax}세와 함께 · 시간 제한 없이</p>`:`<div class="actions">${['playing','feedback'].includes(state.phase)?'<button class="secondary" id="rest">잠깐 쉬기</button>':''}<a class="quiet" href="../">놀이터로 돌아가기</a></div>`;
   let board='';
-  if(welcome)board=`<section class="board welcome-board"><span class="eyebrow">작은 발견 하나</span><div class="welcome-glyphs" aria-hidden="true">${glyph('leaf','#71966a')}${glyph('flower','#c27f5d')}${glyph('triangle','#5f8fa6')}</div><h2>오늘은 ${escape(def.title)}</h2><p>${escape(def.objective)}</p><p class="small-note">직접 눌러 보고 천천히 살펴봐요.</p></section>`;
+  if(welcome)board=`<section class="board welcome-board"><span class="eyebrow">작은 발견 하나</span>${welcomeArt(def)}<h2>오늘은 ${escape(def.title)}</h2><p>${escape(def.description)}</p><p class="small-note">직접 눌러 보고 천천히 살펴봐요.</p></section>`;
   else if(state.phase==='paused')board=`<section class="board pause-panel"><h2 id="pause-title" tabindex="-1">잠깐 쉬어도 괜찮아요.</h2>${garden(count,def.roundCount)}<p>돌아오면 여기서 이어갈 수 있어요.</p><button id="resume" class="primary">이어서 하기</button></section>`;
   else if(state.phase==='complete')board=`<section class="board complete"><span class="eyebrow">오늘의 작은 발견</span><h2 id="done-title" tabindex="-1">${escape(def.title)}, 함께 해냈어요.</h2>${garden(def.roundCount,def.roundCount)}<p>나만의 발견을 차곡차곡 모았어요.<br>이제 쉬거나 다시 만나도 괜찮아요.</p><div class="actions"><button id="again" class="primary">다시 만나기</button><a href="../" class="secondary">놀이터로 돌아가기</a></div></section>`;
   else board=`<section class="board"><div class="board-top"><span>${escape(def.title)}</span><span>${state.round+1} / ${def.roundCount}</span></div><div class="progress" role="progressbar" aria-label="마친 활동" aria-valuemin="0" aria-valuemax="${def.roundCount}" aria-valuenow="${count}"><span style="width:${count/def.roundCount*100}%"></span></div><div id="stage">${stage(state,def)}</div><div id="feedback" class="feedback" role="status">${state.phase==='feedback'?`<p>${def.engine==='feelings'?'서로 다른 마음도 괜찮아요. 내 마음을 살펴봤네요.':'작은 발견이 하나 더 생겼어요.'}</p><button id="next" class="primary">${state.round===def.roundCount-1?'오늘의 발견 보기':'다음 발견 만나기'}</button>`:'<p>천천히 살펴봐도 괜찮아요.</p>'}</div>${garden(count,def.roundCount)}</section>`;

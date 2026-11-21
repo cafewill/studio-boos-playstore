@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 7,
   "roundCount": 6,
   "objective": "시간 제한 없이 씨앗 수를 하나씩 살펴봐요.",
-  "description": "시간 제한 없이 씨앗 수를 하나씩 살펴봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "시간 제한 없이 물체를 세고, 준비됐을 때 숫자를 선택해요.",
   "params": {
     "min": 1,
     "max": 5,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "leaf"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "1부터 5까지 세기"
+  }
 };

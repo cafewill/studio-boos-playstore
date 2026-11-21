@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 4,
   "objective": "짧은 바늘과 긴 바늘을 움직여 시간을 살펴봐요.",
-  "description": "짧은 바늘과 긴 바늘을 움직여 시간을 살펴봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "시침을 한 칸씩, 분침을 30분씩 바꿔 제시된 시간을 만들어요.",
   "params": {
     "halfHours": true
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "정각과 30분"
+  }
 };

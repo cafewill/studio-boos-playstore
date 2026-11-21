@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 8,
   "roundCount": 6,
   "objective": "다섯 개씩 모인 꽃 묶음을 세어 봐요.",
-  "description": "다섯 개씩 모인 꽃 묶음을 세어 봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "다섯 개씩 모인 점 묶음을 세며 묶음의 수와 전체 수를 연결해요.",
   "params": {
     "min": 5,
     "max": 5,
@@ -19,5 +19,9 @@ export const definition = {
     "direction": "more",
     "motif": "circle"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "5개씩 묶어 세기"
+  }
 };

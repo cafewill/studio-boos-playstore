@@ -11,7 +11,7 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 4,
   "objective": "생활 속 장면을 보며 여러 감정의 이름을 살펴봐요.",
-  "description": "생활 속 장면을 보며 여러 감정의 이름을 살펴봐요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "생활 장면을 읽고 기쁨·속상함·차분함·설렘 중 떠오르는 마음을 골라요.",
   "params": {
     "scenes": [
       {
@@ -32,5 +32,9 @@ export const definition = {
       }
     ]
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "서로 다른 마음의 이름"
+  }
 };

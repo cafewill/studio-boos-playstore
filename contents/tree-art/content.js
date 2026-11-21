@@ -11,9 +11,13 @@ export const definition = {
   "ageMax": 5,
   "roundCount": 1,
   "objective": "나의 작은 나무에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요.",
-  "description": "나의 작은 나무에서 선과 점, 색을 자유롭게 골라 나만의 그림을 만들어요. 천천히 살펴보고 나만의 발견을 만나요.",
+  "description": "나무줄기와 둥근 나뭇잎 덩어리의 윤곽에 계절의 색을 더해요.",
   "params": {
     "template": "tree"
   },
-  "accent": "#28644e"
+  "accent": "#28644e",
+  "presentation": {
+    "symbol": "",
+    "detail": "줄기와 나뭇잎"
+  }
 };
